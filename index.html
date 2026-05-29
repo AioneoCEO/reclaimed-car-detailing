@@ -1229,26 +1229,33 @@
       <a href="#" class="social-link">Google Reviews</a>
     </div>
   </div>
-
   <div>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+<form 
+  class="contact-form"
+  action="https://formsubmit.co/reclaimeddetailers@outlook.com"
+  method="POST"
+>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Reclaimed Detailers Booking Request">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" placeholder="John" required>
+          <input type="text" placeholder="First Name" required>
         </div>
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" placeholder="Doe" required>
+          <input type="text" placeholder="Last Name" required>
         </div>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" placeholder="(334) ###-####">
+        <input type="tel" placeholder="Phone Number">
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" placeholder="you@example.com" required>
+        <input type="email" placeholder="Email Address" required>
       </div>
       <div class="form-group">
         <label>Vehicle (Year, Make, Model)</label>
@@ -1256,7 +1263,7 @@
       </div>
       <div class="form-group">
         <label>Service Requested</label>
-        <select>
+          <select name="Service Requested">
           <option value="">Select a package...</option>
           <option>Renewal — Maintenance Detail ($80+)</option>
           <option>Restored — Deep Clean ($150+)</option>
@@ -1267,7 +1274,10 @@
       </div>
       <div class="form-group">
         <label>Additional Notes</label>
-        <textarea placeholder="Tell us about your vehicle's condition or any specific concerns..."></textarea>
+        <textarea 
+          name="Additional Notes"
+          placeholder="Tell us about your vehicle's condition or any specific concerns..."
+        ></textarea>
       </div>
       <button type="submit" class="form-submit">Request Booking</button>
     </form>
@@ -1288,15 +1298,6 @@
   </ul>
   <p class="footer-copy">© 2025 Reclaimed Detailers LLC · Montgomery, AL</p>
 </footer>
-
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Request Sent — We\'ll Be in Touch!';
-    btn.style.background = '#3d6b55';
-    btn.disabled = true;
-  }
 
   // Subtle nav scroll effect
   window.addEventListener('scroll', () => {
