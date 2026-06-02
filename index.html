@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,216 +8,452 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* ── THEME VARIABLES ── */
   :root {
-    --black: #0a0a0a;
-    --dark: #111111;
-    --dark-2: #1a1a1a;
-    --dark-3: #222222;
-    --gold: #c9a84c;
-    --gold-light: #e2c97e;
-    --gold-pale: #f0e2b8;
-    --purple-deep: #1a0d2e;
-    --purple-mid: #2d1a4a;
-    --purple-accent: #6b3fa0;
-    --purple-light: #9b6fd4;
-    --white: #f8f5f0;
-    --white-2: #ede9e2;
-    --gray: #888880;
-    --gray-light: #bbb9b2;
+    --purple: #7b35c4;
+    --purple-brand: #9b5ce4;
+    --purple-light: #b07de8;
+    --purple-ring: rgba(123,53,196,0.6);
+    --gold: #b8922a;
+    --gold-light: #d4aa4a;
+    --silver: #c8c8d0;
+    --silver-light: #e0e0e8;
+    --transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  [data-theme="light"] {
+    --bg:        #f4f2ef;
+    --bg-2:      #ede9e4;
+    --bg-card:   #ffffff;
+    --bg-card-2: #f8f6f3;
+    --bg-dark:   #1a1020;
+    --text:      #1c1a18;
+    --text-2:    #3a3830;
+    --text-muted:#6a6860;
+    --text-dim:  #9a9890;
+    --border:    rgba(0,0,0,0.08);
+    --border-gold: rgba(184,146,42,0.35);
+    --shadow:    0 2px 16px rgba(0,0,0,0.08);
+    --nav-bg:    rgba(244,242,239,0.96);
+    --hero-overlay: linear-gradient(to right, rgba(244,242,239,0.96) 40%, rgba(244,242,239,0.5) 100%);
+    --hero-glow:  rgba(123,53,196,0.25);
+    --section-alt: #ede9e4;
+    --purple-section: #1a1020;
+    --purple-section-text: #f4f2ef;
+  }
+
+  [data-theme="dark"] {
+    --bg:        #080808;
+    --bg-2:      #0f0f0f;
+    --bg-card:   #161616;
+    --bg-card-2: #1e1e1e;
+    --bg-dark:   #080808;
+    --text:      #f5f3f0;
+    --text-2:    #eae7e2;
+    --text-muted:#b0ada6;
+    --text-dim:  #808078;
+    --border:    rgba(255,255,255,0.07);
+    --border-gold: rgba(184,146,42,0.25);
+    --shadow:    0 2px 24px rgba(0,0,0,0.4);
+    --nav-bg:    rgba(8,8,8,0.96);
+    --hero-overlay: linear-gradient(to right, rgba(8,8,8,0.94) 40%, rgba(8,8,8,0.4) 100%);
+    --hero-glow:  rgba(123,53,196,0.4);
+    --section-alt: #0f0f0f;
+    --purple-section: #130a22;
+    --purple-section-text: #f5f3f0;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: 'Barlow', sans-serif;
-    background: var(--black);
-    color: var(--white);
+    background: var(--bg);
+    color: var(--text);
     overflow-x: hidden;
+    transition: var(--transition);
   }
 
-  /* NAV */
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 200;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem 4rem;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    transition: padding 0.3s;
+    padding: 0.85rem 3rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-gold);
+    transition: var(--transition), padding 0.3s;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
   }
 
-  .nav-logo {
+  .nav-left {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
+    gap: 1rem;
   }
 
-  .nav-logo-mark {
-    width: 40px;
-    height: 40px;
-    background: var(--gold);
+  /* Hamburger */
+  .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    transition: background 0.2s;
     flex-shrink: 0;
   }
 
-  .nav-logo-mark span {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 1.1rem;
-    color: var(--black);
-    letter-spacing: -0.02em;
+  .hamburger:hover { background: var(--border); }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s, background 0.35s;
   }
 
-  .nav-logo-text {
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Nav logo */
+  .nav-logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
   }
+
+  .nav-logo-svg { flex-shrink: 0; }
+
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
 
   .nav-logo-name {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 1.1rem;
-    color: var(--white);
-    letter-spacing: 0.04em;
-  }
-
-  .nav-logo-name em {
-    color: var(--gold);
-    font-style: normal;
-  }
-
-  .nav-logo-tagline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
+    font-size: 1.05rem;
+    color: var(--text);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 2px;
+    transition: color 0.35s;
   }
 
+  .nav-logo-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+    margin-top: 1px;
+  }
+
+  /* Desktop nav links */
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
     list-style: none;
   }
 
   .nav-links a {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gray-light);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: var(--purple);
+    transition: width 0.25s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--purple); }
+  .nav-links a:hover::after,
+  .nav-links a.active::after { width: 100%; }
+
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase;
+    color: #fff !important;
+    background: var(--purple);
+    padding: 0.5rem 1.3rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--purple-brand) !important; }
+
+  /* Theme toggle */
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition), transform 0.3s;
+    color: var(--text);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover { transform: rotate(20deg); background: var(--border); }
+
+  .icon-sun  { display: none; }
+  .icon-moon { display: block; }
+  [data-theme="dark"] .icon-sun  { display: block; }
+  [data-theme="dark"] .icon-moon { display: none; }
+
+  /* ── SIDEBAR ── */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 300;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+  }
+
+  .sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 400;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-gold);
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 30px rgba(0,0,0,0.15);
+  }
+
+  .sidebar.open { transform: translateX(0); }
+
+  .sidebar-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border-gold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .sidebar-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--text);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sidebar-logo-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--purple-brand);
+    display: block;
+    margin-top: 1px;
+  }
+
+  .sidebar-close {
+    width: 30px; height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .sidebar-close:hover { background: var(--border); color: var(--text); }
+
+  .sidebar-section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 1.25rem 1.5rem 0.5rem;
+  }
+
+  .sidebar-nav { flex: 1; overflow-y: auto; padding-bottom: 1.5rem; }
+
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.5rem;
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+
+  .sidebar-nav a .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .sidebar-nav a:hover {
+    background: var(--bg-2);
+    color: var(--text);
+    padding-left: 1.75rem;
+  }
+
+  .sidebar-nav a.active {
+    color: var(--purple);
+    border-left-color: var(--purple);
+    background: rgba(123,53,196,0.06);
+    font-weight: 600;
+  }
+
+  .sidebar-nav a.active .nav-dot { background: var(--purple); transform: scale(1.4); }
+
+  /* Page indicator strip at top */
+  .page-indicator {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    z-index: 500;
+    background: var(--border);
+  }
+
+  .page-indicator-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--purple), var(--purple-brand));
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  .sidebar-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sidebar-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--gold); }
+  .sidebar-contact-item:hover { color: var(--purple); }
+  .sidebar-contact-item span { font-size: 0.9rem; }
 
-  .nav-cta {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--black) !important;
-    background: var(--gold);
-    padding: 0.55rem 1.4rem;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--gold-light) !important; }
-
-  /* HERO */
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: 0 4rem;
+    padding: 5rem 4rem 0;
     overflow: hidden;
   }
 
-  .hero-bg-image {
+  .hero-bg {
     position: absolute;
     inset: 0;
-    background-color: var(--black);
-    overflow: hidden;
+    background: var(--bg);
+    transition: background 0.35s;
   }
 
-  /* REPLACE: swap <img> below with your actual hero photo */
-  .hero-bg-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.25;
-    display: block;
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 40%, var(--hero-glow) 0%, transparent 60%),
+      radial-gradient(ellipse at 15% 75%, rgba(184,146,42,0.06) 0%, transparent 50%);
   }
 
-  .hero-bg-image .img-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0d0a14 0%, #1a0d2e 50%, #111111 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .hero-bg-image .img-placeholder span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(201,168,76,0.25);
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border-gold) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 70% 40%, rgba(107,63,160,0.35) 0%, transparent 60%),
-      radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
-      linear-gradient(to right, rgba(10,10,10,0.92) 40%, rgba(10,10,10,0.4) 100%);
-  }
-
-  .hero-grid-overlay {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background: var(--hero-overlay);
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 780px;
+    max-width: 800px;
   }
 
   .hero-eyebrow {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.78rem;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--purple);
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -228,116 +464,117 @@
     content: '';
     display: block;
     width: 36px;
-    height: 1px;
-    background: var(--gold);
+    height: 2px;
+    background: var(--purple);
   }
 
   .hero h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    font-size: clamp(3rem, 6vw, 5.5rem);
     line-height: 1.0;
-    color: var(--white);
-    margin-bottom: 1rem;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    transition: color 0.35s;
   }
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
+  .hero h1 em { font-style: italic; color: var(--purple); }
 
   .hero-sub {
-    font-family: 'Barlow', sans-serif;
     font-weight: 300;
     font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--gray-light);
+    line-height: 1.75;
+    color: var(--text-muted);
     max-width: 520px;
     margin-bottom: 2.5rem;
+    transition: color 0.35s;
   }
 
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   .btn-primary {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 0.9rem 2rem;
-    border-radius: 2px;
+    color: #fff;
+    background: var(--purple);
+    padding: 0.9rem 2.2rem;
+    border-radius: 3px;
     text-decoration: none;
     display: inline-block;
     transition: background 0.2s, transform 0.15s;
   }
 
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--purple-brand); transform: translateY(-1px); }
 
   .btn-outline {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     font-size: 0.85rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--white-2);
+    color: var(--text);
     background: transparent;
-    padding: 0.9rem 2rem;
-    border-radius: 2px;
-    border: 1px solid rgba(248,245,240,0.25);
+    padding: 0.9rem 2.2rem;
+    border-radius: 3px;
+    border: 1px solid var(--border-gold);
     text-decoration: none;
     display: inline-block;
-    transition: border-color 0.2s, color 0.2s;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
   }
 
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-outline:hover { border-color: var(--purple); color: var(--purple); background: rgba(123,53,196,0.05); }
 
-  .hero-stat-row {
+  .hero-stats {
     position: absolute;
-    bottom: 3rem;
-    left: 4rem;
-    right: 4rem;
+    bottom: 0; left: 0; right: 0;
     z-index: 2;
     display: flex;
-    gap: 3rem;
-    border-top: 1px solid rgba(201,168,76,0.2);
-    padding-top: 2rem;
+    border-top: 1px solid var(--border-gold);
+    background: var(--bg);
+    transition: background 0.35s;
   }
 
-  .hero-stat { display: flex; flex-direction: column; gap: 0.25rem; }
+  .hero-stat {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-right: 1px solid var(--border-gold);
+  }
+
+  .hero-stat:last-child { border-right: none; }
 
   .hero-stat-num {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 2rem;
-    color: var(--gold);
+    font-size: 1.6rem;
+    color: var(--purple);
     line-height: 1;
   }
 
   .hero-stat-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 500;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gray);
+    color: var(--text-dim);
   }
 
-  /* SECTION SHARED */
-  section { padding: 6rem 4rem; }
+  /* ── SECTION SHARED ── */
+  section { padding: 5.5rem 4rem; }
 
   .section-label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--purple);
     margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
@@ -348,60 +585,71 @@
     content: '';
     display: block;
     width: 28px;
-    height: 1px;
-    background: var(--gold);
+    height: 2px;
+    background: var(--purple);
   }
 
   .section-title {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     line-height: 1.15;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 1rem;
+    transition: color 0.35s;
   }
 
   .section-desc {
     font-weight: 300;
     font-size: 1rem;
-    line-height: 1.75;
-    color: var(--gray-light);
-    max-width: 520px;
+    line-height: 1.78;
+    color: var(--text-muted);
+    max-width: 540px;
     margin-bottom: 3.5rem;
+    transition: color 0.35s;
   }
 
-  /* SERVICES */
-  #services { background: var(--dark); }
+  .gold-divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(to right, var(--purple), var(--gold));
+    margin: 1.5rem 0;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--bg-2); }
 
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.12);
+    background: var(--border-gold);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .service-card {
-    background: var(--dark-2);
-    padding: 0;
-    position: relative;
-    transition: background 0.2s;
+    background: var(--bg-card);
     display: flex;
     flex-direction: column;
+    transition: background 0.2s;
   }
 
-  /* REPLACE: Each .service-photo img src with your actual detail photos */
+  .service-card:hover { background: var(--bg-card-2); }
+  .service-card.featured { background: var(--purple-section); }
+  .service-card.featured * { transition: color 0.35s; }
+
   .service-photo {
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
-    background: var(--dark-3);
+    background: var(--bg-2);
     position: relative;
   }
 
   .service-photo img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
     display: block;
@@ -410,123 +658,109 @@
   .service-card:hover .service-photo img { transform: scale(1.04); }
 
   .service-photo .photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.4rem;
-    background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-2) 100%);
-    border-bottom: 1px solid rgba(201,168,76,0.1);
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.4rem;
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border-gold);
   }
 
-  .service-photo .photo-placeholder .ph-icon {
-    font-size: 2rem;
-    opacity: 0.3;
-  }
+  .service-photo .photo-placeholder .ph-icon { font-size: 2rem; opacity: 0.25; }
 
   .service-photo .photo-placeholder span {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(201,168,76,0.3);
+    color: var(--text-dim);
   }
 
-  .service-body {
-    padding: 2.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .service-card:hover { background: var(--dark-3); }
-
-  .service-card.featured { background: var(--purple-deep); }
-  .service-card.featured:hover { background: var(--purple-mid); }
+  .service-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
 
   .service-badge {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 0.25rem 0.65rem;
-    border-radius: 1px;
+    color: #fff;
+    background: var(--purple);
+    padding: 0.22rem 0.65rem;
+    border-radius: 2px;
     display: inline-block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     width: fit-content;
   }
 
   .service-tier {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
+    color: var(--purple-brand);
+    margin-bottom: 0.4rem;
   }
 
   .service-name {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 1.75rem;
-    color: var(--white);
-    margin-bottom: 0.5rem;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
     line-height: 1.1;
+    transition: color 0.35s;
   }
+
+  .service-card.featured .service-name { color: #f5f3f0; }
 
   .service-price {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--gold-light);
-    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
   }
 
   .service-desc {
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.65;
-    color: var(--gray-light);
-    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    transition: color 0.35s;
   }
 
-  .service-includes {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: auto;
-  }
+  .service-card.featured .service-desc { color: rgba(245,243,240,0.7); }
+
+  .service-includes { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; margin-top: auto; }
 
   .service-includes li {
-    font-size: 0.85rem;
-    color: var(--gray-light);
-    padding-left: 1.25rem;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    padding-left: 1.2rem;
     position: relative;
+    transition: color 0.35s;
   }
+
+  .service-card.featured .service-includes li { color: rgba(245,243,240,0.65); }
 
   .service-includes li::before {
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--gold);
+    color: var(--purple-brand);
     font-size: 0.75rem;
   }
 
-  /* GALLERY */
-  #gallery { background: var(--black); }
+  /* ── GALLERY ── */
+  #gallery { background: var(--bg); }
 
   .gallery-intro {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
     gap: 1rem;
   }
@@ -536,129 +770,104 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto;
     gap: 4px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .gallery-item {
     position: relative;
     overflow: hidden;
-    background: var(--dark-3);
+    background: var(--bg-2);
     cursor: pointer;
   }
 
   .gallery-item.tall { grid-row: span 2; }
 
-  /* REPLACE: Each .gallery-item img src with your before/after photos */
   .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
     transition: transform 0.4s ease, filter 0.3s;
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .gallery-item:hover img { transform: scale(1.05); filter: brightness(1.1); }
 
   .gallery-item .photo-placeholder {
-    width: 100%;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    background: var(--dark-2);
-    border: 1px solid rgba(201,168,76,0.08);
+    width: 100%; min-height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
   }
 
-  .gallery-item.tall .photo-placeholder { min-height: 448px; }
-
-  .gallery-item .photo-placeholder .ph-icon { font-size: 2.5rem; opacity: 0.2; }
+  .gallery-item.tall .photo-placeholder { min-height: 404px; }
+  .gallery-item .photo-placeholder .ph-icon { font-size: 2rem; opacity: 0.2; }
 
   .gallery-item .photo-placeholder span {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(201,168,76,0.25);
+    color: var(--text-dim);
   }
 
   .gallery-item .gallery-label {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 0.6rem 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold-light);
+    color: #fff;
     opacity: 0;
     transition: opacity 0.3s;
   }
 
   .gallery-item:hover .gallery-label { opacity: 1; }
+  .gallery-note { margin-top: 1.25rem; font-size: 0.82rem; font-weight: 300; color: var(--text-dim); text-align: center; }
 
-  .gallery-note {
-    margin-top: 1.5rem;
-    font-size: 0.82rem;
-    font-weight: 300;
-    color: var(--gray);
-    text-align: center;
-  }
-
-  /* ABOUT PREVIEW */
+  /* ── ABOUT PREVIEW ── */
   #about-preview {
-    background: var(--purple-deep);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     align-items: stretch;
     padding: 0;
+    background: var(--purple-section);
   }
 
   .about-preview-image {
     position: relative;
-    min-height: 500px;
+    min-height: 480px;
     overflow: hidden;
-    background: var(--dark);
+    background: var(--bg-2);
   }
 
-  /* REPLACE: .about-preview-image img src with your team or shop photo */
-  .about-preview-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.6;
-  }
+  .about-preview-image img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.55; }
 
   .about-preview-image .photo-placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
-    background: linear-gradient(135deg, #0a0514 0%, var(--purple-mid) 100%);
+    width: 100%; height: 100%; min-height: 480px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 1rem;
+    background: linear-gradient(135deg, #0a0514 0%, #221440 100%);
   }
 
   .about-preview-image .photo-placeholder .rd-mark {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 5rem;
-    color: rgba(201,168,76,0.2);
+    color: rgba(155,92,228,0.2);
     line-height: 1;
   }
 
   .about-preview-image .photo-placeholder span {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(201,168,76,0.3);
+    color: rgba(155,92,228,0.35);
   }
 
   .about-preview-content {
@@ -666,89 +875,81 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #f5f3f0;
   }
+
+  .about-preview-content .section-label { color: var(--purple-light); }
+  .about-preview-content .section-label::before { background: var(--purple-light); }
+  .about-preview-content .section-title { color: #f5f3f0; }
 
   .faith-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.7rem;
+    font-weight: 600;
+    font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--purple-light);
+    border: 1px solid rgba(176,125,232,0.4);
     padding: 0.3rem 0.9rem;
     border-radius: 2px;
     margin-bottom: 1.5rem;
     width: fit-content;
-  }
-
-  .about-preview-content .section-title { margin-bottom: 1.25rem; }
-
-  .gold-divider {
-    width: 48px;
-    height: 2px;
-    background: var(--gold);
-    margin: 1.5rem 0;
+    background: rgba(123,53,196,0.15);
   }
 
   .about-preview-content p {
     font-weight: 300;
-    font-size: 0.98rem;
+    font-size: 0.96rem;
     line-height: 1.8;
-    color: var(--gray-light);
+    color: rgba(245,243,240,0.72);
     margin-bottom: 1.25rem;
   }
 
-  .about-preview-content .scripture {
+  .scripture {
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1rem;
-    color: rgba(201,168,76,0.7);
-    border-left: 2px solid var(--gold);
+    color: rgba(176,125,232,0.85);
+    border-left: 2px solid var(--purple);
     padding-left: 1rem;
     margin: 1.5rem 0 2rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
-  /* PROCESS */
-  #process {
-    background: var(--dark);
-    padding: 5rem 4rem;
-  }
+  /* ── PROCESS ── */
+  #process { background: var(--bg-2); }
 
-  .process-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-  }
-
+  .process-header { text-align: center; margin-bottom: 3.5rem; }
   .process-header .section-label { justify-content: center; }
   .process-header .section-title { text-align: center; }
 
   .process-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    position: relative;
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    overflow: hidden;
   }
 
   .process-step {
     padding: 2.5rem 2rem;
-    border-right: 1px solid rgba(201,168,76,0.15);
-    position: relative;
+    border-right: 1px solid var(--border-gold);
+    background: var(--bg-card);
     transition: background 0.2s;
   }
 
-  .process-step:hover { background: rgba(201,168,76,0.03); }
+  .process-step:hover { background: var(--bg-card-2); }
   .process-step:last-child { border-right: none; }
 
   .step-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.5rem;
-    color: rgba(201,168,76,0.15);
+    font-size: 3rem;
+    color: var(--purple);
+    opacity: 0.18;
     line-height: 1;
     margin-bottom: 0.75rem;
   }
@@ -756,26 +957,24 @@
   .step-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 0.5rem;
+    transition: color 0.35s;
   }
 
   .step-desc {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 300;
-    color: rgba(248,245,240,0.55);
+    color: var(--text-muted);
     line-height: 1.6;
+    transition: color 0.35s;
   }
 
-  /* MEMBERSHIP */
-  #membership {
-    background: var(--black);
-    text-align: center;
-  }
-
+  /* ── MEMBERSHIP ── */
+  #membership { background: var(--bg); text-align: center; }
   #membership .section-label { justify-content: center; }
   #membership .section-title { text-align: center; }
   #membership .section-desc { text-align: center; margin-left: auto; margin-right: auto; }
@@ -784,148 +983,105 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 800px;
+    max-width: 820px;
     margin: 0 auto;
   }
 
   .plan-card {
-    background: var(--dark-2);
-    border: 1px solid rgba(201,168,76,0.12);
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
     padding: 2.25rem;
     text-align: left;
-    border-radius: 2px;
-    position: relative;
-    transition: border-color 0.2s, background 0.2s;
+    border-radius: 4px;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
   }
 
-  .plan-card:hover { border-color: rgba(201,168,76,0.35); background: var(--dark-3); }
-
-  .plan-card.featured-plan {
-    background: var(--purple-deep);
-    border-color: rgba(201,168,76,0.4);
-  }
-
-  .plan-card.featured-plan:hover { background: var(--purple-mid); }
+  .plan-card:hover { border-color: var(--purple); box-shadow: 0 4px 24px rgba(123,53,196,0.1); }
+  .plan-card.featured-plan { background: var(--purple-section); color: #f5f3f0; border-color: rgba(155,92,228,0.4); }
 
   .plan-name {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 1.4rem;
-    color: var(--white);
-    margin-bottom: 0.4rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    transition: color 0.35s;
   }
+
+  .featured-plan .plan-name { color: #f5f3f0; }
 
   .plan-freq {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--purple-brand);
     margin-bottom: 1.25rem;
   }
 
-  .plan-desc {
-    font-size: 0.88rem;
-    font-weight: 300;
-    color: var(--gray-light);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
+  .plan-desc { font-size: 0.87rem; font-weight: 300; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem; transition: color 0.35s; }
+  .featured-plan .plan-desc { color: rgba(245,243,240,0.65); }
 
-  .plan-perks {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-  }
+  .plan-perks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.75rem; }
 
-  .plan-perks li {
-    font-size: 0.85rem;
-    color: var(--gray-light);
-    padding-left: 1.25rem;
-    position: relative;
-  }
+  .plan-perks li { font-size: 0.84rem; color: var(--text-muted); padding-left: 1.25rem; position: relative; transition: color 0.35s; }
+  .featured-plan .plan-perks li { color: rgba(245,243,240,0.65); }
 
-  .plan-perks li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 0.8rem;
-  }
+  .plan-perks li::before { content: '✓'; position: absolute; left: 0; color: var(--purple-brand); font-size: 0.8rem; }
 
   .plan-cta {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--purple);
     background: transparent;
-    border: 1px solid rgba(201,168,76,0.4);
+    border: 1px solid var(--purple);
     padding: 0.65rem 1.4rem;
-    border-radius: 2px;
+    border-radius: 3px;
     text-decoration: none;
     display: inline-block;
     transition: background 0.2s, color 0.2s;
   }
 
-  .plan-cta:hover { background: var(--gold); color: var(--black); }
+  .plan-cta:hover { background: var(--purple); color: #fff; }
+  .featured-plan .plan-cta { background: var(--purple); color: #fff; border-color: var(--purple); }
+  .featured-plan .plan-cta:hover { background: var(--purple-brand); border-color: var(--purple-brand); }
 
-  .featured-plan .plan-cta {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-  }
-
-  .featured-plan .plan-cta:hover { background: var(--gold-light); border-color: var(--gold-light); }
-
-  /* ADD-ONS */
-  #addons { background: var(--dark); }
+  /* ── ADD-ONS ── */
+  #addons { background: var(--bg-2); }
 
   .addons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.1);
+    background: var(--border-gold);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    overflow: hidden;
   }
 
-  .addon-item {
-    background: var(--dark-2);
-    padding: 1.75rem 1.5rem;
-    transition: background 0.2s;
-  }
-
-  .addon-item:hover { background: var(--purple-deep); }
-
-  .addon-icon {
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-    display: block;
-  }
+  .addon-item { background: var(--bg-card); padding: 1.75rem 1.5rem; transition: background 0.2s; }
+  .addon-item:hover { background: rgba(123,53,196,0.06); }
+  .addon-icon { font-size: 1.3rem; margin-bottom: 0.75rem; display: block; }
 
   .addon-name {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--text);
     margin-bottom: 0.4rem;
+    transition: color 0.35s;
   }
 
-  .addon-desc {
-    font-size: 0.82rem;
-    font-weight: 300;
-    color: var(--gray);
-    line-height: 1.55;
-  }
+  .addon-desc { font-size: 0.82rem; font-weight: 300; color: var(--text-muted); line-height: 1.55; transition: color 0.35s; }
 
-  /* COMMUNITY BANNER */
+  /* ── COMMUNITY BANNER ── */
   #community {
-    background: linear-gradient(135deg, var(--purple-deep) 0%, #0d0a18 100%);
+    background: var(--purple-section);
     padding: 5rem 4rem;
     text-align: center;
     position: relative;
@@ -937,85 +1093,55 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+      linear-gradient(rgba(155,92,228,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155,92,228,0.08) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .community-inner { position: relative; z-index: 1; }
+  .community-inner .section-label { justify-content: center; color: var(--purple-light); }
+  .community-inner .section-label::before { background: var(--purple-light); }
+  .community-inner .section-title { color: var(--purple-section-text); }
 
-  .community-inner .section-label { justify-content: center; }
-
-  .community-stat-row {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    margin: 3rem 0;
-    flex-wrap: wrap;
-  }
+  .community-stat-row { display: flex; justify-content: center; gap: 5rem; margin: 3rem 0; flex-wrap: wrap; }
 
   .community-stat .num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 3.5rem;
-    color: var(--gold);
+    color: var(--purple-light);
     display: block;
     line-height: 1;
   }
 
   .community-stat .lbl {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gray-light);
+    color: rgba(245,243,240,0.55);
     display: block;
     margin-top: 0.4rem;
   }
 
-  .community-inner p {
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    font-weight: 300;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--gray-light);
-  }
+  .community-inner p { max-width: 580px; margin: 0 auto 2.5rem; font-weight: 300; font-size: 0.98rem; line-height: 1.8; color: rgba(245,243,240,0.65); }
 
-  /* CONTACT */
-  #contact {
-    background: var(--dark);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
+  /* ── CONTACT ── */
+  #contact { background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
 
   .form-group label {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gray);
+    color: var(--text-muted);
   }
 
   .form-group input,
@@ -1023,131 +1149,95 @@
   .form-group textarea {
     font-family: 'Barlow', sans-serif;
     font-size: 0.9rem;
-    color: var(--white);
-    background: var(--dark-3);
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 2px;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 3px;
     padding: 0.75rem 1rem;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.35s, color 0.35s;
     width: 100%;
     appearance: none;
   }
 
   .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(136,136,128,0.5); }
+  .form-group textarea::placeholder { color: var(--text-dim); }
 
   .form-group input:focus,
   .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(123,53,196,0.1); }
 
-  .form-group select option { background: var(--dark-3); }
+  .form-group select option { background: var(--bg-card); color: var(--text); }
   .form-group textarea { resize: vertical; min-height: 100px; }
 
   .form-submit {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
+    color: #fff;
+    background: var(--purple);
     border: none;
     padding: 1rem 2.25rem;
-    border-radius: 2px;
+    border-radius: 3px;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
     width: 100%;
     margin-top: 0.5rem;
   }
 
-  .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .form-submit:hover { background: var(--purple-brand); transform: translateY(-1px); }
 
   .contact-info { padding-top: 0.5rem; }
   .contact-info .section-desc { margin-bottom: 2.5rem; }
 
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
+  .contact-details { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
 
-  .contact-detail {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
+  .contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
 
   .contact-detail-icon {
-    width: 38px;
-    height: 38px;
+    width: 38px; height: 38px;
     flex-shrink: 0;
-    background: rgba(107,63,160,0.12);
-    border: 1px solid rgba(201,168,76,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    border-radius: 2px;
+    background: rgba(123,53,196,0.1);
+    border: 1px solid rgba(123,53,196,0.25);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--purple);
+    border-radius: 3px;
     font-size: 1rem;
   }
 
-  .contact-detail-text strong {
-    display: block;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--white);
-    margin-bottom: 0.1rem;
-  }
+  .contact-detail-text strong { display: block; font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.1rem; transition: color 0.35s; }
+  .contact-detail-text p { font-size: 0.84rem; font-weight: 300; color: var(--text-muted); transition: color 0.35s; }
 
-  .contact-detail-text p {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: var(--gray);
-  }
-
-  /* SOCIAL LINKS WITH ICONS */
-  .social-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+  /* Social links */
+  .social-links { display: flex; gap: 0.65rem; flex-wrap: wrap; }
 
   .social-link {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
+    font-weight: 700;
+    font-size: 0.7rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
-    background: transparent;
-    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--purple);
+    background: rgba(123,53,196,0.07);
+    border: 1px solid rgba(123,53,196,0.25);
     padding: 0.45rem 1rem;
-    border-radius: 2px;
+    border-radius: 3px;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
 
-  .social-link:hover { background: var(--gold); color: var(--black); }
-  .social-link:hover svg path,
-  .social-link:hover svg rect,
-  .social-link:hover svg circle { fill: var(--black); }
+  .social-link:hover { background: var(--purple); color: #fff; }
+  .social-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .social-link svg path { fill: var(--purple); transition: fill 0.2s; }
+  .social-link:hover svg path { fill: #fff; }
 
-  .social-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-  .social-link svg path,
-  .social-link svg rect,
-  .social-link svg circle { fill: var(--gold); transition: fill 0.2s; }
-
-  /* FOOTER */
-  footer {
-    background: var(--black);
-    border-top: 1px solid rgba(201,168,76,0.12);
-    padding: 3.5rem 4rem 2rem;
-  }
+  /* ── FOOTER ── */
+  footer { background: var(--purple-section); color: var(--purple-section-text); padding: 3.5rem 4rem 2rem; }
 
   .footer-top {
     display: flex;
@@ -1156,164 +1246,166 @@
     flex-wrap: wrap;
     gap: 3rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(201,168,76,0.08);
+    border-bottom: 1px solid rgba(155,92,228,0.2);
     margin-bottom: 2rem;
   }
 
-  .footer-brand .footer-logo-mark {
-    width: 44px;
-    height: 44px;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    margin-bottom: 0.75rem;
-  }
+  .footer-logo-img { height: 80px; width: auto; display: block; margin-bottom: 0.75rem; opacity: 0.9; }
 
-  .footer-brand .footer-logo-mark span {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: 1.2rem;
-    color: var(--black);
-  }
-
-  .footer-brand .footer-name {
+  .footer-name {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 1.3rem;
-    color: var(--white);
-  }
-
-  .footer-brand .footer-name em { color: var(--gold); font-style: normal; }
-
-  .footer-brand .footer-motto {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.2em;
+    color: var(--silver-light);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 0.25rem;
   }
 
-  .footer-col-title {
+  .footer-sub {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.25rem;
+    color: var(--purple-brand);
   }
 
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
+  .footer-motto { font-family: 'Barlow Condensed', sans-serif; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,240,0.4); margin-top: 0.5rem; }
 
-  .footer-links a {
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 300;
-    color: var(--gray-light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-col-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple-brand); margin-bottom: 1.25rem; }
 
-  .footer-links a:hover { color: var(--gold); }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 
-  .footer-social {
-    display: flex;
-    gap: 0.6rem;
-  }
+  .footer-links a { font-size: 0.87rem; font-weight: 300; color: rgba(245,243,240,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--purple-light); }
+
+  .footer-social { display: flex; gap: 0.6rem; }
 
   .footer-social-btn {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(155,92,228,0.3);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, border-color 0.2s;
     text-decoration: none;
   }
 
-  .footer-social-btn:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-  }
+  .footer-social-btn:hover { background: var(--purple); border-color: var(--purple); }
+  .footer-social-btn svg { width: 15px; height: 15px; }
+  .footer-social-btn svg path { fill: rgba(245,243,240,0.5); transition: fill 0.2s; }
+  .footer-social-btn:hover svg path { fill: #fff; }
 
-  .footer-social-btn svg { width: 16px; height: 16px; }
-  .footer-social-btn svg path,
-  .footer-social-btn svg rect,
-  .footer-social-btn svg circle { fill: var(--gold); transition: fill 0.2s; }
-  .footer-social-btn:hover svg path,
-  .footer-social-btn:hover svg rect,
-  .footer-social-btn:hover svg circle { fill: var(--black); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-copy { font-size: 0.76rem; font-weight: 300; color: rgba(245,243,240,0.3); }
+  .footer-faith { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(155,92,228,0.5); }
 
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-copy {
-    font-size: 0.78rem;
-    font-weight: 300;
-    color: rgba(136,136,128,0.5);
-  }
-
-  .footer-faith {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(201,168,76,0.35);
-  }
-
-  /* MOBILE */
+  /* ── MOBILE ── */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
+    nav { padding: 0.85rem 1.25rem; }
     .nav-links { display: none; }
     section { padding: 4rem 1.5rem; }
-    .hero { padding: 0 1.5rem; }
-    .hero h1 { font-size: 2.8rem; }
-    .hero-stat-row { left: 1.5rem; right: 1.5rem; gap: 1.5rem; bottom: 1.5rem; }
+    .hero { padding: 5rem 1.5rem 0; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero-stats { flex-wrap: wrap; }
+    .hero-stat { flex: 0 0 50%; border-bottom: 1px solid var(--border-gold); }
     .services-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .gallery-item.tall { grid-row: span 1; }
     #about-preview { grid-template-columns: 1fr; }
-    .about-preview-image { min-height: 280px; }
+    .about-preview-image { min-height: 260px; }
     .about-preview-content { padding: 3rem 1.5rem; }
     .plans-grid { grid-template-columns: 1fr; }
     #contact { grid-template-columns: 1fr; gap: 3rem; }
     footer { padding: 3rem 1.5rem 2rem; }
     .footer-top { gap: 2rem; }
-    .process-strip { grid-template-columns: 1fr 1fr; }
-    #process { padding: 3rem 1.5rem; }
-    .form-row { grid-template-columns: 1fr; }
-    .community-stat-row { gap: 2.5rem; }
-    #community { padding: 4rem 1.5rem; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .process-strip { grid-template-columns: 1fr 1fr; border: none; gap: 4px; }
+    .process-step { border-right: 1px solid var(--border-gold) !important; border-bottom: 1px solid var(--border-gold); border-radius: 3px; }
+    #process { padding: 3rem 1.5rem; }
+    #community { padding: 4rem 1.5rem; }
+    .community-stat-row { gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .sidebar { width: 280px; }
   }
 </style>
 </head>
 <body>
 
+<!-- Scroll progress bar -->
+<div class="page-indicator"><div class="page-indicator-fill" id="progress-fill"></div></div>
+
+<!-- Sidebar overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a href="index.html" class="sidebar-logo" onclick="closeSidebar()">
+      <svg width="32" height="32" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
+        <text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="36" fill="#9b5ce4">RD</text>
+      </svg>
+      <div>
+        <span class="sidebar-logo-name">Reclaimed</span>
+        <span class="sidebar-logo-sub">— Detailers —</span>
+      </div>
+    </a>
+    <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">This Page</div>
+    <a href="#home"       class="sidebar-link" data-section="home">       <span class="nav-dot"></span> Home</a>
+    <a href="#services"   class="sidebar-link" data-section="services">   <span class="nav-dot"></span> Services</a>
+    <a href="#gallery"    class="sidebar-link" data-section="gallery">    <span class="nav-dot"></span> Gallery</a>
+    <a href="#process"    class="sidebar-link" data-section="process">    <span class="nav-dot"></span> How It Works</a>
+    <a href="#membership" class="sidebar-link" data-section="membership"> <span class="nav-dot"></span> Memberships</a>
+    <a href="#addons"     class="sidebar-link" data-section="addons">     <span class="nav-dot"></span> Add-Ons</a>
+    <a href="#community"  class="sidebar-link" data-section="community">  <span class="nav-dot"></span> Community</a>
+    <a href="#contact"    class="sidebar-link" data-section="contact">    <span class="nav-dot"></span> Book Now</a>
+
+    <div class="sidebar-section-label" style="margin-top:1rem;">Pages</div>
+    <a href="index.html"  class="sidebar-link active-page">              <span class="nav-dot"></span> Home</a>
+    <a href="about.html"  class="sidebar-link">                          <span class="nav-dot"></span> About Us</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="tel:3346401831" class="sidebar-contact-item"><span>📞</span> (334) 640-1831</a>
+    <a href="mailto:reclaimeddetailers@outlook.com" class="sidebar-contact-item"><span>✉</span> reclaimeddetailers@outlook.com</a>
+  </div>
+</aside>
+
 <!-- NAV -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark"><span>RD</span></div>
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Reclaimed<em>.</em></span>
-      <span class="nav-logo-tagline">Premium Detailing · Montgomery, AL</span>
-    </div>
-  </a>
+  <div class="nav-left">
+    <button class="hamburger" id="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo">
+      <!-- Inline SVG logo mark matching your brand -->
+      <svg class="nav-logo-svg" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
+        <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(123,53,196,0.25)" stroke-width="1"/>
+        <!-- Crown -->
+        <g transform="translate(50,20) scale(0.55)" fill="#9b5ce4">
+          <polygon points="-18,16 -18,-2 -9,6 0,-12 9,6 18,-2 18,16" opacity="0.9"/>
+          <rect x="-18" y="16" width="36" height="4" rx="1"/>
+          <circle cx="-18" cy="-2" r="2.5"/>
+          <circle cx="0" cy="-12" r="2.5"/>
+          <circle cx="18" cy="-2" r="2.5"/>
+        </g>
+        <!-- RD text -->
+        <text x="50" y="62" text-anchor="middle" font-family="Georgia,'Playfair Display',serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
+        <!-- Bottom decorative line -->
+        <line x1="30" y1="70" x2="70" y2="70" stroke="#7b35c4" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Reclaimed</span>
+        <span class="nav-logo-sub">— Detailers —</span>
+      </div>
+    </a>
+  </div>
+
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
@@ -1321,22 +1413,40 @@
     <li><a href="#membership">Memberships</a></li>
     <li><a href="#contact" class="nav-cta">Book Now</a></li>
   </ul>
+
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg-image">
-    <!-- REPLACE: add your hero background photo -->
-    <!-- <img src="images/hero-bg.jpg" alt="Reclaimed Detailers at work"> -->
-    <div class="img-placeholder">
-      <span>Hero Background Photo</span>
-      <span style="font-size:0.6rem; color:rgba(201,168,76,0.15);">Replace with your best detail shot</span>
-    </div>
-  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-grid-overlay"></div>
 
   <div class="hero-content">
+    <!-- Full logo SVG in hero -->
+    <svg width="160" height="160" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1.5rem; filter:drop-shadow(0 0 28px rgba(123,53,196,0.35));">
+      <circle cx="100" cy="100" r="94" fill="none" stroke="#7b35c4" stroke-width="3"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(123,53,196,0.2)" stroke-width="1.5"/>
+      <!-- Crown at top -->
+      <g transform="translate(100,32) scale(1.1)" fill="#9b5ce4">
+        <polygon points="-20,18 -20,-4 -10,8 0,-14 10,8 20,-4 20,18" opacity="0.95"/>
+        <rect x="-20" y="18" width="40" height="5" rx="1.5"/>
+        <circle cx="-20" cy="-4" r="3"/>
+        <circle cx="0" cy="-14" r="3"/>
+        <circle cx="20" cy="-4" r="3"/>
+      </g>
+      <!-- RD monogram -->
+      <text x="100" y="115" text-anchor="middle" font-family="Georgia,'Playfair Display',serif" font-weight="900" font-size="48" fill="#c8c8d0" letter-spacing="4">RD</text>
+      <!-- Decorative lines -->
+      <line x1="52" y1="130" x2="148" y2="130" stroke="#7b35c4" stroke-width="1.5" opacity="0.6"/>
+      <text x="100" y="148" text-anchor="middle" font-family="'Barlow Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="9" fill="#9b5ce4" letter-spacing="4">DETAILERS</text>
+    </svg>
+
     <div class="hero-eyebrow">Premium Mobile Detailing — Montgomery, AL</div>
     <h1>Restored.<br><em>Refined.</em><br>Reclaimed.</h1>
     <p class="hero-sub">We bring vehicles back to life with precision craftsmanship, premium products, and a commitment to results that speak for themselves. Faith-driven. Community-focused. Excellence guaranteed.</p>
@@ -1346,23 +1456,11 @@
     </div>
   </div>
 
-  <div class="hero-stat-row">
-    <div class="hero-stat">
-      <span class="hero-stat-num">3</span>
-      <span class="hero-stat-label">Core Packages</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">100%</span>
-      <span class="hero-stat-label">Premium Products</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">20%</span>
-      <span class="hero-stat-label">Given to Charity</span>
-    </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">Mobile</span>
-      <span class="hero-stat-label">We Come to You</span>
-    </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Core Packages</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">100%</span><span class="hero-stat-label">Premium Products</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">20%</span><span class="hero-stat-label">Given to Charity</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">Mobile</span><span class="hero-stat-label">We Come to You</span></div>
   </div>
 </section>
 
@@ -1375,11 +1473,7 @@
   <div class="services-grid">
     <div class="service-card">
       <div class="service-photo">
-        <!-- REPLACE: <img src="images/renewal-detail.jpg" alt="Renewal maintenance detail"> -->
-        <div class="photo-placeholder">
-          <span class="ph-icon">🚗</span>
-          <span>Add Renewal Photo</span>
-        </div>
+        <div class="photo-placeholder"><span class="ph-icon">🚗</span><span>Add Renewal Photo</span></div>
       </div>
       <div class="service-body">
         <div class="service-tier">Tier 01</div>
@@ -1387,61 +1481,43 @@
         <div class="service-price">Starting at $80</div>
         <p class="service-desc">The perfect maintenance detail for customers who want their vehicle consistently clean and protected. Built for regular visits.</p>
         <ul class="service-includes">
-          <li>Exterior hand wash</li>
-          <li>Wheel cleaning &amp; tire shine</li>
-          <li>Full vacuum</li>
-          <li>Interior wipe-down</li>
-          <li>Window cleaning</li>
-          <li>Light touch-up detailing</li>
+          <li>Exterior hand wash</li><li>Wheel cleaning &amp; tire shine</li><li>Full vacuum</li>
+          <li>Interior wipe-down</li><li>Window cleaning</li><li>Light touch-up detailing</li>
         </ul>
       </div>
     </div>
 
     <div class="service-card featured">
       <div class="service-photo">
-        <!-- REPLACE: <img src="images/restored-detail.jpg" alt="Restored deep clean detail"> -->
-        <div class="photo-placeholder">
-          <span class="ph-icon">✨</span>
-          <span>Add Restored Photo</span>
-        </div>
+        <div class="photo-placeholder"><span class="ph-icon">✨</span><span>Add Restored Photo</span></div>
       </div>
       <div class="service-body">
         <div class="service-badge">Most Popular</div>
         <div class="service-tier">Tier 02</div>
         <div class="service-name">Restored</div>
         <div class="service-price">Starting at $150</div>
-        <p class="service-desc">A comprehensive deep-clean combining full exterior treatment with thorough interior work. Ideal for seasonal refreshes and mid-tier customers.</p>
+        <p class="service-desc">A comprehensive deep-clean combining full exterior treatment with thorough interior work. Ideal for seasonal refreshes.</p>
         <ul class="service-includes">
-          <li>Deep exterior wash + clay treatment</li>
-          <li>Decontamination &amp; spray protection</li>
-          <li>Door jambs &amp; exterior glass</li>
-          <li>Deep vacuum &amp; interior wipe-down</li>
-          <li>Stain treatment &amp; carpet care</li>
-          <li>Plastic protection &amp; window clean</li>
+          <li>Deep exterior wash + clay treatment</li><li>Decontamination &amp; spray protection</li>
+          <li>Door jambs &amp; exterior glass</li><li>Deep vacuum &amp; interior wipe-down</li>
+          <li>Stain treatment &amp; carpet care</li><li>Plastic protection &amp; window clean</li>
         </ul>
       </div>
     </div>
 
     <div class="service-card">
       <div class="service-photo">
-        <!-- REPLACE: <img src="images/reclaimed-detail.jpg" alt="Reclaimed full restoration detail"> -->
-        <div class="photo-placeholder">
-          <span class="ph-icon">🏆</span>
-          <span>Add Reclaimed Photo</span>
-        </div>
+        <div class="photo-placeholder"><span class="ph-icon">🏆</span><span>Add Reclaimed Photo</span></div>
       </div>
       <div class="service-body">
         <div class="service-tier">Tier 03</div>
         <div class="service-name">Reclaimed</div>
         <div class="service-price">Starting at $500</div>
-        <p class="service-desc">Our signature full-restoration experience. No corner left untouched. For neglected vehicles, high-end clients, and total transformations.</p>
+        <p class="service-desc">Our signature full-restoration experience. No corner left untouched. For neglected vehicles and total transformations.</p>
         <ul class="service-includes">
-          <li>Full deep-clean restoration</li>
-          <li>Steam cleaning &amp; carpet extraction</li>
-          <li>Paint decontamination &amp; clay bar</li>
-          <li>Engine bay cleaning</li>
-          <li>Odor treatment &amp; trim restoration</li>
-          <li>High-end protection applied</li>
+          <li>Full deep-clean restoration</li><li>Steam cleaning &amp; carpet extraction</li>
+          <li>Paint decontamination &amp; clay bar</li><li>Engine bay cleaning</li>
+          <li>Odor treatment &amp; trim restoration</li><li>High-end protection applied</li>
         </ul>
       </div>
     </div>
@@ -1457,70 +1533,29 @@
     </div>
     <a href="#contact" class="btn-outline">Book Your Detail</a>
   </div>
-
   <div class="gallery-grid">
-    <div class="gallery-item tall">
-      <!-- REPLACE: <img src="images/gallery-1.jpg" alt="Full restoration before and after"> -->
-      <div class="photo-placeholder">
-        <span class="ph-icon">📷</span>
-        <span>Before / After Photo</span>
-      </div>
-      <div class="gallery-label">Full Restoration</div>
-    </div>
-    <div class="gallery-item">
-      <!-- REPLACE: <img src="images/gallery-2.jpg" alt="Interior deep clean"> -->
-      <div class="photo-placeholder">
-        <span class="ph-icon">📷</span>
-        <span>Interior Detail</span>
-      </div>
-      <div class="gallery-label">Interior Deep Clean</div>
-    </div>
-    <div class="gallery-item">
-      <!-- REPLACE: <img src="images/gallery-3.jpg" alt="Exterior paint treatment"> -->
-      <div class="photo-placeholder">
-        <span class="ph-icon">📷</span>
-        <span>Paint Treatment</span>
-      </div>
-      <div class="gallery-label">Exterior Treatment</div>
-    </div>
-    <div class="gallery-item">
-      <!-- REPLACE: <img src="images/gallery-4.jpg" alt="Wheel and tire detail"> -->
-      <div class="photo-placeholder">
-        <span class="ph-icon">📷</span>
-        <span>Wheel Detail</span>
-      </div>
-      <div class="gallery-label">Wheels &amp; Tires</div>
-    </div>
-    <div class="gallery-item">
-      <!-- REPLACE: <img src="images/gallery-5.jpg" alt="Ceramic coating application"> -->
-      <div class="photo-placeholder">
-        <span class="ph-icon">📷</span>
-        <span>Ceramic Coating</span>
-      </div>
-      <div class="gallery-label">Ceramic Coating</div>
-    </div>
+    <div class="gallery-item tall"><div class="photo-placeholder"><span class="ph-icon">📷</span><span>Before / After Photo</span></div><div class="gallery-label">Full Restoration</div></div>
+    <div class="gallery-item"><div class="photo-placeholder"><span class="ph-icon">📷</span><span>Interior Detail</span></div><div class="gallery-label">Interior Deep Clean</div></div>
+    <div class="gallery-item"><div class="photo-placeholder"><span class="ph-icon">📷</span><span>Paint Treatment</span></div><div class="gallery-label">Exterior Treatment</div></div>
+    <div class="gallery-item"><div class="photo-placeholder"><span class="ph-icon">📷</span><span>Wheel Detail</span></div><div class="gallery-label">Wheels &amp; Tires</div></div>
+    <div class="gallery-item"><div class="photo-placeholder"><span class="ph-icon">📷</span><span>Ceramic Coating</span></div><div class="gallery-label">Ceramic Coating</div></div>
   </div>
-  <p class="gallery-note">Follow us on <a href="https://www.instagram.com/reclaimeddetailers" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Instagram</a> to see our latest transformations.</p>
+  <p class="gallery-note">Follow us on <a href="https://www.instagram.com/reclaimeddetailers" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:none;">@reclaimeddetailers</a> to see our latest transformations.</p>
 </section>
 
 <!-- ABOUT PREVIEW -->
 <section id="about-preview">
   <div class="about-preview-image">
-    <!-- REPLACE: <img src="images/team-photo.jpg" alt="Reclaimed Detailers team"> -->
-    <div class="photo-placeholder">
-      <div class="rd-mark">RD</div>
-      <span>Add Team / Shop Photo</span>
-    </div>
+    <div class="photo-placeholder"><div class="rd-mark">RD</div><span>Add Team / Shop Photo</span></div>
   </div>
-
   <div class="about-preview-content">
     <span class="faith-badge">✝ Christian-Owned Business</span>
     <div class="section-label">Our Story</div>
     <h2 class="section-title">Built on Faith.<br>Driven by Purpose.</h2>
     <div class="gold-divider"></div>
-    <p>Reclaimed Detailers was founded on a simple conviction — that honest work, done with excellence, glorifies God. We're not just a detailing company; we're a mission-driven business that pours integrity into every vehicle we touch.</p>
+    <p>Reclaimed Detailers was founded on a simple conviction — that honest work, done with excellence, glorifies God. We put Him first in every decision we make.</p>
     <blockquote class="scripture">"Whatever you do, work heartily, as for the Lord and not for men." — Colossians 3:23</blockquote>
-    <p>We give 20% of every transaction to charitable causes, support local community events, and are committed to being a positive force in Montgomery, AL and beyond.</p>
+    <p>We give 20% of every transaction to charitable causes and are committed to being a positive force in Montgomery, AL and beyond.</p>
     <a href="about.html" class="btn-primary">Our Full Story</a>
   </div>
 </section>
@@ -1532,26 +1567,10 @@
     <h2 class="section-title">Simple, Seamless, Professional</h2>
   </div>
   <div class="process-strip">
-    <div class="process-step">
-      <div class="step-num">01</div>
-      <div class="step-title">Book Online</div>
-      <p class="step-desc">Fill out our quick booking form. We'll confirm your appointment and service package within 24 hours.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">02</div>
-      <div class="step-title">We Come to You</div>
-      <p class="step-desc">Our fully-equipped mobile setup arrives at your home or workplace — no drop-off needed.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">03</div>
-      <div class="step-title">Precision Work</div>
-      <p class="step-desc">Every vehicle is documented before and after. We work clean, organized, and with full attention to detail.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">04</div>
-      <div class="step-title">Drive Proud</div>
-      <p class="step-desc">You receive after-care recommendations and a follow-up from us. Your satisfaction is the job.</p>
-    </div>
+    <div class="process-step"><div class="step-num">01</div><div class="step-title">Book Online</div><p class="step-desc">Fill out our quick form. We confirm your appointment within 24 hours.</p></div>
+    <div class="process-step"><div class="step-num">02</div><div class="step-title">We Come to You</div><p class="step-desc">Our fully-equipped mobile setup arrives at your home or workplace.</p></div>
+    <div class="process-step"><div class="step-num">03</div><div class="step-title">Precision Work</div><p class="step-desc">Every vehicle documented before and after. Full attention to detail, always.</p></div>
+    <div class="process-step"><div class="step-num">04</div><div class="step-title">Drive Proud</div><p class="step-desc">After-care recommendations and a follow-up from us. Your satisfaction is the job.</p></div>
   </div>
 </section>
 
@@ -1559,34 +1578,21 @@
 <section id="membership">
   <div class="section-label">Recurring Plans</div>
   <h2 class="section-title">Maintenance Memberships</h2>
-  <p class="section-desc">Protect your investment consistently. Our membership plans are designed to keep your vehicle in top condition year-round while saving you time and money.</p>
-
+  <p class="section-desc">Protect your investment consistently. Our membership plans keep your vehicle in top condition year-round.</p>
   <div class="plans-grid">
     <div class="plan-card">
       <div class="plan-name">Standard Renewal</div>
       <div class="plan-freq">Monthly · Priority Booking</div>
-      <p class="plan-desc">One maintenance detail per month. Perfect for customers who want consistent care without the premium frequency commitment.</p>
-      <ul class="plan-perks">
-        <li>1 Renewal Detail per month</li>
-        <li>Reduced per-visit pricing</li>
-        <li>Priority scheduling</li>
-        <li>Monthly condition check-in</li>
-        <li>Loyalty rewards eligible</li>
-      </ul>
+      <p class="plan-desc">One maintenance detail per month. Perfect for customers who want consistent care.</p>
+      <ul class="plan-perks"><li>1 Renewal Detail per month</li><li>Reduced per-visit pricing</li><li>Priority scheduling</li><li>Monthly condition check-in</li><li>Loyalty rewards eligible</li></ul>
       <a href="#contact" class="plan-cta">Get Started</a>
     </div>
     <div class="plan-card featured-plan">
-      <div class="service-badge" style="margin-bottom: 1rem;">Best Value</div>
+      <div class="service-badge" style="margin-bottom:1rem;">Best Value</div>
       <div class="plan-name">Premium Maintenance</div>
       <div class="plan-freq">Bi-Weekly · Top Priority</div>
-      <p class="plan-desc">Every two weeks, your vehicle stays immaculate. Easier workloads, better results, and the strongest customer relationships we offer.</p>
-      <ul class="plan-perks">
-        <li>1 Renewal Detail every 2 weeks</li>
-        <li>Best per-visit pricing</li>
-        <li>Top-priority scheduling</li>
-        <li>Seasonal upgrade discounts</li>
-        <li>Referral bonus credits</li>
-      </ul>
+      <p class="plan-desc">Every two weeks, your vehicle stays immaculate. Best pricing and strongest relationships.</p>
+      <ul class="plan-perks"><li>1 Renewal Detail every 2 weeks</li><li>Best per-visit pricing</li><li>Top-priority scheduling</li><li>Seasonal upgrade discounts</li><li>Referral bonus credits</li></ul>
       <a href="#contact" class="plan-cta">Get Started</a>
     </div>
   </div>
@@ -1596,63 +1602,27 @@
 <section id="addons">
   <div class="section-label">Protection Upgrades</div>
   <h2 class="section-title">Covenant Coatings &amp; Add-Ons</h2>
-  <p class="section-desc">Long-term protection services to go beyond the detail. Ask about pricing and availability when booking.</p>
-
+  <p class="section-desc">Long-term protection services to go beyond the detail. Ask about pricing when booking.</p>
   <div class="addons-grid">
-    <div class="addon-item">
-      <span class="addon-icon">◈</span>
-      <div class="addon-name">Ceramic Coating</div>
-      <p class="addon-desc">Premium long-term paint protection bonded to your vehicle's surface for years of shine and resistance.</p>
-    </div>
-    <div class="addon-item">
-      <span class="addon-icon">◉</span>
-      <div class="addon-name">Wheel Coating</div>
-      <p class="addon-desc">Ceramic protection applied to wheels for easy cleanup and long-lasting finish preservation.</p>
-    </div>
-    <div class="addon-item">
-      <span class="addon-icon">◻</span>
-      <div class="addon-name">Glass Coating</div>
-      <p class="addon-desc">Hydrophobic coating on all glass surfaces for clearer visibility and water repellency in any weather.</p>
-    </div>
-    <div class="addon-item">
-      <span class="addon-icon">◎</span>
-      <div class="addon-name">Headlight Restoration</div>
-      <p class="addon-desc">Restore cloudy, yellowed headlights to clarity — improving both appearance and safety.</p>
-    </div>
-    <div class="addon-item">
-      <span class="addon-icon">▣</span>
-      <div class="addon-name">Trim Coating</div>
-      <p class="addon-desc">Protect and restore exterior plastic trim with a lasting coating that prevents fading and graying.</p>
-    </div>
-    <div class="addon-item">
-      <span class="addon-icon">◐</span>
-      <div class="addon-name">Interior Protection</div>
-      <p class="addon-desc">Full interior guard coating on fabric, leather, and hard surfaces to repel stains and wear.</p>
-    </div>
+    <div class="addon-item"><span class="addon-icon">◈</span><div class="addon-name">Ceramic Coating</div><p class="addon-desc">Premium long-term paint protection bonded to your vehicle's surface.</p></div>
+    <div class="addon-item"><span class="addon-icon">◉</span><div class="addon-name">Wheel Coating</div><p class="addon-desc">Ceramic protection on wheels for easy cleanup and lasting finish.</p></div>
+    <div class="addon-item"><span class="addon-icon">◻</span><div class="addon-name">Glass Coating</div><p class="addon-desc">Hydrophobic coating for clearer visibility in any weather.</p></div>
+    <div class="addon-item"><span class="addon-icon">◎</span><div class="addon-name">Headlight Restoration</div><p class="addon-desc">Restore cloudy, yellowed headlights to clarity.</p></div>
+    <div class="addon-item"><span class="addon-icon">▣</span><div class="addon-name">Trim Coating</div><p class="addon-desc">Protect exterior plastic trim from fading and graying.</p></div>
+    <div class="addon-item"><span class="addon-icon">◐</span><div class="addon-name">Interior Protection</div><p class="addon-desc">Full guard coating on fabric, leather, and hard surfaces.</p></div>
   </div>
 </section>
 
-<!-- COMMUNITY BANNER -->
+<!-- COMMUNITY -->
 <section id="community">
   <div class="community-inner">
     <div class="section-label">Giving Back</div>
-    <h2 class="section-title" style="text-align:center;">More Than a Detail.<br><em style="font-style:italic; color:var(--gold);">A Purpose.</em></h2>
-
+    <h2 class="section-title">More Than a Detail. <em style="font-style:italic;color:var(--purple-light);">A Purpose.</em></h2>
     <div class="community-stat-row">
-      <div class="community-stat">
-        <span class="num">20%</span>
-        <span class="lbl">Of Every Transaction<br>to Charitable Causes</span>
-      </div>
-      <div class="community-stat">
-        <span class="num">Local</span>
-        <span class="lbl">Car Events &amp;<br>Trunk-or-Treats</span>
-      </div>
-      <div class="community-stat">
-        <span class="num">Faith</span>
-        <span class="lbl">First in Everything<br>We Do</span>
-      </div>
+      <div class="community-stat"><span class="num">20%</span><span class="lbl">Of Every Transaction<br>to Charitable Causes</span></div>
+      <div class="community-stat"><span class="num">Local</span><span class="lbl">Car Events &amp;<br>Trunk-or-Treats</span></div>
+      <div class="community-stat"><span class="num">Faith</span><span class="lbl">First in Everything<br>We Do</span></div>
     </div>
-
     <p>Every time you book with Reclaimed Detailers, you're part of something bigger. We believe business done right is business done generously.</p>
     <a href="about.html" class="btn-primary">Learn More About Our Mission</a>
   </div>
@@ -1664,88 +1634,44 @@
     <div class="section-label">Book a Service</div>
     <h2 class="section-title">Let's Restore<br>Your Vehicle</h2>
     <div class="gold-divider"></div>
-    <p class="section-desc">Ready to experience the difference? Fill out the form and we'll reach out to confirm your appointment within 24 hours.</p>
-
+    <p class="section-desc">Ready to experience the difference? Fill out the form and we'll reach out within 24 hours to confirm your appointment.</p>
     <div class="contact-details">
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📍</div>
-        <div class="contact-detail-text">
-          <strong>Service Area</strong>
-          <p>Montgomery, Alabama &amp; surrounding areas</p>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">📞</div>
-        <div class="contact-detail-text">
-          <strong>Phone / Text</strong>
-          <p>(334) 640-1831</p>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon">✉</div>
-        <div class="contact-detail-text">
-          <strong>Email</strong>
-          <p>reclaimeddetailers@outlook.com</p>
-        </div>
-      </div>
+      <div class="contact-detail"><div class="contact-detail-icon">📍</div><div class="contact-detail-text"><strong>Service Area</strong><p>Montgomery, Alabama &amp; surrounding areas</p></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">📞</div><div class="contact-detail-text"><strong>Phone / Text</strong><p>(334) 640-1831</p></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">✉</div><div class="contact-detail-text"><strong>Email</strong><p>reclaimeddetailers@outlook.com</p></div></div>
     </div>
-
     <div class="social-links">
-      <!-- Instagram -->
       <a href="https://www.instagram.com/reclaimeddetailers" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram
       </a>
-      <!-- Facebook -->
       <a href="https://www.facebook.com/reclaimeddetailers" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Facebook
       </a>
-      <!-- TikTok -->
       <a href="https://www.tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
         TikTok
       </a>
-      <!-- Google Review -->
       <a href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsdiY1GsDjY" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
         Leave a Review
       </a>
     </div>
   </div>
 
   <div>
-    <form
-      class="contact-form"
-      action="https://formsubmit.co/reclaimeddetailers@outlook.com"
-      method="POST"
-    >
+    <form class="contact-form" action="https://formsubmit.co/reclaimeddetailers@outlook.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New Reclaimed Detailers Booking Request">
       <input type="hidden" name="_template" value="table">
-
       <div class="form-row">
-        <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input type="text" id="first_name" name="First Name" placeholder="First Name" required>
-        </div>
-        <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input type="text" id="last_name" name="Last Name" placeholder="Last Name" required>
-        </div>
+        <div class="form-group"><label for="first_name">First Name</label><input type="text" id="first_name" name="First Name" placeholder="First Name" required></div>
+        <div class="form-group"><label for="last_name">Last Name</label><input type="text" id="last_name" name="Last Name" placeholder="Last Name" required></div>
       </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="Phone Number" placeholder="(334) 000-0000">
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="Email Address" placeholder="you@email.com" required>
-      </div>
-      <div class="form-group">
-        <label for="vehicle">Vehicle (Year, Make, Model)</label>
-        <input type="text" id="vehicle" name="Vehicle" placeholder="e.g. 2021 Ford F-150">
-      </div>
+      <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="Phone Number" placeholder="(334) 000-0000"></div>
+      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email Address" placeholder="you@email.com" required></div>
+      <div class="form-group"><label for="vehicle">Vehicle (Year, Make, Model)</label><input type="text" id="vehicle" name="Vehicle" placeholder="e.g. 2021 Ford F-150"></div>
       <div class="form-group">
         <label for="service">Service Requested</label>
         <select id="service" name="Service Requested">
@@ -1757,14 +1683,7 @@
           <option>Membership Plan — Monthly or Bi-Weekly</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="notes">Additional Notes</label>
-        <textarea
-          id="notes"
-          name="Additional Notes"
-          placeholder="Tell us about your vehicle's condition or any specific concerns..."
-        ></textarea>
-      </div>
+      <div class="form-group"><label for="notes">Additional Notes</label><textarea id="notes" name="Additional Notes" placeholder="Tell us about your vehicle's condition or any specific concerns..."></textarea></div>
       <button type="submit" class="form-submit">Request Booking</button>
     </form>
   </div>
@@ -1774,18 +1693,26 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo-mark"><span>RD</span></div>
-      <div class="footer-name">Reclaimed<em>.</em></div>
+      <svg width="70" height="70" viewBox="0 0 100 100" style="margin-bottom:0.75rem;">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
+        <g transform="translate(50,18) scale(0.5)" fill="#9b5ce4">
+          <polygon points="-20,18 -20,-4 -10,8 0,-14 10,8 20,-4 20,18"/>
+          <rect x="-20" y="18" width="40" height="5" rx="1.5"/>
+          <circle cx="-20" cy="-4" r="3"/><circle cx="0" cy="-14" r="3"/><circle cx="20" cy="-4" r="3"/>
+        </g>
+        <text x="50" y="65" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="26" fill="#c8c8d0" letter-spacing="2">RD</text>
+        <line x1="30" y1="72" x2="70" y2="72" stroke="#7b35c4" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <div class="footer-name">Reclaimed</div>
+      <div class="footer-sub">— Detailers —</div>
       <div class="footer-motto">Restored · Refined · Reclaimed</div>
     </div>
 
     <div>
       <div class="footer-col-title">Navigate</div>
       <ul class="footer-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#membership">Memberships</a></li>
+        <li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li><li><a href="#membership">Memberships</a></li>
         <li><a href="#addons">Add-Ons</a></li>
       </ul>
     </div>
@@ -1795,7 +1722,7 @@
       <ul class="footer-links">
         <li><a href="tel:3346401831">(334) 640-1831</a></li>
         <li><a href="mailto:reclaimeddetailers@outlook.com">reclaimeddetailers@outlook.com</a></li>
-        <li style="color:var(--gray); font-size:0.88rem; font-weight:300;">Montgomery, Alabama</a></li>
+        <li style="color:rgba(245,243,240,0.4);font-size:0.87rem;font-weight:300;">Montgomery, Alabama</li>
       </ul>
     </div>
 
@@ -1822,14 +1749,72 @@
 </footer>
 
 <script>
-  // Nav scroll shrink
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
-    nav.style.padding = window.scrollY > 60 ? '0.75rem 4rem' : '1.25rem 4rem';
+  /* ── THEME ── */
+  const savedTheme = localStorage.getItem('rd-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  function toggleTheme() {
+    const curr = document.documentElement.getAttribute('data-theme');
+    const next = curr === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('rd-theme', next);
+  }
+
+  /* ── SIDEBAR ── */
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const btn     = document.getElementById('hamburger-btn');
+    const open    = sidebar.classList.toggle('open');
+    overlay.classList.toggle('open', open);
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar-overlay').classList.remove('open');
+    document.getElementById('hamburger-btn').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.sidebar-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', closeSidebar);
   });
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
+  /* ── SCROLL PROGRESS ── */
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('progress-fill').style.width = (scrolled / total * 100) + '%';
+
+    // Nav shrink
+    const nav = document.getElementById('main-nav');
+    nav.style.padding = scrolled > 60 ? '0.6rem 3rem' : '0.85rem 3rem';
+  });
+
+  /* ── ACTIVE SECTION HIGHLIGHT ── */
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link[data-section]');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        sidebarLinks.forEach(link => {
+          link.classList.toggle('active', link.dataset.section === id);
+        });
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  /* ── FADE IN ── */
+  const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.style.opacity = '1';
@@ -1838,11 +1823,11 @@
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll('.service-card, .plan-card, .addon-item, .process-step, .value-item, .gallery-item, .community-stat').forEach(el => {
+  document.querySelectorAll('.service-card, .plan-card, .addon-item, .process-step, .gallery-item, .community-stat, .contact-detail').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
-    observer.observe(el);
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    fadeObserver.observe(el);
   });
 </script>
 </body>
