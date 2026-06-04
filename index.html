@@ -82,17 +82,19 @@
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 200;
+    z-index: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.85rem 3rem;
+    padding: 0 2.5rem;
+    height: 68px;
     background: var(--nav-bg);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px) saturate(1.4);
     border-bottom: 1px solid var(--border-gold);
-    transition: var(--transition), padding 0.3s;
-    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+    transition: height 0.3s ease, var(--transition);
   }
+
+  nav.scrolled { height: 60px; }
 
   .nav-left {
     display: flex;
@@ -119,25 +121,23 @@
   .hamburger span {
     display: block;
     width: 22px;
-    height: 2px;
-    background: var(--text);
+    height: 1.5px;
+    background: var(--text-muted);
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s, background 0.35s;
   }
 
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
   /* Nav logo */
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.7rem;
     text-decoration: none;
   }
-
-  .nav-logo-svg { flex-shrink: 0; }
 
   .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
 
@@ -146,19 +146,20 @@
     font-weight: 900;
     font-size: 1.05rem;
     color: var(--text);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: color 0.35s;
   }
 
   .nav-logo-sub {
     font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.58rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--purple-brand);
-    margin-top: 1px;
+    margin-top: 2px;
+    display: block;
   }
 
   /* Desktop nav links */
@@ -172,8 +173,8 @@
   .nav-links a {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-muted);
     text-decoration: none;
@@ -187,26 +188,20 @@
     position: absolute;
     bottom: -2px; left: 0;
     width: 0; height: 1px;
-    background: var(--purple);
+    background: var(--purple-brand);
     transition: width 0.25s;
   }
 
   .nav-links a:hover,
-  .nav-links a.active { color: var(--purple); }
+  .nav-links a.active { color: var(--purple-brand); }
   .nav-links a:hover::after,
   .nav-links a.active::after { width: 100%; }
 
   .nav-cta {
-    font-family: 'Barlow Condensed', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.78rem !important;
-    letter-spacing: 0.16em !important;
-    text-transform: uppercase;
     color: #fff !important;
-    background: var(--purple);
-    padding: 0.5rem 1.3rem;
-    border-radius: 3px;
-    text-decoration: none;
+    background: var(--purple) !important;
+    padding: 0.5rem 1.4rem !important;
+    border-radius: 2px;
     transition: background 0.2s !important;
   }
 
@@ -1543,11 +1538,9 @@
       <span></span><span></span><span></span>
     </button>
     <a href="index.html" class="nav-logo">
-      <!-- Inline SVG logo mark matching your brand -->
-      <svg class="nav-logo-svg" width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <svg width="42" height="42" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
         <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
         <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(123,53,196,0.25)" stroke-width="1"/>
-        <!-- Crown -->
         <g transform="translate(50,20) scale(0.55)" fill="#9b5ce4">
           <polygon points="-18,16 -18,-2 -9,6 0,-12 9,6 18,-2 18,16" opacity="0.9"/>
           <rect x="-18" y="16" width="36" height="4" rx="1"/>
@@ -1555,14 +1548,12 @@
           <circle cx="0" cy="-12" r="2.5"/>
           <circle cx="18" cy="-2" r="2.5"/>
         </g>
-        <!-- RD text -->
-        <text x="50" y="62" text-anchor="middle" font-family="Georgia,'Playfair Display',serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
-        <!-- Bottom decorative line -->
+        <text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
         <line x1="30" y1="70" x2="70" y2="70" stroke="#7b35c4" stroke-width="1" opacity="0.5"/>
       </svg>
       <div class="nav-logo-text">
         <span class="nav-logo-name">Reclaimed</span>
-        <span class="nav-logo-sub">— Detailers —</span>
+        <span class="nav-logo-sub">&#x2014; Detailers &#x2014;</span>
       </div>
     </a>
   </div>
@@ -2021,8 +2012,7 @@
     document.getElementById('progress-fill').style.width = (scrolled / total * 100) + '%';
 
     // Nav shrink
-    const nav = document.getElementById('main-nav');
-    nav.style.padding = scrolled > 60 ? '0.6rem 3rem' : '0.85rem 3rem';
+    document.getElementById('main-nav').classList.toggle('scrolled', scrolled > 60);
   });
 
   /* ── ACTIVE SECTION HIGHLIGHT ── */

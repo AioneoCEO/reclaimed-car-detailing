@@ -61,31 +61,34 @@
 
   /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    background: var(--nav-bg); backdrop-filter: blur(18px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 68px;
+    background: rgba(5,5,5,0.92); backdrop-filter: blur(24px) saturate(1.4);
     border-bottom: 1px solid var(--border-gold);
-    height: 68px; display: flex; align-items: center;
-    padding: 0 2rem; gap: 1.5rem;
+    transition: height 0.3s ease, background 0.3s ease;
   }
-  .page-indicator { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--purple), var(--gold)); z-index: 300; transform-origin: left; transform: scaleX(0); transition: transform 0.1s linear; }
-  .hamburger { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 5px; transition: background 0.2s; }
-  .hamburger:hover { background: var(--border); }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-muted); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.scrolled { height: 60px; background: rgba(5,5,5,0.98); }
+  .page-indicator { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--purple), var(--gold)); z-index: 600; transform-origin: left; transform: scaleX(0); transition: transform 0.1s linear; }
+  .nav-left { display: flex; align-items: center; gap: 1rem; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border-radius: 4px; border: none; background: transparent; flex-shrink: 0; transition: background 0.2s; }
+  .hamburger:hover { background: rgba(255,255,255,0.06); }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(245,243,240,0.6); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-  .nav-logo-text { display: flex; flex-direction: column; }
-  .nav-logo-text .brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.1em; color: var(--purple-brand); line-height: 1; }
-  .nav-logo-text .sub { font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; line-height: 1; margin-top: 2px; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; margin-left: auto; align-items: center; }
-  .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; position: relative; transition: color 0.2s; }
-  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--purple-brand); transition: width 0.3s ease; }
-  .nav-links a:hover, .nav-links a.active { color: var(--purple-brand); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .nav-logo-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.05rem; color: #f5f3f0; letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-logo-sub { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--purple-brand); margin-top: 2px; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,243,240,0.5); text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 2px; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--purple-brand); transition: width 0.25s ease; }
+  .nav-links a:hover, .nav-links a.active { color: #f5f3f0; }
   .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-  .nav-links a.nav-cta { color: #fff; background: var(--purple); padding: 0.5rem 1.3rem; border-radius: 3px; font-weight: 700; letter-spacing: 0.06em; }
-  .nav-links a.nav-cta::after { display: none; }
-  .nav-links a.nav-cta:hover { background: var(--purple-brand); color: #fff; }
+  .nav-cta { color: #fff !important; background: var(--purple) !important; padding: 0.5rem 1.4rem !important; border-radius: 2px; transition: background 0.2s !important; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--purple-brand) !important; }
 
   /* ── SIDEBAR ── */
   .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 300; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(4px); }
@@ -304,21 +307,31 @@
 </aside>
 
 <!-- Nav -->
-<nav>
-  <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="index.html" class="nav-logo">
-    <svg width="38" height="38" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
-      <g transform="translate(50,20) scale(0.55)" fill="#9b5ce4"><polygon points="-18,16 -18,-2 -9,6 0,-12 9,6 18,-2 18,16" opacity="0.9"/><rect x="-18" y="16" width="36" height="4" rx="1"/><circle cx="-18" cy="-2" r="2.5"/><circle cx="0" cy="-12" r="2.5"/><circle cx="18" cy="-2" r="2.5"/></g>
-      <text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
-    </svg>
-    <div class="nav-logo-text">
-      <span class="brand">RECLAIMED</span>
-      <span class="sub">Detailers</span>
-    </div>
-  </a>
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-left">
+    <button class="hamburger" id="hamburger-btn" onclick="toggleSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo">
+      <svg width="42" height="42" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
+        <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(123,53,196,0.25)" stroke-width="1"/>
+        <g transform="translate(50,20) scale(0.55)" fill="#9b5ce4">
+          <polygon points="-18,16 -18,-2 -9,6 0,-12 9,6 18,-2 18,16" opacity="0.9"/>
+          <rect x="-18" y="16" width="36" height="4" rx="1"/>
+          <circle cx="-18" cy="-2" r="2.5"/>
+          <circle cx="0" cy="-12" r="2.5"/>
+          <circle cx="18" cy="-2" r="2.5"/>
+        </g>
+        <text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
+        <line x1="30" y1="70" x2="70" y2="70" stroke="#7b35c4" stroke-width="1" opacity="0.5"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Reclaimed</span>
+        <span class="nav-logo-sub">&#x2014; Detailers &#x2014;</span>
+      </div>
+    </a>
+  </div>
   <ul class="nav-links">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#gallery">Gallery</a></li>
@@ -702,12 +715,12 @@
 function toggleSidebar() {
   const open = document.getElementById('sidebar').classList.toggle('open');
   document.getElementById('sidebar-overlay').classList.toggle('open', open);
-  document.getElementById('hamburger').classList.toggle('open', open);
+  document.getElementById('hamburger-btn').classList.toggle('open', open);
 }
 function closeSidebar() {
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('hamburger-btn').classList.remove('open');
 }
 
 // ── SCROLL PROGRESS ──
