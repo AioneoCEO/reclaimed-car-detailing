@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>!function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}();</script>
   <title>Book a Detail | Reclaimed Detailers — Mobile Auto Detailing Montgomery, AL</title>
   <meta name="description" content="Book your mobile auto detail in Montgomery, AL online. Choose your service, pick a date, and we'll come to you. No payment required to book." />
   <link rel="canonical" href="https://reclaimeddetailers.com/book" />
@@ -33,7 +32,7 @@
     .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
     .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--purple),var(--purple-brand));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;color:#fff;letter-spacing:.05em}
     .logo-text{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;line-height:1.1}
-    .logo-text em{display:block;font-style:normal;font-size:11px;font-family:'Barlow Condensed',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .nav-logo-img{height:38px;width:auto;display:block}.footer-logo-img{height:56px;width:auto;display:block;margin-bottom:4px}.logo-text em{display:block;font-style:normal;font-size:11px;font-family:'Barlow Condensed',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
     .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:auto}
     .nav-links>li>a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:block}
     .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.06)}
@@ -45,7 +44,6 @@
     .nav-dropdown a span{display:block;font-size:11px;color:rgba(255,255,255,.35);font-weight:400;letter-spacing:.02em;text-transform:none;margin-top:1px;font-family:'Barlow',sans-serif}
     .nav-cta{background:var(--purple)!important;color:#fff!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important}
     .nav-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
-    .theme-toggle{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-size:16px}
     .nav-hamburger{display:none;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px}
     .hamburger-line{width:18px;height:2px;background:currentColor;border-radius:2px;display:block}
     .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -173,7 +171,7 @@
 <!-- Nav -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><div class="logo-icon">RD</div><div class="logo-text">Reclaimed<em>Detailers</em></div></a>
+    <a href="index.html" class="nav-logo"><img src="images/logo-icon.svg" alt="Reclaimed Detailers" class="nav-logo-img"></a>
     <ul class="nav-links">
       <li class="has-dropdown"><a href="services.html">Services ▾</a><div class="nav-dropdown"><a href="services-exterior.html">Exterior Detailing<span>Wash, clay bar & protection</span></a><a href="services-interior.html">Interior Detailing<span>Deep clean & restoration</span></a><a href="services-paint-correction.html">Paint Correction<span>Swirl & scratch removal</span></a><a href="services-ceramic.html">Ceramic Coating<span>Covenant Coatings program</span></a></div></li>
       <li><a href="membership.html">Membership</a></li>
@@ -183,14 +181,13 @@
       <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle">☀</button>
       <button class="nav-hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
     </div>
   </div>
 </nav>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <nav class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><div class="logo-icon">RD</div><div class="logo-text" style="color:#fff">Reclaimed<em>Detailers</em></div></a><button class="mobile-nav-close" id="mobileClose">✕</button></div>
+  <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="images/logo-icon.svg" alt="Reclaimed Detailers" class="nav-logo-img"></a><button class="mobile-nav-close" id="mobileClose">✕</button></div>
   <ul class="mobile-nav-links">
     <li><a href="index.html">Home</a></li>
     <span class="mobile-section-label">Services</span>
@@ -384,7 +381,7 @@
 </div>
 <footer class="footer" style="margin-top:0">
   <div class="footer-inner">
-    <div><div class="footer-logo-row"><div class="logo-icon">RD</div><div class="logo-text">Reclaimed<em>Detailers</em></div></div><p class="footer-tagline">"Restored. Refined. Reclaimed."</p><p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL.</p><div class="footer-socials"><a href="https://instagram.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://facebook.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://tiktok.com/@reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="TikTok">TT</a></div><p class="footer-faith">✝ Faith First. Community Always.</p></div>
+    <div><div class="footer-logo-row"><img src="images/logo-white.svg" alt="Reclaimed Detailers" class="footer-logo-img"></div><p class="footer-tagline">"Restored. Refined. Reclaimed."</p><p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL.</p><div class="footer-socials"><a href="https://instagram.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://facebook.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://tiktok.com/@reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="TikTok">TT</a></div><p class="footer-faith">✝ Faith First. Community Always.</p></div>
     <div><div class="footer-col-title">Navigate</div><ul class="footer-links-list"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="membership.html">Membership</a></li><li><a href="about.html">About Us</a></li><li><a href="showcase.html">Gallery</a></li></ul></div>
     <div><div class="footer-col-title">Services</div><ul class="footer-links-list"><li><a href="services-exterior.html">Exterior Detailing</a></li><li><a href="services-interior.html">Interior Detailing</a></li><li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Ceramic Coating</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
     <div><div class="footer-col-title">Contact</div><ul class="footer-links-list"><li><a href="tel:3346401831">(334) 640-1831</a></li><li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li><li><a href="contact.html">Contact Form</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
@@ -397,9 +394,6 @@
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
   const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  const tt = document.getElementById('themeToggle'), html = document.documentElement;
-  const saved = localStorage.getItem('theme') || 'dark'; html.setAttribute('data-theme', saved); tt.textContent = saved === 'dark' ? '☀' : '☽';
-  tt.addEventListener('click', () => { const n = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', n); localStorage.setItem('theme', n); tt.textContent = n === 'dark' ? '☀' : '☽'; });
   const ham = document.getElementById('hamburger'), mNav = document.getElementById('mobileNav'), mOvr = document.getElementById('mobileOverlay'), mCls = document.getElementById('mobileClose');
   ham.addEventListener('click', () => { mNav.classList.add('open'); mOvr.classList.add('open'); document.body.style.overflow = 'hidden'; });
   [mCls, mOvr].forEach(el => el.addEventListener('click', () => { mNav.classList.remove('open'); mOvr.classList.remove('open'); document.body.style.overflow = ''; }));

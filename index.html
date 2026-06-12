@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>!function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}();</script>
   <title>Mobile Auto Detailing in Montgomery, AL | Reclaimed Detailers</title>
   <meta name="description" content="Professional mobile auto detailing in Montgomery, AL. Ceramic coatings, paint correction & maintenance memberships. We come to you. Book online today." />
   <link rel="canonical" href="https://reclaimeddetailers.com/" />
@@ -42,7 +41,7 @@
     .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
     .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--purple),var(--purple-brand));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;color:#fff;letter-spacing:.05em}
     .logo-text{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;line-height:1.1}
-    .logo-text em{display:block;font-style:normal;font-size:11px;font-family:'Barlow Condensed',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .nav-logo-img{height:38px;width:auto;display:block}.footer-logo-img{height:56px;width:auto;display:block;margin-bottom:4px}.logo-text em{display:block;font-style:normal;font-size:11px;font-family:'Barlow Condensed',sans-serif;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
     .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:auto}
     .nav-links>li>a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:block}
     .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.06)}
@@ -55,8 +54,6 @@
     .nav-cta{background:var(--purple)!important;color:#fff!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important;box-shadow:0 2px 12px rgba(123,53,196,.35)}
     .nav-cta:hover{background:var(--purple-brand)!important;transform:scale(1.02)}
     .nav-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
-    .theme-toggle{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;transition:background .2s;font-size:16px}
-    .theme-toggle:hover{background:rgba(255,255,255,.12)}
     .nav-hamburger{display:none;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px}
     .hamburger-line{width:18px;height:2px;background:currentColor;border-radius:2px;transition:all .3s;display:block}
 
@@ -254,42 +251,6 @@
     .float-book:hover{background:var(--purple-brand)}
 
     /* Light mode overrides */
-    [data-theme="light"] body{background:var(--bg)}
-    [data-theme="light"] .hero{background:var(--bg)}
-    [data-theme="light"] .hero-h1{color:var(--text)}
-    [data-theme="light"] .hero-sub{color:var(--text-muted)}
-    [data-theme="light"] .hero-badge span,[data-theme="light"] .hero-trust-item{color:var(--text-muted)}
-    [data-theme="light"] .hero-card{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08)}
-    [data-theme="light"] .stat-item{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.06)}
-    [data-theme="light"] .stat-num{color:var(--text)}
-    [data-theme="light"] .trust-bar{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.06)}
-    [data-theme="light"] .trust-item{color:var(--text-muted)}
-    [data-theme="light"] .section-dark,[data-theme="light"] .section-deeper{background:var(--bg-2)}
-    [data-theme="light"] .section-title{color:var(--text)}
-    [data-theme="light"] .why-card{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.06)}
-    [data-theme="light"] .why-title{color:var(--text)}
-    [data-theme="light"] .why-desc{color:var(--text-muted)}
-    [data-theme="light"] .plan-card{background:var(--bg-card);border-color:var(--border)}
-    [data-theme="light"] .plan-name,.plan-amt{color:var(--text)}
-    [data-theme="light"] .plan-feats li{color:var(--text-muted)}
-    [data-theme="light"] .testi-card{background:var(--bg-card);border-color:var(--border)}
-    [data-theme="light"] .testi-text,.testi-veh{color:var(--text-muted)}
-    [data-theme="light"] .testi-name{color:var(--text)}
-    [data-theme="light"] .about-content p{color:var(--text-muted)}
-    [data-theme="light"] .about-badge{background:var(--bg-2);border-color:var(--border)}
-    [data-theme="light"] .about-badge-num{color:var(--text)}
-    [data-theme="light"] .area-chip{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.07)}
-    [data-theme="light"] .area-name{color:var(--text)}
-    [data-theme="light"] .area-dist{color:var(--text-muted)}
-    [data-theme="light"] .final-cta{background:var(--bg-2)}
-    [data-theme="light"] .cta-glow{display:none}
-    [data-theme="light"] .nav.scrolled{background:rgba(250,248,245,.92)}
-    [data-theme="light"] .nav-links>li>a{color:rgba(0,0,0,.7)}
-    [data-theme="light"] .nav-links>li>a:hover{color:#000;background:rgba(0,0,0,.05)}
-    [data-theme="light"] .logo-text{color:var(--text)}
-    [data-theme="light"] .nav-dropdown{background:#fff;border-color:rgba(0,0,0,.1)}
-    [data-theme="light"] .nav-dropdown a{color:var(--text-muted)}
-    [data-theme="light"] .nav-dropdown a:hover{background:rgba(123,53,196,.06);color:var(--purple)}
 
     /* Responsive */
     @media(max-width:1024px){.services-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}.plans-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:repeat(3,1fr)}}
@@ -305,8 +266,7 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon">RD</div>
-      <div class="logo-text">Reclaimed<em>Detailers</em></div>
+      <img src="images/logo-icon.svg" alt="Reclaimed Detailers" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li class="has-dropdown">
@@ -325,7 +285,6 @@
       <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -340,8 +299,7 @@
 <nav class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-header">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon">RD</div>
-      <div class="logo-text" style="color:#fff">Reclaimed<em>Detailers</em></div>
+      <img src="images/logo-icon.svg" alt="Reclaimed Detailers" class="nav-logo-img">
     </a>
     <button class="mobile-nav-close" id="mobileClose">✕</button>
   </div>
@@ -708,8 +666,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo-row">
-        <div class="logo-icon">RD</div>
-        <div class="logo-text">Reclaimed<em>Detailers</em></div>
+        <img src="images/logo-white.svg" alt="Reclaimed Detailers" class="footer-logo-img">
       </div>
       <p class="footer-tagline">"Restored. Refined. Reclaimed."</p>
       <p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL and surrounding communities. We come to you.</p>
@@ -787,20 +744,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Theme
-  const tt = document.getElementById('themeToggle');
-  const html = document.documentElement;
-  const saved = localStorage.getItem('theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  tt.textContent = saved === 'dark' ? '☀' : '☽';
-  tt.addEventListener('click', () => {
-    const n = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', n);
-    localStorage.setItem('theme', n);
-    tt.textContent = n === 'dark' ? '☀' : '☽';
-  });
-
   // Mobile nav
   const ham = document.getElementById('hamburger');
   const mNav = document.getElementById('mobileNav');
