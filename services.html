@@ -1,530 +1,283 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-accent="purple" data-fonts="editorial" data-motion="on" data-mood="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | Reclaimed Detailers — Mobile Auto Detailing in Montgomery, AL</title>
-  <meta name="description" content="Explore all detailing services from Reclaimed Detailers — exterior wash, paint correction, ceramic coating, interior detailing, and membership plans. Serving Montgomery, AL and surrounding areas." />
-  <link rel="canonical" href="https://reclaimeddetailers.com/services" />
-  <meta property="og:title" content="Auto Detailing Services in Montgomery, AL | Reclaimed Detailers" />
-  <meta property="og:description" content="Mobile exterior wash, interior detailing, paint correction, ceramic coating & maintenance memberships. We come to you in Montgomery, AL." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://reclaimeddetailers.com/services" />
-  <meta property="og:site_name" content="Reclaimed Detailers LLC" />
-  <meta property="og:image" content="https://reclaimeddetailers.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Auto Detailing Services — Reclaimed Detailers" />
-  <meta name="twitter:description" content="Mobile exterior wash, interior detail, paint correction, and ceramic coating in Montgomery, AL." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root{--purple:#7b35c4;--purple-brand:#9b5ce4;--purple-light:#b07de8;--gold:#b8922a;--gold-light:#d4aa4a;--silver:#c8c8d0;--bg-dark:#1a1020;--bg:#f4f2ef;--bg-2:#ede9e4;--bg-card:#ffffff;--text:#1c1a18;--text-muted:#6a6860;--border:rgba(0,0,0,0.08);--shadow:0 4px 24px rgba(0,0,0,0.08);--radius:12px;--radius-lg:20px}
-    [data-theme="dark"]{--bg:#080808;--bg-2:#111111;--bg-card:#161616;--text:#f5f3f0;--text-muted:#b0ada6;--border:rgba(255,255,255,0.06);--shadow:0 4px 32px rgba(0,0,0,0.5)}
-    .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--gold));z-index:9999;width:0%;transition:width .1s}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s,box-shadow .3s}
-    .nav.scrolled{background:rgba(10,5,18,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.05)}
-    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;gap:32px}
-    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
-    .nav-logo-img{height:38px;width:auto;display:block}.footer-logo-img{height:56px;width:auto;display:block;margin-bottom:4px}
-    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:auto}
-    .nav-links>li>a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:block}
-    .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.06)}
-    .has-dropdown{position:relative}
-    .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#1a1020;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:8px;min-width:230px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,transform .2s;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-    .has-dropdown:hover .nav-dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-    .nav-dropdown a{display:block;padding:10px 14px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .2s,background .2s;text-decoration:none}
-    .nav-dropdown a:hover{color:#fff;background:rgba(123,53,196,.2)}
-    .nav-dropdown a span{display:block;font-size:11px;color:rgba(255,255,255,.35);font-weight:400;letter-spacing:.02em;text-transform:none;margin-top:1px;font-family:'Barlow',sans-serif}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important;box-shadow:0 2px 12px rgba(123,53,196,.35)}
-    .nav-cta:hover{background:var(--purple-brand)!important}
-    .nav-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
-    .nav-hamburger{display:none;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px;border:none;cursor:pointer}
-    .hamburger-line{width:18px;height:2px;background:currentColor;border-radius:2px;transition:all .3s;display:block}
-    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mobile-overlay.open{opacity:1;pointer-events:all}
-    .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:290px;background:#110a1a;z-index:1001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:24px;overflow-y:auto}
-    .mobile-nav.open{transform:translateX(0)}
-    .mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .mobile-nav-close{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;border:none}
-    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:2px}
-    .mobile-nav-links a{display:block;padding:11px 16px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:background .2s,color .2s;text-decoration:none}
-    .mobile-nav-links a:hover{background:rgba(255,255,255,.06);color:#fff}
-    .mobile-cta-link{background:var(--purple)!important;color:#fff!important;text-align:center;border-radius:10px;margin-top:12px;padding:14px 16px!important}
-    .mobile-section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:14px 16px 4px;display:block}
-    .mobile-sub-link{padding-left:28px!important;font-size:13px!important;color:rgba(255,255,255,.5)!important}
-    .footer{background:#050505;border-top:1px solid rgba(255,255,255,.06);padding:52px 24px 28px}
-    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
-    .footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .footer-tagline{font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;color:rgba(255,255,255,.5);margin-bottom:10px}
-    .footer-desc{font-size:.85rem;font-weight:300;color:rgba(255,255,255,.35);line-height:1.65;margin-bottom:20px}
-    .footer-socials{display:flex;gap:10px;margin-bottom:20px}
-    .footer-social{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);font-size:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.05em;transition:background .2s,color .2s;text-decoration:none}
-    .footer-social:hover{background:rgba(123,53,196,.3);color:#fff}
-    .footer-faith{font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);opacity:.6}
-    .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .footer-links a{font-size:.875rem;font-weight:300;color:rgba(255,255,255,.45);transition:color .2s;text-decoration:none}
-    .footer-links a:hover{color:rgba(255,255,255,.85)}
-    .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-    .footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.25)}
-    .footer-legal{display:flex;gap:20px}
-    .footer-legal a{font-size:.8rem;color:rgba(255,255,255,.25);transition:color .2s;text-decoration:none}
-    .footer-legal a:hover{color:rgba(255,255,255,.6)}
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Barlow', sans-serif; background: var(--bg-dark); color: var(--text); line-height: 1.6; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Reclaimed Detailers · Montgomery, AL</title>
+<meta name="description" content="Exterior detailing, interior restoration, paint correction, and Covenant ceramic coatings. Premium mobile auto detailing in Montgomery, Alabama." />
+<link rel="icon" href="images/reclaimed-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+html[data-fonts="classic"]{--font-display:'Playfair Display',Georgia,serif}
+html[data-fonts="modern"]{--font-display:'Hanken Grotesk',system-ui,sans-serif}
+html[data-fonts="modern"] h1,html[data-fonts="modern"] h2,html[data-fonts="modern"] h3{font-weight:700;letter-spacing:-.02em}
+html[data-mood="dark"] body{background:var(--dark);color:var(--on-dark)}
+html[data-mood="dark"] .bg-cream{background:var(--dark)} html[data-mood="dark"] .bg-alt{background:var(--dark-2)}
+html[data-mood="dark"] .bg-cream,html[data-mood="dark"] .bg-alt{color:var(--on-dark)}
+html[data-mood="dark"] .bg-cream h2,html[data-mood="dark"] .bg-alt h2,html[data-mood="dark"] .srow h2{color:var(--on-dark)}
+html[data-mood="dark"] .srow p,html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
 
-    /* HERO */
-    .page-hero { background: var(--bg-dark); padding: 160px 24px 80px; text-align: center; position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(123,53,196,0.18) 0%, transparent 70%); pointer-events: none; }
-    .hero-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 16px; }
-    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; color: var(--text); margin-bottom: 20px; }
-    .page-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 32px; line-height: 1.7; }
-    .btn { display: inline-block; padding: 14px 32px; border-radius: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: var(--transition); cursor: pointer; border: none; }
-    .btn-primary { background: var(--purple); color: #fff; }
-    .btn-primary:hover { background: var(--purple-brand); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(123,53,196,0.4); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.2); }
-    .btn-outline:hover { border-color: var(--purple-light); color: var(--purple-light); transform: translateY(-2px); }
+/* subhero banner */
+.subhero{position:relative;background:var(--dark);color:var(--on-dark);overflow:hidden;padding:clamp(150px,20vh,210px) 0 clamp(60px,9vh,96px)}
+.subhero .glow{position:absolute;width:680px;height:560px;top:-160px;left:50%;transform:translateX(-46%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.28),transparent 65%);pointer-events:none}
+.subhero h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-top:18px;max-width:16ch}
+.subhero p{color:rgba(244,240,234,.66);font-size:clamp(1.02rem,1.3vw,1.18rem);max-width:54ch;margin-top:22px;line-height:1.7}
 
-    /* SECTIONS */
-    section { padding: 80px 24px; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-light); margin-bottom: 12px; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--text); margin-bottom: 16px; }
-    .section-sub { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; line-height: 1.7; }
+/* service detail rows */
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.srow + .srow{margin-top:clamp(56px,9vh,110px)}
+.srow.flip .sfig{order:2}
+.sfig .slot-frame{aspect-ratio:4/3;box-shadow:var(--shadow)}
+.sfig image-slot{width:100%;height:100%}
+.srow .num{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px}
+.srow h2{font-size:clamp(2rem,3.6vw,2.9rem)}
+.srow p{color:var(--muted);font-size:1.02rem;line-height:1.75;margin-top:16px}
+.incl{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin:24px 0 26px}
+.incl li{font-size:.94rem;display:flex;gap:10px;align-items:flex-start;color:var(--ink-2)}
+.incl li::before{content:"";width:16px;height:16px;flex-shrink:0;margin-top:3px;border-radius:50%;background:rgba(var(--accent-rgb),.14);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8842f' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+.srow .meta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.srow .price{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--accent)}
+.srow .price b{font-family:var(--font-display);font-size:1.7rem;letter-spacing:0;color:var(--ink)}
+html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
 
-    /* SERVICES GRID */
-    .services-intro { background: var(--bg); }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
-    .service-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); display: flex; flex-direction: column; }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.3); border-color: rgba(123,53,196,0.3); }
-    .service-card.featured { border-color: rgba(123,53,196,0.4); box-shadow: 0 4px 24px rgba(123,53,196,0.15); }
-    .service-img { width: 100%; height: 200px; background: linear-gradient(135deg, var(--bg-dark) 0%, #0d0520 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .service-img-icon { font-size: 3rem; opacity: 0.6; }
-    .service-badge { position: absolute; top: 16px; right: 16px; background: var(--purple); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
-    .service-badge.gold { background: var(--gold); }
-    .service-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-    .service-body h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 10px; }
-    .service-body p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; flex: 1; }
-    .service-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .service-features li { font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
-    .service-features li::before { content: '✓'; color: var(--purple-light); font-weight: 700; flex-shrink: 0; }
-    .service-price { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
-    .service-price strong { font-size: 1.1rem; color: var(--text); }
-    .service-actions { display: flex; gap: 12px; }
-    .service-actions .btn { flex: 1; text-align: center; padding: 11px 16px; font-size: 0.85rem; }
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:20px;position:relative}
+.step{position:relative;padding:0 18px;text-align:center}
+.step .ring{width:64px;height:64px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);font-family:var(--font-display);font-size:1.5rem;color:var(--gold-lite);position:relative;z-index:2}
+.step h4{font-size:1.3rem;margin-bottom:8px}.step p{font-size:.88rem;color:var(--on-dark-mut);line-height:1.6}
+.steps::before{content:"";position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);z-index:1}
 
-    /* PROCESS */
-    .process-section { background: var(--bg-2); }
-    [data-theme="dark"] .process-section { background: var(--bg-dark); }
-    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 48px; position: relative; }
-    .process-step { text-align: center; position: relative; }
-    .step-num { width: 56px; height: 56px; background: var(--purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: #fff; margin: 0 auto 16px; }
-    .process-step h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
-    .process-step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+.final{position:relative;text-align:center;overflow:hidden}
+.final .glow{position:absolute;width:760px;height:520px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.2),transparent 65%);pointer-events:none}
+.final h2{font-size:clamp(2.4rem,5vw,4rem);position:relative;z-index:2}
+.final .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px;position:relative;z-index:2}
 
-    /* MEMBERSHIP TEASER */
-    .membership-teaser { background: var(--bg); }
-    .teaser-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
-    .teaser-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 32px 28px; text-align: center; transition: var(--transition); }
-    .teaser-card:hover { border-color: rgba(123,53,196,0.3); transform: translateY(-4px); }
-    .teaser-card.featured { border-color: rgba(123,53,196,0.5); background: linear-gradient(135deg, rgba(123,53,196,0.08) 0%, var(--bg-card) 100%); }
-    .teaser-card .plan-name { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-    .teaser-card .plan-price { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--text); }
-    .teaser-card .plan-price sup { font-size: 1.1rem; }
-    .teaser-card .plan-price span { font-family: 'Barlow', sans-serif; font-size: 0.9rem; font-weight: 400; color: var(--text-muted); }
-    .teaser-card .plan-desc { font-size: 0.9rem; color: var(--text-muted); margin: 12px 0 24px; line-height: 1.6; }
-
-    /* CTA BAND */
-    .cta-band { background: linear-gradient(135deg, var(--bg-dark) 0%, #0a0320 100%); text-align: center; padding: 80px 24px; }
-    .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--text); margin-bottom: 16px; }
-    .cta-band p { font-size: 1.05rem; color: var(--text-muted); max-width: 520px; margin: 0 auto 36px; }
-    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-    /* FOOTER - handled by standard block above */
-
-    /* COOKIE BANNER */
-    #cookie-banner { position: fixed; bottom: 24px; left: 24px; right: 24px; max-width: 520px; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px; z-index: 999; display: none; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
-    #cookie-banner p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
-    #cookie-banner p a { color: var(--purple-light); }
-    .cookie-btns { display: flex; gap: 10px; }
-    .cookie-accept { background: var(--purple); color: #fff; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-size: 0.85rem; }
-    .cookie-decline { background: transparent; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.1); padding: 9px 16px; border-radius: 6px; font-size: 0.85rem; cursor: pointer; }
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    @media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}}
-    @media(max-width:768px){.services-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}.service-actions{flex-direction:column}}
-    @media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
-  </style>
+@media (max-width:860px){
+  .srow{grid-template-columns:1fr;gap:32px}.srow.flip .sfig{order:0}
+  .incl{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr 1fr;gap:30px 0}.steps::before{display:none}
+}
+@media (max-width:600px){.steps{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img">
-      </a>
-      <ul class="nav-links">
-        <li class="has-dropdown">
-          <a href="services.html">Services &#9662;</a>
-          <div class="nav-dropdown">
-            <a href="services-exterior.html">Exterior Detailing<span>Wash, clay bar &amp; protection</span></a>
-            <a href="services-interior.html">Interior Detailing<span>Deep clean &amp; restoration</span></a>
-            <a href="services-paint-correction.html">Paint Correction<span>Swirl &amp; scratch removal</span></a>
-            <a href="services-ceramic.html">Ceramic Coating<span>Covenant Coatings program</span></a>
-          </div>
-        </li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="showcase.html">Gallery</a></li>
-        <li><a href="service-areas.html">Areas</a></li>
-        <li><a href="book.html" class="nav-cta">Book Now</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </nav>
-  <div class="mobile-overlay" id="mobileOverlay"></div>
-  <nav class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img">
-      </a>
-      <button class="mobile-nav-close" id="mobileClose">&#10005;</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="index.html">Home</a></li>
-      <span class="mobile-section-label">Services</span>
-      <li><a href="services.html" class="mobile-sub-link">All Services</a></li>
-      <li><a href="services-exterior.html" class="mobile-sub-link">Exterior Detailing</a></li>
-      <li><a href="services-interior.html" class="mobile-sub-link">Interior Detailing</a></li>
-      <li><a href="services-paint-correction.html" class="mobile-sub-link">Paint Correction</a></li>
-      <li><a href="services-ceramic.html" class="mobile-sub-link">Ceramic Coating</a></li>
+
+<nav class="nav over-hero" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><img src="images/reclaimed-mark.png" alt="Reclaimed Detailers" /><span class="bw"><b>Reclaimed</b><small>Detailers</small></span></a>
+    <ul class="nav-links">
+      <li class="has-dd"><a href="services.html">Services <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="services-exterior.html">Exterior Detail<small>Wash, clay bar &amp; protection</small></a>
+          <a href="services-interior.html">Interior Restoration<small>Deep clean &amp; restoration</small></a>
+          <a href="services-paint-correction.html">Paint Correction<small>Swirl &amp; scratch removal</small></a>
+          <a href="services-ceramic.html">Covenant Coatings<small>Ceramic protection program</small></a>
+        </div>
+      </li>
       <li><a href="membership.html">Membership</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
-      <li><a href="service-areas.html">Service Areas</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="book.html" class="mobile-cta-link">Book a Detail</a></li>
+      <li><a href="service-areas.html">Areas</a></li>
     </ul>
-  </nav>
+    <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="drawer-scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-top"><img src="images/reclaimed-mark-white.png" alt="Reclaimed Detailers" /><button class="drawer-x" id="drawerX" aria-label="Close menu">&times;</button></div>
+  <a class="dl" href="index.html">Home</a>
+  <div class="dgroup">Services</div>
+  <a class="dl sub" href="services.html">All Services</a>
+  <a class="dl sub" href="services-exterior.html">Exterior Detail</a>
+  <a class="dl sub" href="services-interior.html">Interior Restoration</a>
+  <a class="dl sub" href="services-paint-correction.html">Paint Correction</a>
+  <a class="dl sub" href="services-ceramic.html">Covenant Coatings</a>
+  <a class="dl" href="membership.html">Membership</a>
+  <a class="dl" href="about.html">About</a>
+  <a class="dl" href="showcase.html">Gallery</a>
+  <a class="dl" href="service-areas.html">Service Areas</a>
+  <a class="dl" href="reviews.html">Reviews</a>
+  <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="contact.html">Contact</a>
+  <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
+</aside>
 
-  <section class="page-hero">
-    <div class="hero-label">Our Services</div>
-    <h1>Every Service, Executed with Excellence</h1>
-    <p>From a fresh exterior wash to a full ceramic coating installation — we bring precision, care, and faith-driven craftsmanship to every vehicle we touch.</p>
-    <a href="book.html" class="btn btn-primary">Book a Service</a>
-  </section>
+<header class="subhero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold-lite)">Our Services</span>
+    <h1>Detailing, done with intent.</h1>
+    <p>Every service is a step in the same philosophy — inspect, restore, refine, protect, reclaim. Mobile across Montgomery and surrounding areas.</p>
+  </div>
+</header>
 
-  <section class="services-intro">
-    <div class="container">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Six Ways to Reclaim Your Vehicle</h2>
-      <p class="section-sub">Every service is performed mobile — we come to your home, office, or wherever works best for you.</p>
+<section class="section bg-cream">
+  <div class="wrap">
 
-      <div class="services-grid">
-
-        <div class="service-card reveal">
-          <div class="service-img">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">EXT</span>
-          </div>
-          <div class="service-body">
-            <h3>Exterior Wash & Decontamination</h3>
-            <p>A thorough hand wash, clay bar treatment, and iron decontamination to strip bonded contaminants and leave your paint perfectly clean and ready for protection.</p>
-            <ul class="service-features">
-              <li>Two-bucket hand wash method</li>
-              <li>Clay bar decontamination</li>
-              <li>Iron fallout removal</li>
-              <li>Tire & wheel cleaning</li>
-              <li>Streak-free glass treatment</li>
-            </ul>
-            <div class="service-price">Starting at <strong>$80</strong></div>
-            <div class="service-actions">
-              <a href="services-exterior.html" class="btn btn-outline">Learn More</a>
-              <a href="book.html?service=exterior" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-img">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">PC</span>
-            <span class="service-badge">Popular</span>
-          </div>
-          <div class="service-body">
-            <h3>Paint Correction</h3>
-            <p>Machine polishing that removes swirl marks, scratches, water spots, and oxidation — restoring your paint's original depth, clarity, and gloss.</p>
-            <ul class="service-features">
-              <li>Single or multi-stage correction</li>
-              <li>Swirl & scratch removal</li>
-              <li>Paint thickness measurement</li>
-              <li>Gloss enhancement to 90%+</li>
-              <li>Before/after photo documentation</li>
-            </ul>
-            <div class="service-price">Starting at <strong>$250</strong></div>
-            <div class="service-actions">
-              <a href="services-paint-correction.html" class="btn btn-outline">Learn More</a>
-              <a href="book.html?service=paint-correction" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card featured reveal">
-          <div class="service-img" style="background: linear-gradient(135deg, #1a0a35 0%, #2d1060 100%);">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">CC</span>
-            <span class="service-badge">Covenant Coatings™</span>
-          </div>
-          <div class="service-body">
-            <h3>Ceramic Coating</h3>
-            <p>Our signature Covenant Coatings™ program — a professional-grade ceramic coating that bonds to your paint and delivers years of protection, gloss, and hydrophobic performance.</p>
-            <ul class="service-features">
-              <li>2–5 year protection warranty</li>
-              <li>Hydrophobic self-cleaning effect</li>
-              <li>UV & chemical resistance</li>
-              <li>Paint correction included</li>
-              <li>Maintenance kit provided</li>
-            </ul>
-            <div class="service-price">Starting at <strong>$600</strong></div>
-            <div class="service-actions">
-              <a href="services-ceramic.html" class="btn btn-outline">Learn More</a>
-              <a href="book.html?service=ceramic" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-img">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">INT</span>
-          </div>
-          <div class="service-body">
-            <h3>Interior Detailing</h3>
-            <p>A deep clean of every surface inside your vehicle — vacuuming, steam cleaning, leather conditioning, and odor elimination so your cabin feels brand new.</p>
-            <ul class="service-features">
-              <li>Full vacuum & extraction</li>
-              <li>Steam sanitization</li>
-              <li>Leather cleaning & conditioning</li>
-              <li>Dashboard & trim dressing</li>
-              <li>Odor elimination treatment</li>
-            </ul>
-            <div class="service-price">Starting at <strong>$120</strong></div>
-            <div class="service-actions">
-              <a href="services-interior.html" class="btn btn-outline">Learn More</a>
-              <a href="book.html?service=interior" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-img">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">FD</span>
-          </div>
-          <div class="service-body">
-            <h3>Full Detail</h3>
-            <p>The complete package — interior and exterior combined into one comprehensive service. Perfect for seasonal refreshes, pre-sale prep, or when your car just needs a full reset.</p>
-            <ul class="service-features">
-              <li>Complete exterior wash & decon</li>
-              <li>Full interior deep clean</li>
-              <li>Spot paint correction</li>
-              <li>Tire dressing & glass treatment</li>
-              <li>Engine bay cleaning (add-on)</li>
-            </ul>
-            <div class="service-price">Starting at <strong>$200</strong></div>
-            <div class="service-actions">
-              <a href="book.html?service=full-detail" class="btn btn-outline">Get Quote</a>
-              <a href="book.html?service=full-detail" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-img" style="background: linear-gradient(135deg, #1a1200 0%, #2d2000 100%);">
-            <span class="service-img-icon" style="font-size:1.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;opacity:.5;">MBR</span>
-            <span class="service-badge gold">Membership</span>
-          </div>
-          <div class="service-body">
-            <h3>Maintenance Memberships</h3>
-            <p>Never think about scheduling again. Our monthly membership plans keep your vehicle in showroom condition year-round at a fraction of the retail cost.</p>
-            <ul class="service-features">
-              <li>Monthly scheduled services</li>
-              <li>Priority booking</li>
-              <li>Member-only discounts</li>
-              <li>Cancel anytime</li>
-              <li>Bronze, Silver & Gold tiers</li>
-            </ul>
-            <div class="service-price">From <strong>$159</strong>/month</div>
-            <div class="service-actions">
-              <a href="membership.html" class="btn btn-outline">View Plans</a>
-              <a href="book.html?plan=bronze" class="btn btn-primary">Join Now</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="srow reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-ext" fit="cover" placeholder="Exterior detail — clean panel, beading water"></image-slot></div></div>
+      <div>
+        <div class="num">01 · Exterior</div>
+        <h2>Exterior Detail</h2>
+        <p>A clean, refreshed exterior — the honest basics done well. Add clay bar, bug &amp; tar, or fallout decontamination when the paint needs more.</p>
+        <ul class="incl">
+          <li>Foam pre-soak &amp; hand wash</li><li>Wheel faces &amp; barrels</li>
+          <li>Tire cleaning &amp; dressing</li><li>Spray sealant protection</li>
+          <li>Exterior glass &amp; trim</li><li>Door jambs wiped down</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$160</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
       </div>
     </div>
-  </section>
 
-  <section class="process-section">
-    <div class="container">
-      <div style="text-align:center; margin-bottom: 8px;">
-        <div class="section-label">How It Works</div>
-        <h2 class="section-title">Simple from Start to Finish</h2>
-        <p class="section-sub" style="margin: 0 auto;">We built our process to be effortless for you — just tell us what you need and we handle everything else.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="step-num">1</div>
-          <h4>Book Online</h4>
-          <p>Choose your service, pick a time that works, and tell us where to come. Takes about 90 seconds.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">2</div>
-          <h4>We Come to You</h4>
-          <p>Our mobile unit arrives fully equipped — no drop-off, no waiting, no driving anywhere.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">3</div>
-          <h4>Inspect & Execute</h4>
-          <p>We walk the vehicle, discuss any concerns, then perform the service with care and precision.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-num">4</div>
-          <h4>You Drive Away Proud</h4>
-          <p>Your vehicle is returned looking its best. We follow up to ensure you're completely satisfied.</p>
-        </div>
+    <div class="srow flip reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-int" fit="cover" placeholder="Interior — conditioned leather, restored cabin"></image-slot></div></div>
+      <div>
+        <div class="num">02 · Interior</div>
+        <h2>Interior Restoration</h2>
+        <p>A fresh, clean cabin — vacuumed, wiped down, and deodorized. Add pet hair removal or heavy mud &amp; dirt extraction as needed.</p>
+        <ul class="incl">
+          <li>Full vacuum &amp; air purge</li><li>Surface wipe-down</li>
+          <li>Console, vents &amp; cupholders</li><li>Door panels</li>
+          <li>Interior glass</li><li>Light deodorize</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$180</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
       </div>
     </div>
-  </section>
 
-  <section class="membership-teaser">
-    <div class="container">
-      <div class="section-label">Membership Plans</div>
-      <h2 class="section-title">Save More. Stress Less.</h2>
-      <p class="section-sub">Lock in recurring care at a rate that makes more sense than paying per visit. Members always come first.</p>
-      <div class="teaser-cards">
-        <div class="teaser-card reveal">
-          <div class="plan-name">Bronze</div>
-          <div class="plan-price"><sup>$</sup>159<span>/mo</span></div>
-          <div class="plan-desc">Monthly wash & light maintenance. Great starting point for consistent care.</div>
-          <a href="membership.html" class="btn btn-outline" style="width:100%;text-align:center;">View Plan</a>
-        </div>
-        <div class="teaser-card featured reveal">
-          <div class="plan-name" style="color:var(--purple-light);">Silver — Most Popular</div>
-          <div class="plan-price"><sup>$</sup>329<span>/mo</span></div>
-          <div class="plan-desc">Full detail every month plus interior cleaning. The smart choice for most drivers.</div>
-          <a href="membership.html" class="btn btn-primary" style="width:100%;text-align:center;">View Plan</a>
-        </div>
-        <div class="teaser-card reveal" style="border-color:rgba(184,146,42,0.3);">
-          <div class="plan-name" style="color:var(--gold-light);">Gold</div>
-          <div class="plan-price"><sup>$</sup>549<span>/mo</span></div>
-          <div class="plan-desc">Everything in Silver plus paint correction and ceramic maintenance. Elite care for special vehicles.</div>
-          <a href="membership.html" class="btn btn-outline" style="width:100%;text-align:center;border-color:rgba(184,146,42,0.4);color:var(--gold-light);">View Plan</a>
-        </div>
+    <div class="srow reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-pc" fit="cover" placeholder="Paint correction — swirl-free reflection"></image-slot></div></div>
+      <div>
+        <div class="num">03 · Correction</div>
+        <h2>Paint Correction</h2>
+        <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth, gloss, and clarity.</p>
+        <ul class="incl">
+          <li>Paint depth assessment</li><li>Single or multi-stage cut</li>
+          <li>Swirl &amp; haze removal</li><li>Oxidation correction</li>
+          <li>Gloss refinement</li><li>Pre-coating prep</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$400</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
       </div>
     </div>
-  </section>
 
-  <div class="cta-band">
-    <div class="container">
-      <h2>Ready to Reclaim Your Vehicle?</h2>
-      <p>Book your service today and experience what it means to have someone who truly cares about your car.</p>
-      <div class="cta-actions">
-        <a href="book.html" class="btn btn-primary">Book Now</a>
-        <a href="contact.html" class="btn btn-outline">Ask a Question</a>
+    <div class="srow flip reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-cc" fit="cover" placeholder="Ceramic coating — water sheeting off paint"></image-slot></div></div>
+      <div>
+        <div class="num">04 · Protection</div>
+        <h2>Covenant Coatings</h2>
+        <p>Our flagship ceramic protection program. A professional-grade coating bonds to your paint — hydrophobic, UV-resistant, and self-cleaning — protecting your finish for years.</p>
+        <ul class="incl">
+          <li>Decontamination &amp; prep</li><li>Correction as needed</li>
+          <li>Multi-year ceramic coat</li><li>Hydrophobic finish</li>
+          <li>UV &amp; chemical resistance</li><li>Maintenance guidance</li>
+        </ul>
+        <div class="meta"><div class="price">Bespoke quote</div><a href="book.html" class="btn btn-primary btn-sm">Request Quote <span class="ar">&rarr;</span></a></div>
+      </div>
+    </div>
+
+    <div class="srow reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-full" fit="cover" placeholder="Full detail — inside and out, finished"></image-slot></div></div>
+      <div>
+        <div class="num">05 · Complete</div>
+        <h2>The Full Detail</h2>
+        <p>The complete Reclaimed experience — interior and exterior combined into one visit. Your vehicle transformed, inside and out, in a single appointment.</p>
+        <ul class="incl">
+          <li>Everything exterior</li><li>Everything interior</li>
+          <li>Sealant protection</li><li>Wheels &amp; tires dressed</li>
+          <li>All glass</li><li>Final inspection</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$330</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+      </div>
+    </div>
+
+    <div class="addons reveal">
+      <div class="addons-head"><span class="eyebrow no-rule">À la carte</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service above</span></div>
+      <div class="addons-grid">
+        <div class="addon"><span>Clay bar treatment</span><b>+$40</b></div>
+        <div class="addon"><span>Iron fallout removal</span><b>+$45</b></div>
+        <div class="addon"><span>Chemical decontamination</span><b>+$40</b></div>
+        <div class="addon"><span>Bug &amp; tar removal</span><b>+$25</b></div>
+        <div class="addon"><span>Pet hair removal</span><b>+$40</b></div>
+        <div class="addon"><span>Heavy mud &amp; dirt removal</span><b>+$50</b></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow no-rule" style="justify-content:center">The Process</span>
+      <h2 class="sec-title">Five steps to reclaimed.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="ring">I</div><h4>Inspect</h4><p>We assess paint, panels, and interior to build the right plan.</p></div>
+      <div class="step reveal d1"><div class="ring">II</div><h4>Restore</h4><p>Decontamination and deep cleaning bring the surface back.</p></div>
+      <div class="step reveal d2"><div class="ring">III</div><h4>Refine</h4><p>Machine correction restores depth, gloss, and clarity.</p></div>
+      <div class="step reveal d3"><div class="ring">IV</div><h4>Protect</h4><p>Sealant or ceramic locks in the finish for the long haul.</p></div>
+      <div class="step reveal d4"><div class="ring">V</div><h4>Reclaim</h4><p>We hand back a vehicle that looks and feels renewed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section final dark">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow no-rule" style="justify-content:center;color:var(--gold-lite)">Ready When You Are</span>
+      <h2 style="margin-top:18px">Let's reclaim your vehicle.</h2>
+      <p class="sec-sub" style="margin:22px auto 0;text-align:center">Tell us where you are and what you drive. We'll bring the studio to your door.</p>
+      <div class="ctas">
+        <a href="mailto:reclaimeddetailers@outlook.com?subject=Detail%20Booking%20Request" class="btn btn-primary">Request a Booking <span class="ar">&rarr;</span></a>
+        <a href="tel:+13346401831" class="btn btn-ghost">Call (334) 640-1831</a>
       </div>
     </div>
   </div>
+</section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo-row">
-          <img src="images/logo.png" alt="Reclaimed Detailers" class="footer-logo-img">
-        </div>
-        <p class="footer-tagline">"Restored. Refined. Reclaimed."</p>
-        <p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL and surrounding communities. We come to you.</p>
-        <div class="footer-socials">
-          <a href="https://instagram.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-          <a href="https://facebook.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-          <a href="https://tiktok.com/@reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
-        </div>
-        <p class="footer-faith">&#10013; Faith First. Community Always.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="showcase.html">Gallery</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="services-exterior.html">Exterior Detailing</a></li>
-          <li><a href="services-interior.html">Interior Detailing</a></li>
-          <li><a href="services-paint-correction.html">Paint Correction</a></li>
-          <li><a href="services-ceramic.html">Ceramic Coating</a></li>
-          <li><a href="service-areas.html">Service Areas</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="tel:3346401831">(334) 640-1831</a></li>
-          <li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li>
-          <li><a href="contact.html">Contact Form</a></li>
-          <li><a href="book.html">Book Online</a></li>
-          <li><a href="reviews.html">Reviews</a></li>
-        </ul>
+<footer class="footer">
+  <div class="wrap cols">
+    <div>
+      <img src="images/reclaimed-logo-white.png" alt="Reclaimed Detailers" class="fmark" />
+      <div class="ftag">Restored. Refined. Reclaimed.</div>
+      <p class="fdesc">Premium mobile auto detailing in Montgomery, Alabama. Faith-driven, community-minded, and obsessive about the details.</p>
+      <div class="socials">
+        <a href="https://instagram.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&#169; 2026 Reclaimed Detailers LLC &middot; Montgomery, Alabama</p>
-      <div class="footer-legal">
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-    </div>
-  </footer>
-
-  <div id="cookie-banner">
-    <p>We use cookies to improve your experience. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-    <div class="cookie-btns">
-      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
-      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
-    </div>
+    <div><div class="ftitle">Navigate</div><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
+      <li><a href="showcase.html">Gallery</a></li></ul></div>
+    <div><div class="ftitle">Services</div><ul>
+      <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
+      <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
+      <li><a href="service-areas.html">Service Areas</a></li></ul></div>
+    <div><div class="ftitle">Contact</div><ul>
+      <li><a href="tel:+13346401831">(334) 640-1831</a></li>
+      <li><a href="mailto:reclaimeddetailers@outlook.com">reclaimeddetailers@outlook.com</a></li>
+      <li><span style="color:var(--on-dark-mut)">Montgomery, AL &amp; surrounding areas</span></li>
+      <li><span style="color:var(--on-dark-mut)">2317 Ware Rd, Tallassee, AL</span></li></ul></div>
   </div>
+  <div class="fbottom"><p>&copy; 2026 Reclaimed Detailers LLC &middot; Montgomery, Alabama</p><div style="display:flex;gap:18px;align-items:center"><a href="privacy-policy.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Privacy</a><a href="terms.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Terms</a><span class="verse">"Faith First. Community Always."</span></div></div>
+</footer>
 
-  <script>
-    const prog = document.getElementById('scrollProgress');
-    const navEl = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      if (prog) prog.style.width = ((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + '%';
-      navEl.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-    const obsEl = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obsEl.observe(el));
-    const htmlEl = document.documentElement;
-    });
-    const ham = document.getElementById('hamburger');
-    const mNavEl = document.getElementById('mobileNav');
-    const mOvr = document.getElementById('mobileOverlay');
-    const mCls = document.getElementById('mobileClose');
-    ham.addEventListener('click', () => { mNavEl.classList.add('open'); mOvr.classList.add('open'); document.body.style.overflow = 'hidden'; });
-    [mCls, mOvr].forEach(el => el.addEventListener('click', () => { mNavEl.classList.remove('open'); mOvr.classList.remove('open'); document.body.style.overflow = ''; }));
-    if (!localStorage.getItem('cookie-consent')) document.getElementById('cookie-banner').style.display = 'block';
-    function acceptCookies() { localStorage.setItem('cookie-consent', 'accepted'); document.getElementById('cookie-banner').style.display = 'none'; }
-    function declineCookies() { localStorage.setItem('cookie-consent', 'declined'); document.getElementById('cookie-banner').style.display = 'none'; }
-  </script>
+<a href="book.html" class="btn btn-primary float-book" id="floatBook">Book Now</a>
+<div id="tweaks-root"></div>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="assets/reclaimed-tweaks.jsx"></script>
+
 </body>
 </html>

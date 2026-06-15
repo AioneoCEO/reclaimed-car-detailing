@@ -1,535 +1,254 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-accent="purple" data-fonts="editorial" data-motion="on" data-mood="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monthly Detailing Memberships | Bronze, Silver & Gold Plans — Reclaimed Detailers</title>
-  <meta name="description" content="Join a Reclaimed Detailers membership and never think about your car again. Bronze $159, Silver $329, Gold $549/month. Mobile detailing in Montgomery, AL." />
-  <link rel="canonical" href="https://reclaimeddetailers.com/membership" />
-  <meta property="og:title" content="Monthly Detailing Memberships — Bronze, Silver & Gold | Reclaimed Detailers" />
-  <meta property="og:description" content="Join a Reclaimed Detailers membership and never think about your car again. Bronze $159, Silver $329, Gold $549/month. Mobile detailing in Montgomery, AL." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://reclaimeddetailers.com/membership" />
-  <meta property="og:site_name" content="Reclaimed Detailers LLC" />
-  <meta property="og:image" content="https://reclaimeddetailers.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Monthly Detailing Memberships — Reclaimed Detailers" />
-  <meta name="twitter:description" content="Bronze $159/mo, Silver $329/mo, Gold $549/mo. Mobile auto detailing memberships in Montgomery, AL." />
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Reclaimed Detailers Membership Plans","provider":{"@type":"LocalBusiness","name":"Reclaimed Detailers LLC","telephone":"(334) 640-1831","address":{"@type":"PostalAddress","addressLocality":"Montgomery","addressRegion":"AL"}},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Membership Plans","itemListElement":[{"@type":"Offer","name":"Bronze Membership","price":"159","priceCurrency":"USD","description":"Monthly exterior wash, vacuum, and light maintenance"},{"@type":"Offer","name":"Silver Membership","price":"329","priceCurrency":"USD","description":"Full interior and exterior detail every month"},{"@type":"Offer","name":"Gold Membership","price":"549","priceCurrency":"USD","description":"Premium full detail with paint correction and ceramic maintenance"}]}}
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--purple:#7b35c4;--purple-brand:#9b5ce4;--purple-light:#b07de8;--gold:#b8922a;--gold-light:#d4aa4a;--bg-dark:#1a1020;--bg:#f4f2ef;--bg-2:#ede9e4;--bg-card:#ffffff;--text:#1c1a18;--text-muted:#6a6860;--border:rgba(0,0,0,0.08);--radius:12px;--radius-lg:20px}
-    [data-theme="dark"]{--bg:#080808;--bg-2:#111111;--bg-card:#161616;--text:#f5f3f0;--text-muted:#b0ada6;--border:rgba(255,255,255,0.06)}
-    html{scroll-behavior:smooth}
-    body{font-family:'Barlow',sans-serif;background:var(--bg-dark);color:var(--text);line-height:1.65;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    button{cursor:pointer;border:none;background:none;font-family:inherit}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Membership — Reclaimed Detailers · Montgomery, AL</title>
+<meta name="description" content="Bronze, Silver, and Gold detailing memberships. Recurring premium care, priority scheduling, and member-only pricing. Cancel anytime." />
+<link rel="icon" href="images/reclaimed-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+html[data-fonts="classic"]{--font-display:'Playfair Display',Georgia,serif}
+html[data-fonts="modern"]{--font-display:'Hanken Grotesk',system-ui,sans-serif}
+html[data-fonts="modern"] h1,html[data-fonts="modern"] h2,html[data-fonts="modern"] h3{font-weight:700;letter-spacing:-.02em}
+html[data-mood="dark"] body{background:var(--dark);color:var(--on-dark)}
+html[data-mood="dark"] .bg-cream{background:var(--dark)} html[data-mood="dark"] .bg-alt{background:var(--dark-2)}
+html[data-mood="dark"] .bg-cream,html[data-mood="dark"] .bg-alt{color:var(--on-dark)}
+html[data-mood="dark"] .bg-cream h2,html[data-mood="dark"] .bg-alt h2,html[data-mood="dark"] .ctitle{color:var(--on-dark)}
+html[data-mood="dark"] .ctable td{color:var(--on-dark-mut);border-color:var(--on-dark-line)}
 
-    /* Nav — same across all pages */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s}
-    .nav.scrolled{background:rgba(10,5,18,.9);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.05)}
-    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;gap:32px}
-    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-    .nav-logo-img{height:38px;width:auto;display:block}.footer-logo-img{height:56px;width:auto;display:block;margin-bottom:4px}
-    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:auto}
-    .nav-links>li>a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:block}
-    .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.06)}
-    .has-dropdown{position:relative}
-    .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#1a1020;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:8px;min-width:230px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,transform .2s;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-    .has-dropdown:hover .nav-dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-    .nav-dropdown a{display:block;padding:10px 14px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .2s,background .2s}
-    .nav-dropdown a:hover{color:#fff;background:rgba(123,53,196,.2)}
-    .nav-dropdown a span{display:block;font-size:11px;color:rgba(255,255,255,.35);font-weight:400;letter-spacing:.02em;text-transform:none;margin-top:1px;font-family:'Barlow',sans-serif}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important}
-    .nav-cta:hover{background:var(--purple-brand)!important}
-    .nav-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
-    .nav-hamburger{display:none;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px}
-    .hamburger-line{width:18px;height:2px;background:currentColor;border-radius:2px;display:block}
-    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mobile-overlay.open{opacity:1;pointer-events:all}
-    .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:290px;background:#110a1a;z-index:1001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:24px;overflow-y:auto}
-    .mobile-nav.open{transform:translateX(0)}
-    .mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .mobile-nav-close{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;border:none}
-    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:2px}
-    .mobile-nav-links a{display:block;padding:11px 16px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:background .2s,color .2s}
-    .mobile-nav-links a:hover{background:rgba(255,255,255,.06);color:#fff}
-    .mobile-cta-link{background:var(--purple)!important;color:#fff!important;text-align:center;border-radius:10px;margin-top:12px;padding:14px 16px!important}
-    .mobile-section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:14px 16px 4px;display:block}
-    .mobile-sub-link{padding-left:28px!important;font-size:13px!important;color:rgba(255,255,255,.5)!important}
+.subhero{position:relative;background:var(--dark);color:var(--on-dark);overflow:hidden;padding:clamp(150px,20vh,210px) 0 clamp(60px,9vh,96px);text-align:center}
+.subhero .glow{position:absolute;width:680px;height:560px;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.28),transparent 65%);pointer-events:none}
+.subhero h1{font-size:clamp(2.8rem,6vw,4.8rem);margin-top:18px}
+.subhero p{color:rgba(244,240,234,.66);font-size:clamp(1.02rem,1.3vw,1.18rem);max-width:52ch;margin:22px auto 0;line-height:1.7}
 
-    /* Layout */
-    .container{max-width:1200px;margin:0 auto}
-    .section{padding:96px 24px}
-    .section-light{background:var(--bg);color:var(--text)}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px;border-radius:10px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(123,53,196,.35)}
-    .btn-primary:hover{background:var(--purple-brand);transform:translateY(-1px)}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.8);font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px;border-radius:10px;border:1px solid rgba(255,255,255,.2);transition:border-color .2s,color .2s,background .2s}
-    .btn-outline:hover{border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.05)}
+/* plan cards (light surface) */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-top:-90px;position:relative;z-index:5}
+.plan{position:relative;border:1px solid var(--line);background:var(--bg-card);border-radius:var(--radius-lg);padding:36px 30px;box-shadow:var(--shadow);transition:transform calc(.3s*var(--motion))}
+.plan:hover{transform:translateY(-6px)}
+.plan.feat{border-color:var(--accent-soft);box-shadow:0 0 0 1px var(--accent-soft),0 36px 80px -44px rgba(var(--accent-rgb),.55)}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:5px 16px;border-radius:100px}
+.plan .tier{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.plan h3{font-size:2rem}
+.plan .ptag{font-size:.88rem;color:var(--muted);margin:2px 0 22px}
+.plan .amt{font-family:var(--font-display);font-size:3.2rem;font-weight:600;color:var(--ink);line-height:1}
+.plan .amt sup{font-size:1.1rem;vertical-align:super}
+.plan .amt span{font-family:var(--font-sans);font-size:.95rem;font-weight:400;color:var(--muted)}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:11px;margin:24px 0 28px}
+.plan-feats li{font-size:.94rem;color:var(--ink-2);display:flex;gap:11px;align-items:flex-start}
+.plan-feats li::before{content:"";width:16px;height:16px;flex-shrink:0;margin-top:3px;border-radius:50%;background:rgba(var(--accent-rgb),.14);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8842f' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+.plan .save{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;color:var(--gold);margin-top:14px;text-align:center}
+.plan .btn{width:100%;justify-content:center}
 
-    /* Page hero */
-    .page-hero{background:var(--bg-dark);padding:140px 24px 80px;text-align:center;position:relative;overflow:hidden}
-    .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(123,53,196,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(123,53,196,.06) 1px,transparent 1px);background-size:48px 48px}
-    .page-hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(123,53,196,.2) 0%,transparent 70%);pointer-events:none}
-    .breadcrumb{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
-    .breadcrumb a{color:rgba(255,255,255,.35);transition:color .2s}
-    .breadcrumb a:hover{color:rgba(255,255,255,.7)}
-    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:16px;position:relative}
-    .page-hero p{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.55);max-width:520px;margin:0 auto;position:relative}
+/* comparison table */
+.ctitle{font-size:clamp(1.8rem,3.4vw,2.6rem);text-align:center}
+.ctable{width:100%;border-collapse:collapse;margin-top:40px;font-size:.95rem}
+.ctable th,.ctable td{padding:16px 18px;text-align:center;border-bottom:1px solid var(--line)}
+.ctable th{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.ctable th.feat-col{color:var(--accent)}
+.ctable td:first-child,.ctable th:first-child{text-align:left;font-weight:500;color:var(--ink-2)}
+.ctable .yes{color:var(--accent);font-weight:600}
+.ctable .no{color:var(--muted);opacity:.5}
+.ctable tr:last-child td{border-bottom:none}
 
-    /* Value prop bar */
-    .value-bar{background:rgba(123,53,196,.08);border-top:1px solid rgba(123,53,196,.15);border-bottom:1px solid rgba(123,53,196,.15)}
-    .value-bar-inner{max-width:1200px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 32px}
-    .value-item{display:flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.addons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.addon{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.addon b{font-family:var(--font-display);font-size:1.3rem;display:block;margin-bottom:4px}
+.addon span{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--accent)}
+.addon p{font-size:.88rem;color:var(--muted);margin-top:8px;line-height:1.6}
 
-    /* Plans */
-    .plans-section{background:#070510;padding:80px 24px}
-    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;max-width:1100px;margin:0 auto}
-    .plan-card{border-radius:var(--radius-lg);padding:36px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);position:relative;transition:transform .2s,box-shadow .2s}
-    .plan-card:hover{transform:translateY(-4px)}
-    .plan-card.featured{border-color:var(--purple);background:linear-gradient(160deg,rgba(123,53,196,.14),rgba(123,53,196,.04));box-shadow:0 0 0 1px var(--purple),0 12px 48px rgba(123,53,196,.18)}
-    .plan-card.elite{border-color:var(--gold);background:linear-gradient(160deg,rgba(184,146,42,.08),rgba(184,146,42,.02))}
-    .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap}
-    .plan-badge.gold-badge{background:var(--gold)}
-    .plan-tier{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-    .plan-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:4px}
-    .plan-tagline{font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:24px;font-weight:300}
-    .plan-price{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)}
-    .price-row{display:flex;align-items:baseline;gap:4px}
-    .price-dollar{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:rgba(255,255,255,.6);align-self:flex-start;margin-top:8px}
-    .price-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:#fff;line-height:1}
-    .price-period{font-size:.95rem;color:rgba(255,255,255,.4);font-weight:300}
-    .price-value{margin-top:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.08em;color:var(--gold)}
-    .plan-feats{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
-    .plan-feats li{font-size:.9rem;color:rgba(255,255,255,.7);display:flex;align-items:flex-start;gap:10px;font-weight:300;line-height:1.5}
-    .feat-check{color:var(--gold);font-size:13px;margin-top:1px;flex-shrink:0}
-    .plan-feats li.muted{color:rgba(255,255,255,.3)}
-    .plan-feats li.muted .feat-check{color:rgba(255,255,255,.2)}
-    .plan-btn{display:block;text-align:center;padding:15px;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;transition:all .2s;margin-bottom:12px}
-    .plan-btn-outline{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
-    .plan-btn-outline:hover{border-color:var(--purple);color:#fff;background:rgba(123,53,196,.1)}
-    .plan-btn-fill{background:var(--purple);color:#fff;box-shadow:0 4px 16px rgba(123,53,196,.3)}
-    .plan-btn-fill:hover{background:var(--purple-brand)}
-    .plan-btn-gold{background:var(--gold);color:#fff;box-shadow:0 4px 16px rgba(184,146,42,.3)}
-    .plan-btn-gold:hover{background:var(--gold-light)}
-    .plan-note{text-align:center;font-size:.8rem;color:rgba(255,255,255,.25);line-height:1.5}
+.final{position:relative;text-align:center;overflow:hidden}
+.final .glow{position:absolute;width:760px;height:520px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.2),transparent 65%);pointer-events:none}
+.final h2{font-size:clamp(2.4rem,5vw,4rem);position:relative;z-index:2}
+.final .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px;position:relative;z-index:2}
 
-    /* Comparison table */
-    .compare-section{padding:80px 24px;background:#080808}
-    .compare-table{width:100%;border-collapse:collapse;max-width:900px;margin:0 auto}
-    .compare-table th{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:12px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
-    .compare-table th:first-child{text-align:left}
-    .compare-table td{padding:14px 16px;font-size:.9rem;font-weight:300;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.05);text-align:center}
-    .compare-table td:first-child{text-align:left;color:rgba(255,255,255,.8)}
-    .compare-table tr:hover td{background:rgba(255,255,255,.02)}
-    .check-yes{color:var(--gold)}
-    .check-no{color:rgba(255,255,255,.2)}
-    .check-partial{color:rgba(255,255,255,.4);font-size:.85rem}
-    .compare-table .plan-col-header{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;display:block}
-
-    /* FAQ */
-    .faq-section{padding:80px 24px;background:var(--bg-dark)}
-    .faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
-    .faq-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius)}
-    .faq-q{width:100%;text-align:left;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:500;color:rgba(255,255,255,.85);gap:12px;cursor:pointer;background:none;border:none}
-    .faq-q:hover{color:#fff}
-    .faq-chevron{flex-shrink:0;transition:transform .25s;font-size:12px;color:rgba(255,255,255,.35)}
-    .faq-item.open .faq-chevron{transform:rotate(180deg)}
-    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
-    .faq-a-inner{padding:0 20px 18px;font-size:.9rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.7}
-    .faq-item.open .faq-a{max-height:300px}
-
-    /* CTA section */
-    .cta-section{background:var(--bg-dark);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
-    .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(123,53,196,.2) 0%,transparent 70%);pointer-events:none}
-
-    /* Footer */
-    .footer{background:#060410;border-top:1px solid rgba(255,255,255,.05);padding:64px 24px 0}
-    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.05)}
-    .footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.35);font-size:.9rem;margin-bottom:12px}
-    .footer-desc{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.3);line-height:1.7;margin-bottom:18px}
-    .footer-socials{display:flex;gap:8px;margin-bottom:16px}
-    .footer-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:15px;color:rgba(255,255,255,.45);transition:background .2s,color .2s}
-    .footer-social:hover{background:rgba(123,53,196,.2);color:#fff}
-    .footer-faith{font-size:12px;color:rgba(255,255,255,.18)}
-    .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .footer-links a{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s}
-    .footer-links a:hover{color:rgba(255,255,255,.8)}
-    .footer-bottom{max-width:1200px;margin:0 auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.18)}
-    .footer-legal{display:flex;gap:20px}
-    .footer-legal a{font-size:.78rem;color:rgba(255,255,255,.18);transition:color .2s}
-    .footer-legal a:hover{color:rgba(255,255,255,.5)}
-
-    /* Cookie */
-    .cookie{position:fixed;bottom:24px;left:24px;right:24px;max-width:600px;margin:0 auto;background:#1a1020;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:20px 24px;display:flex;align-items:center;gap:16px;z-index:9000;box-shadow:0 8px 40px rgba(0,0,0,.6);transform:translateY(140px);transition:transform .4s cubic-bezier(.4,0,.2,1)}
-    .cookie.show{transform:translateY(0)}
-    .cookie p{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.55);flex:1;line-height:1.5}
-    .cookie a{color:var(--purple-light);text-decoration:underline}
-    .cookie-btn{background:var(--purple);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border-radius:8px;flex-shrink:0;cursor:pointer;border:none}
-    .cookie-btn:hover{background:var(--purple-brand)}
-
-    @media(max-width:1024px){.plans-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.plans-grid{grid-template-columns:1fr}.compare-table{font-size:.82rem}.footer-inner{grid-template-columns:1fr 1fr;gap:28px}.section{padding:64px 20px}}
-    @media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
-  </style>
+@media (max-width:860px){
+  .plans{grid-template-columns:1fr;max-width:440px;margin:-70px auto 0}
+  .addons{grid-template-columns:1fr}
+  .ctable{font-size:.82rem}.ctable th,.ctable td{padding:12px 8px}
+}
+</style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="nav" id="nav">
+<nav class="nav over-hero" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img">
-    </a>
+    <a href="index.html" class="nav-brand"><img src="images/reclaimed-mark.png" alt="Reclaimed Detailers" /><span class="bw"><b>Reclaimed</b><small>Detailers</small></span></a>
     <ul class="nav-links">
-      <li class="has-dropdown">
-        <a href="services.html">Services ▾</a>
-        <div class="nav-dropdown">
-          <a href="services-exterior.html">Exterior Detailing<span>Wash, clay bar & protection</span></a>
-          <a href="services-interior.html">Interior Detailing<span>Deep clean & restoration</span></a>
-          <a href="services-paint-correction.html">Paint Correction<span>Swirl & scratch removal</span></a>
-          <a href="services-ceramic.html">Ceramic Coating<span>Covenant Coatings program</span></a>
+      <li class="has-dd"><a href="services.html">Services <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="services-exterior.html">Exterior Detail<small>Wash, clay bar &amp; protection</small></a>
+          <a href="services-interior.html">Interior Restoration<small>Deep clean &amp; restoration</small></a>
+          <a href="services-paint-correction.html">Paint Correction<small>Swirl &amp; scratch removal</small></a>
+          <a href="services-ceramic.html">Covenant Coatings<small>Ceramic protection program</small></a>
         </div>
       </li>
-      <li><a href="membership.html" style="color:#fff">Membership</a></li>
+      <li><a href="membership.html">Membership</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
       <li><a href="service-areas.html">Areas</a></li>
-      <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
-    <div class="nav-actions">
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-        <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-      </button>
-    </div>
+    <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<nav class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img"></a>
-    <button class="mobile-nav-close" id="mobileClose">✕</button>
+<div class="drawer-scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-top"><img src="images/reclaimed-mark-white.png" alt="Reclaimed Detailers" /><button class="drawer-x" id="drawerX" aria-label="Close menu">&times;</button></div>
+  <a class="dl" href="index.html">Home</a>
+  <div class="dgroup">Services</div>
+  <a class="dl sub" href="services.html">All Services</a>
+  <a class="dl sub" href="services-exterior.html">Exterior Detail</a>
+  <a class="dl sub" href="services-interior.html">Interior Restoration</a>
+  <a class="dl sub" href="services-paint-correction.html">Paint Correction</a>
+  <a class="dl sub" href="services-ceramic.html">Covenant Coatings</a>
+  <a class="dl" href="membership.html">Membership</a>
+  <a class="dl" href="about.html">About</a>
+  <a class="dl" href="showcase.html">Gallery</a>
+  <a class="dl" href="service-areas.html">Service Areas</a>
+  <a class="dl" href="reviews.html">Reviews</a>
+  <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="contact.html">Contact</a>
+  <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
+</aside>
+
+<header class="subhero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow no-rule" style="justify-content:center;color:var(--gold-lite)">Membership</span>
+    <h1>Never think about your car again.</h1>
+    <p>Lock in premium care on a recurring schedule. No scheduling hassle, no contracts — just a clean vehicle, always.</p>
   </div>
-  <ul class="mobile-nav-links">
-    <li><a href="index.html">Home</a></li>
-    <span class="mobile-section-label">Services</span>
-    <li><a href="services.html" class="mobile-sub-link">All Services</a></li>
-    <li><a href="services-exterior.html" class="mobile-sub-link">Exterior Detailing</a></li>
-    <li><a href="services-interior.html" class="mobile-sub-link">Interior Detailing</a></li>
-    <li><a href="services-paint-correction.html" class="mobile-sub-link">Paint Correction</a></li>
-    <li><a href="services-ceramic.html" class="mobile-sub-link">Ceramic Coating</a></li>
-    <li><a href="membership.html">Membership</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="showcase.html">Gallery</a></li>
-    <li><a href="service-areas.html">Service Areas</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="book.html" class="mobile-cta-link">Book a Detail →</a></li>
-  </ul>
-</nav>
+</header>
 
-<!-- Page Hero -->
-<div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
-  <div style="position:relative">
-    <div class="breadcrumb reveal"><a href="index.html">Home</a> / Membership</div>
-    <h1 class="reveal d1">Member Plans</h1>
-    <p class="reveal d2">Recurring care, consistent results. Lock in professional detailing on a predictable schedule — and never worry about your vehicle's appearance again.</p>
-  </div>
-</div>
-
-<!-- Value Bar -->
-<div class="value-bar">
-  <div class="value-bar-inner">
-    <div class="value-item">&nbsp;Cancel Anytime</div>
-    <div class="value-item">&nbsp;No Contracts</div>
-    <div class="value-item">&nbsp;Priority Scheduling</div>
-    <div class="value-item">Members Save 30–50%</div>
-    <div class="value-item">&nbsp;We Come to You</div>
-  </div>
-</div>
-
-<!-- Plans -->
-<div class="plans-section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:52px" class="reveal">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Choose Your Level of Care</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#fff;letter-spacing:-.02em">Built Around Your Vehicle.<br>Built Around Your Life.</h2>
-    </div>
-    <div class="plans-grid">
-
-      <!-- Bronze -->
-      <div class="plan-card reveal">
-        <div class="plan-tier">Entry Tier</div>
-        <div class="plan-name">Bronze</div>
-        <div class="plan-tagline">The Covenant Wash</div>
-        <div class="plan-price">
-          <div class="price-row">
-            <span class="price-dollar">$</span>
-            <span class="price-num">159</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="price-value">Retail value: ~$240/month · You save $81</div>
-        </div>
+<section class="section bg-cream" style="padding-top:0">
+  <div class="wrap">
+    <div class="plans">
+      <div class="plan reveal">
+        <div class="tier">Entry</div><h3>Bronze</h3><div class="ptag">The Covenant Wash</div>
+        <div class="amt"><sup>$</sup>159 <span>/mo</span></div>
         <ul class="plan-feats">
-          <li><span class="feat-check">✓</span>1 visit per month</li>
-          <li><span class="feat-check">✓</span>Full exterior hand wash &amp; dry</li>
-          <li><span class="feat-check">✓</span>Tire shine &amp; rubber dressing</li>
-          <li><span class="feat-check">✓</span>Interior wipe-down &amp; vacuum</li>
-          <li><span class="feat-check">✓</span>Exterior window cleaning</li>
-          <li><span class="feat-check">✓</span>Door jamb wipe-down</li>
-          <li class="muted"><span class="feat-check">—</span>Full interior detail</li>
-          <li class="muted"><span class="feat-check">—</span>Paint correction</li>
+          <li>One visit per month</li><li>Full exterior hand wash &amp; dry</li>
+          <li>Tire shine &amp; dressing</li><li>Interior wipe-down &amp; vacuum</li>
+          <li>Exterior glass cleaning</li>
         </ul>
-        <a href="book.html?plan=bronze" class="plan-btn plan-btn-outline">Join Bronze</a>
-        <p class="plan-note">Perfect for weekly drivers who want a clean vehicle without the hassle.</p>
+        <a href="mailto:reclaimeddetailers@outlook.com?subject=Bronze%20Membership" class="btn btn-ghost">Get Started</a>
+        <div class="save">Save ~$81/mo vs. one-time</div>
       </div>
-
-      <!-- Silver -->
-      <div class="plan-card featured reveal d1">
+      <div class="plan feat reveal d1">
         <div class="plan-badge">Most Popular</div>
-        <div class="plan-tier">Premium Tier</div>
-        <div class="plan-name">Silver</div>
-        <div class="plan-tagline">The Refined Detail</div>
-        <div class="plan-price">
-          <div class="price-row">
-            <span class="price-dollar">$</span>
-            <span class="price-num">329</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="price-value">Retail value: ~$600/month · You save $271</div>
-        </div>
+        <div class="tier">Premium</div><h3>Silver</h3><div class="ptag">The Refined Detail</div>
+        <div class="amt"><sup>$</sup>329 <span>/mo</span></div>
         <ul class="plan-feats">
-          <li><span class="feat-check">✓</span>2 visits per month</li>
-          <li><span class="feat-check">✓</span>Full exterior detail + wax/sealant monthly</li>
-          <li><span class="feat-check">✓</span>Complete interior detail monthly</li>
-          <li><span class="feat-check">✓</span>Tire dressing &amp; wheel cleaning</li>
-          <li><span class="feat-check">✓</span>Interior + exterior window cleaning</li>
-          <li><span class="feat-check">✓</span>Priority scheduling (within 48 hrs)</li>
-          <li><span class="feat-check">✓</span>Quarterly engine bay wipe</li>
-          <li><span class="feat-check">✓</span>Members-only pricing on add-ons</li>
+          <li>Two visits per month</li><li>Full exterior detail + sealant</li>
+          <li>Complete interior detail monthly</li><li>Priority 48-hour scheduling</li>
+          <li>Quarterly engine-bay refresh</li><li>Member-only service pricing</li>
         </ul>
-        <a href="book.html?plan=silver" class="plan-btn plan-btn-fill">Join Silver →</a>
-        <p class="plan-note">Best for daily drivers who demand a consistently polished vehicle.</p>
+        <a href="mailto:reclaimeddetailers@outlook.com?subject=Silver%20Membership" class="btn btn-primary">Join Silver <span class="ar">&rarr;</span></a>
+        <div class="save">Save ~$271/mo vs. one-time</div>
       </div>
-
-      <!-- Gold -->
-      <div class="plan-card elite reveal d2">
-        <div class="plan-badge gold-badge">VIP Elite</div>
-        <div class="plan-tier">Elite Tier</div>
-        <div class="plan-name">Gold</div>
-        <div class="plan-tagline">The Covenant Elite</div>
-        <div class="plan-price">
-          <div class="price-row">
-            <span class="price-dollar">$</span>
-            <span class="price-num">549</span>
-            <span class="price-period">/month</span>
-          </div>
-          <div class="price-value">Retail value: ~$1,200/month · You save $651</div>
-        </div>
+      <div class="plan reveal d2">
+        <div class="tier">Elite</div><h3>Gold</h3><div class="ptag">The Covenant Elite</div>
+        <div class="amt"><sup>$</sup>549 <span>/mo</span></div>
         <ul class="plan-feats">
-          <li><span class="feat-check">✓</span>2–3 visits per month</li>
-          <li><span class="feat-check">✓</span>Full interior + exterior each visit</li>
-          <li><span class="feat-check">✓</span>Ceramic coating maintenance (quarterly)</li>
-          <li><span class="feat-check">✓</span>Paint decontamination (quarterly)</li>
-          <li><span class="feat-check">✓</span>Leather conditioning &amp; UV protection</li>
-          <li><span class="feat-check">✓</span>Annual 1-stage paint correction included</li>
-          <li><span class="feat-check">✓</span>First-priority scheduling (next slot)</li>
-          <li><span class="feat-check">✓</span>Direct line to Ray</li>
-          <li><span class="feat-check">✓</span>Bi-annual headlight restoration</li>
+          <li>Two to three visits per month</li><li>Full interior + exterior each visit</li>
+          <li>Quarterly ceramic maintenance</li><li>Annual paint correction included</li>
+          <li>First-priority scheduling</li><li>A direct line to Ray</li>
         </ul>
-        <a href="book.html?plan=gold" class="plan-btn plan-btn-gold">Join Gold →</a>
-        <p class="plan-note">For luxury, collector, or daily-driver owners who accept nothing less than perfect.</p>
+        <a href="mailto:reclaimeddetailers@outlook.com?subject=Gold%20Membership" class="btn btn-ghost">Join Gold</a>
+        <div class="save">Save ~$651/mo vs. one-time</div>
       </div>
-
     </div>
-    <p style="text-align:center;margin-top:28px;font-size:.82rem;color:rgba(255,255,255,.22)">All memberships are month-to-month · Cancel anytime with 7 days notice · Service area restrictions apply</p>
+    <p style="text-align:center;margin-top:26px;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--muted)">Cancel anytime &middot; No contracts &middot; Satisfaction guaranteed</p>
   </div>
-</div>
+</section>
 
-<!-- Comparison Table -->
-<div class="compare-section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:40px" class="reveal">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Plan Comparison</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;letter-spacing:-.02em">What's Included?</h2>
-    </div>
-    <div style="overflow-x:auto" class="reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th style="text-align:left;min-width:200px">Feature</th>
-            <th><span class="plan-col-header">Bronze</span>$159/mo</th>
-            <th><span class="plan-col-header" style="color:var(--purple-light)">Silver</span>$329/mo</th>
-            <th><span class="plan-col-header" style="color:var(--gold-light)">Gold</span>$549/mo</th>
-          </tr>
-        </thead>
+<section class="section bg-alt">
+  <div class="wrap">
+    <h2 class="ctitle reveal">Compare every plan.</h2>
+    <div class="reveal" style="overflow-x:auto">
+      <table class="ctable">
+        <thead><tr><th>What's included</th><th>Bronze</th><th class="feat-col">Silver</th><th>Gold</th></tr></thead>
         <tbody>
-          <tr><td>Visits per month</td><td>1</td><td>2</td><td>2–3</td></tr>
-          <tr><td>Exterior wash &amp; dry</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
-          <tr><td>Tire shine &amp; dressing</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
-          <tr><td>Window cleaning (ext)</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
-          <tr><td>Interior vacuum &amp; wipe</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
-          <tr><td>Full interior detail</td><td class="check-no">—</td><td class="check-yes">✓ Monthly</td><td class="check-yes">✓ Every visit</td></tr>
-          <tr><td>Wax / sealant application</td><td class="check-no">—</td><td class="check-yes">✓ Monthly</td><td class="check-yes">✓ Monthly</td></tr>
-          <tr><td>Wheel deep cleaning</td><td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
-          <tr><td>Engine bay wipe</td><td class="check-no">—</td><td class="check-partial">Quarterly</td><td class="check-yes">✓ Quarterly</td></tr>
-          <tr><td>Paint decontamination</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-partial">Quarterly</td></tr>
-          <tr><td>Ceramic maintenance</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-partial">Quarterly</td></tr>
-          <tr><td>Leather conditioning</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
-          <tr><td>Paint correction (annual)</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓ Included</td></tr>
-          <tr><td>Priority scheduling</td><td class="check-no">—</td><td class="check-partial">48 hours</td><td class="check-yes">Next slot</td></tr>
-          <tr><td>Direct line to Ray</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
-          <tr><td>Members-only pricing</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+          <tr><td>Visits per month</td><td>1</td><td>2</td><td>2&ndash;3</td></tr>
+          <tr><td>Exterior hand wash</td><td class="yes">&check;</td><td class="yes">&check;</td><td class="yes">&check;</td></tr>
+          <tr><td>Interior detail</td><td>Wipe-down</td><td class="yes">Full monthly</td><td class="yes">Every visit</td></tr>
+          <tr><td>Sealant / wax</td><td class="no">&mdash;</td><td class="yes">&check;</td><td class="yes">&check;</td></tr>
+          <tr><td>Engine-bay refresh</td><td class="no">&mdash;</td><td>Quarterly</td><td class="yes">Quarterly</td></tr>
+          <tr><td>Ceramic maintenance</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">Quarterly</td></tr>
+          <tr><td>Annual paint correction</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&check;</td></tr>
+          <tr><td>Priority scheduling</td><td class="no">&mdash;</td><td class="yes">48-hour</td><td class="yes">First priority</td></tr>
+          <tr><td>Member-only pricing</td><td class="no">&mdash;</td><td class="yes">&check;</td><td class="yes">&check;</td></tr>
         </tbody>
       </table>
     </div>
-  </div>
-</div>
 
-<!-- FAQ -->
-<div class="faq-section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:40px" class="reveal">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Questions</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;letter-spacing:-.02em">Membership FAQ</h2>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item open">
-        <button class="faq-q">How does the membership billing work? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Your membership bills monthly on the date you first sign up. There are no contracts or commitments — you can cancel anytime with 7 days notice before your next billing date.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can I skip a month? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Life happens. You can pause your membership once per year without penalty. Just reach out to Ray at least 7 days before your next billing date and we'll hold your spot.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can unused visits roll over? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Visits do not roll over month to month. We design the membership so visits are spaced to maintain your vehicle optimally — skipping too long between services means more work is needed next time.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Can I upgrade or downgrade my plan? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Absolutely. You can change plans at any time and the new pricing takes effect at your next billing cycle. Upgrades are applied immediately, so you get the better service right away.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Does the membership cover multiple vehicles? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Each membership covers one vehicle. If you have multiple vehicles, reach out to discuss a custom bundle — we can work something out for households with 2+ vehicles.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What if I'm not satisfied with a visit? <span class="faq-chevron">▼</span></button>
-        <div class="faq-a"><div class="faq-a-inner">We stand behind every job. If something doesn't meet your standards, call Ray directly and we'll make it right — no questions asked. Your satisfaction is our reputation.</div></div>
-      </div>
+    <div class="addons">
+      <div class="addon reveal"><span>Add-on</span><b>Ceramic Coating</b><p>Add Covenant Coatings to any membership for long-term protection at a member rate.</p></div>
+      <div class="addon reveal d1"><span>Add-on</span><b>Pet &amp; Odor Treatment</b><p>Deep extraction and neutralization for cabins that need extra restoration.</p></div>
+      <div class="addon reveal d2"><span>Add-on</span><b>Headlight Restoration</b><p>Clear up foggy, oxidized headlights — safer nights, sharper looks.</p></div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- CTA -->
-<div class="cta-section">
-  <div class="cta-glow"></div>
-  <div class="container" style="position:relative">
+<section class="section final dark">
+  <div class="glow"></div>
+  <div class="wrap">
     <div class="reveal">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Ready to Join?</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:16px">Your Vehicle Deserves<br>Consistent, Professional Care.</h2>
-      <p style="color:rgba(255,255,255,.5);max-width:460px;margin:0 auto 36px;font-weight:300;font-size:1rem">Become a Reclaimed member today. Cancel anytime. Satisfaction guaranteed every single visit.</p>
-      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px">
-        <a href="book.html?plan=silver" class="btn-primary" style="font-size:15px;padding:16px 36px">Join Silver — $329/mo →</a>
-        <a href="tel:3346401831" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;transition:color .2s">Questions? Call Ray</a>
+      <span class="eyebrow no-rule" style="justify-content:center;color:var(--gold-lite)">Join the Covenant</span>
+      <h2 style="margin-top:18px">Care that never lapses.</h2>
+      <p class="sec-sub" style="margin:22px auto 0;text-align:center">Pick a plan and we'll handle the rest — on schedule, at your door.</p>
+      <div class="ctas">
+        <a href="mailto:reclaimeddetailers@outlook.com?subject=Membership%20Enquiry" class="btn btn-primary">Start a Membership <span class="ar">&rarr;</span></a>
+        <a href="tel:+13346401831" class="btn btn-ghost">Call (334) 640-1831</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Footer -->
 <footer class="footer">
-  <div class="footer-inner">
+  <div class="wrap cols">
     <div>
-      <div class="footer-logo-row"><img src="images/logo.png" alt="Reclaimed Detailers" class="footer-logo-img"></div>
-      <p class="footer-tagline">"Restored. Refined. Reclaimed."</p>
-      <p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL and surrounding communities.</p>
-      <div class="footer-socials">
-        <a href="https://instagram.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="https://facebook.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-        <a href="https://tiktok.com/@reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+      <img src="images/reclaimed-logo-white.png" alt="Reclaimed Detailers" class="fmark" />
+      <div class="ftag">Restored. Refined. Reclaimed.</div>
+      <p class="fdesc">Premium mobile auto detailing in Montgomery, Alabama. Faith-driven, community-minded, and obsessive about the details.</p>
+      <div class="socials">
+        <a href="https://instagram.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
       </div>
-      <p class="footer-faith">✝ Faith First. Community Always.</p>
     </div>
-    <div><div class="footer-col-title">Navigate</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="membership.html">Membership</a></li><li><a href="about.html">About Us</a></li><li><a href="showcase.html">Gallery</a></li></ul></div>
-    <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="services-exterior.html">Exterior Detailing</a></li><li><a href="services-interior.html">Interior Detailing</a></li><li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Ceramic Coating</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-    <div><div class="footer-col-title">Contact</div><ul class="footer-links"><li><a href="tel:3346401831">(334) 640-1831</a></li><li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li><li><a href="contact.html">Contact Form</a></li><li><a href="book.html">Book Online</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+    <div><div class="ftitle">Navigate</div><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
+      <li><a href="showcase.html">Gallery</a></li></ul></div>
+    <div><div class="ftitle">Services</div><ul>
+      <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
+      <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
+      <li><a href="service-areas.html">Service Areas</a></li></ul></div>
+    <div><div class="ftitle">Contact</div><ul>
+      <li><a href="tel:+13346401831">(334) 640-1831</a></li>
+      <li><a href="mailto:reclaimeddetailers@outlook.com">reclaimeddetailers@outlook.com</a></li>
+      <li><span style="color:var(--on-dark-mut)">Montgomery, AL &amp; surrounding areas</span></li>
+      <li><span style="color:var(--on-dark-mut)">2317 Ware Rd, Tallassee, AL</span></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Reclaimed Detailers LLC · Montgomery, Alabama</p>
-    <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
-  </div>
+  <div class="fbottom"><p>&copy; 2026 Reclaimed Detailers LLC &middot; Montgomery, Alabama</p><div style="display:flex;gap:18px;align-items:center"><a href="privacy-policy.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Privacy</a><a href="terms.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Terms</a><span class="verse">"Faith First. Community Always."</span></div></div>
 </footer>
 
-<div class="cookie" id="cookie">
-  <p>We use cookies to improve your experience. <a href="privacy-policy.html">Privacy Policy</a>.</p>
-  <button class="cookie-btn" id="cookieBtn">Accept</button>
-</div>
+<a href="book.html" class="btn btn-primary float-book" id="floatBook">Book Now</a>
+<div id="tweaks-root"></div>
 
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  const ham = document.getElementById('hamburger'), mNav = document.getElementById('mobileNav'), mOvr = document.getElementById('mobileOverlay'), mCls = document.getElementById('mobileClose');
-  ham.addEventListener('click', () => { mNav.classList.add('open'); mOvr.classList.add('open'); document.body.style.overflow = 'hidden'; });
-  [mCls, mOvr].forEach(el => el.addEventListener('click', () => { mNav.classList.remove('open'); mOvr.classList.remove('open'); document.body.style.overflow = ''; }));
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
-      const open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!open) item.classList.add('open');
-    });
-  });
-  if (!localStorage.getItem('cookieOk')) setTimeout(() => document.getElementById('cookie').classList.add('show'), 1800);
-  document.getElementById('cookieBtn').addEventListener('click', () => { localStorage.setItem('cookieOk', '1'); document.getElementById('cookie').classList.remove('show'); });
-</script>
-<div id="signupModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.7);backdrop-filter:blur(4px)" aria-modal="true" role="dialog">
-  <div style="background:#1a1020;border:1px solid rgba(123,53,196,.3);border-radius:20px;padding:40px 36px;max-width:440px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.7)">
-    <button id="signupClose" aria-label="Close" style="position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:none;cursor:pointer;font-size:16px">&#10005;</button>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b8922a;margin-bottom:12px">Stay in the Loop</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px">Weekly Updates &amp; Exclusive Deals</h2>
-    <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:24px">Sign up to receive detailing tips, seasonal specials, and community updates from Reclaimed Detailers.</p>
-    <form id="signupForm" action="https://formspree.io/f/mzdqjbye" method="POST">
-      <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:13px 16px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;margin-bottom:12px;outline:none;box-sizing:border-box" />
-      <input type="hidden" name="_subject" value="New Email Signup — Reclaimed Detailers" />
-      <button type="submit" style="width:100%;padding:14px;background:#7b35c4;color:#fff;border:none;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">Sign Me Up</button>
-    </form>
-    <div id="signupSuccess" style="display:none;text-align:center;padding:12px 0"><p style="color:#b8922a;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em">Thank you! We'll be in touch soon.</p></div>
-    <p style="font-size:.75rem;color:rgba(255,255,255,.2);margin-top:14px;text-align:center">No spam. Unsubscribe anytime.</p>
-  </div>
-</div>
-<script>
-(function(){
-  if(localStorage.getItem('signup-dismissed')||localStorage.getItem('signup-complete')) return;
-  var modal=document.getElementById('signupModal');
-  if(!modal) return;
-  setTimeout(function(){ modal.style.display='flex'; },4000);
-  document.getElementById('signupClose').addEventListener('click',function(){ modal.style.display='none'; localStorage.setItem('signup-dismissed','1'); });
-  modal.addEventListener('click',function(e){ if(e.target===modal){ modal.style.display='none'; localStorage.setItem('signup-dismissed','1'); } });
-  document.getElementById('signupForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var email=this.querySelector('[name="email"]').value;
-    fetch(this.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'New Email Signup — Reclaimed Detailers'})})
-    .then(function(r){ if(r.ok){ document.getElementById('signupForm').style.display='none'; document.getElementById('signupSuccess').style.display='block'; localStorage.setItem('signup-complete','1'); setTimeout(function(){ modal.style.display='none'; },2500); } })
-    .catch(function(){ document.getElementById('signupForm').submit(); });
-  });
-})();
-</script>
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="assets/reclaimed-tweaks.jsx"></script>
+
 </body>
 </html>

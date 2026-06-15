@@ -1,521 +1,206 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-accent="purple" data-fonts="editorial" data-motion="on" data-mood="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Detail | Reclaimed Detailers — Mobile Auto Detailing Montgomery, AL</title>
-  <meta name="description" content="Book your mobile auto detail in Montgomery, AL online. Choose your service, pick a date, and we'll come to you. No payment required to book." />
-  <link rel="canonical" href="https://reclaimeddetailers.com/book" />
-  <meta property="og:title" content="Book Mobile Auto Detailing in Montgomery, AL | Reclaimed Detailers" />
-  <meta property="og:description" content="Book your mobile auto detail online in under 3 minutes. Choose your service, pick a date, and we'll come to you. No payment required to book." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://reclaimeddetailers.com/book" />
-  <meta property="og:site_name" content="Reclaimed Detailers LLC" />
-  <meta property="og:image" content="https://reclaimeddetailers.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Book a Detail — Reclaimed Detailers" />
-  <meta name="twitter:description" content="Mobile detailing in Montgomery, AL. Book online — we come to you." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--purple:#7b35c4;--purple-brand:#9b5ce4;--purple-light:#b07de8;--gold:#b8922a;--gold-light:#d4aa4a;--bg-dark:#1a1020;--bg:#f4f2ef;--bg-2:#ede9e4;--bg-card:#ffffff;--text:#1c1a18;--text-muted:#6a6860;--border:rgba(0,0,0,0.08);--radius:12px;--radius-lg:20px}
-    [data-theme="dark"]{--bg:#080808;--bg-2:#111111;--bg-card:#1c1c1c;--text:#f5f3f0;--text-muted:#b0ada6;--border:rgba(255,255,255,0.06)}
-    html{scroll-behavior:smooth}
-    body{font-family:'Barlow',sans-serif;background:var(--bg-dark);color:var(--text);line-height:1.65;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    button{cursor:pointer;border:none;background:none;font-family:inherit}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s}
-    .nav.scrolled{background:rgba(10,5,18,.9);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.05)}
-    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;gap:32px}
-    .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-    .nav-logo-img{height:38px;width:auto;display:block}.footer-logo-img{height:56px;width:auto;display:block;margin-bottom:4px}
-    .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:auto}
-    .nav-links>li>a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:8px 12px;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;display:block}
-    .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.06)}
-    .has-dropdown{position:relative}
-    .nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#1a1020;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:8px;min-width:230px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .2s,transform .2s;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-    .has-dropdown:hover .nav-dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-    .nav-dropdown a{display:block;padding:10px 14px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.7)}
-    .nav-dropdown a:hover{color:#fff;background:rgba(123,53,196,.2)}
-    .nav-dropdown a span{display:block;font-size:11px;color:rgba(255,255,255,.35);font-weight:400;letter-spacing:.02em;text-transform:none;margin-top:1px;font-family:'Barlow',sans-serif}
-    .nav-cta{background:var(--purple)!important;color:#fff!important;padding:10px 20px!important;border-radius:8px!important;font-weight:600!important}
-    .nav-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
-    .nav-hamburger{display:none;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;align-items:center;justify-content:center;flex-direction:column;gap:4px}
-    .hamburger-line{width:18px;height:2px;background:currentColor;border-radius:2px;display:block}
-    .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mobile-overlay.open{opacity:1;pointer-events:all}
-    .mobile-nav{position:fixed;top:0;right:0;bottom:0;width:290px;background:#110a1a;z-index:1001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);padding:24px;overflow-y:auto}
-    .mobile-nav.open{transform:translateX(0)}
-    .mobile-nav-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .mobile-nav-close{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;border:none}
-    .mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:2px}
-    .mobile-nav-links a{display:block;padding:11px 16px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);transition:background .2s,color .2s}
-    .mobile-nav-links a:hover{background:rgba(255,255,255,.06);color:#fff}
-    .mobile-cta-link{background:var(--purple)!important;color:#fff!important;text-align:center;border-radius:10px;margin-top:12px;padding:14px 16px!important}
-    .mobile-section-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:14px 16px 4px;display:block}
-    .mobile-sub-link{padding-left:28px!important;font-size:13px!important;color:rgba(255,255,255,.5)!important}
-    .container{max-width:1200px;margin:0 auto}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .d1{transition-delay:.1s}.d2{transition-delay:.2s}
-
-    /* Page */
-    .page-hero{background:var(--bg-dark);padding:130px 24px 60px;text-align:center;position:relative;overflow:hidden}
-    .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(123,53,196,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(123,53,196,.06) 1px,transparent 1px);background-size:48px 48px}
-    .page-hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(123,53,196,.18) 0%,transparent 70%);pointer-events:none}
-    .breadcrumb{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
-    .breadcrumb a{color:rgba(255,255,255,.3)}
-    .breadcrumb a:hover{color:rgba(255,255,255,.7)}
-
-    /* Progress bar */
-    .form-progress{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px}
-    .progress-step{display:flex;align-items:center;gap:0}
-    .prog-circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;border:2px solid rgba(255,255,255,.15);color:rgba(255,255,255,.4);transition:all .3s}
-    .prog-circle.active{border-color:var(--purple);background:var(--purple);color:#fff}
-    .prog-circle.done{border-color:var(--gold);background:rgba(184,146,42,.15);color:var(--gold)}
-    .prog-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px;text-align:center;display:block}
-    .prog-connector{width:60px;height:2px;background:rgba(255,255,255,.1);margin:0 8px;margin-bottom:16px}
-    .prog-connector.done{background:var(--gold)}
-    .progress-step{flex-direction:column;align-items:center}
-
-    /* Form layout */
-    .booking-layout{max-width:900px;margin:0 auto;padding:0 24px 96px;display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start}
-    .form-section{display:none}
-    .form-section.active{display:block}
-    .form-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius-lg);padding:32px}
-    .form-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px}
-    .form-card-sub{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.45);margin-bottom:28px}
-    .form-grid{display:grid;gap:16px}
-    .form-grid-2{grid-template-columns:1fr 1fr}
-    .form-group{display:flex;flex-direction:column;gap:6px}
-    .form-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-    .form-input,.form-select,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:13px 16px;font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:300;color:#fff;transition:border-color .2s,background .2s;outline:none;width:100%}
-    .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--purple);background:rgba(123,53,196,.06)}
-    .form-select{appearance:none;cursor:pointer}
-    .form-textarea{resize:vertical;min-height:100px}
-    .form-input::placeholder,.form-textarea::placeholder{color:rgba(255,255,255,.25)}
-
-    /* Service selector */
-    .service-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .service-option{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;cursor:pointer;transition:border-color .2s,background .2s;display:flex;flex-direction:column;gap:4px}
-    .service-option:hover{border-color:rgba(123,53,196,.4);background:rgba(123,53,196,.06)}
-    .service-option.selected{border-color:var(--purple);background:rgba(123,53,196,.1)}
-    .svc-opt-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
-    .svc-opt-price{font-size:.82rem;color:var(--gold);font-weight:300}
-    .svc-opt-time{font-size:.8rem;color:rgba(255,255,255,.35)}
-
-    /* Vehicle type */
-    .vehicle-options{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .veh-option{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 10px;cursor:pointer;text-align:center;transition:border-color .2s,background .2s}
-    .veh-option:hover{border-color:rgba(123,53,196,.4);background:rgba(123,53,196,.06)}
-    .veh-option.selected{border-color:var(--purple);background:rgba(123,53,196,.1)}
-    .veh-icon{font-size:24px;margin-bottom:6px}
-    .veh-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
-
-    /* Buttons */
-    .form-actions{display:flex;align-items:center;justify-content:space-between;margin-top:24px;gap:12px}
-    .btn-next{background:var(--purple);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:14px 32px;border-radius:10px;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(123,53,196,.35);cursor:pointer;border:none}
-    .btn-next:hover{background:var(--purple-brand);transform:translateY(-1px)}
-    .btn-back{background:transparent;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:14px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.12);transition:all .2s;cursor:pointer}
-    .btn-back:hover{color:#fff;border-color:rgba(255,255,255,.3)}
-
-    /* Summary sidebar */
-    .booking-summary{position:sticky;top:96px}
-    .summary-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:24px}
-    .summary-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    .summary-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-    .summary-row:last-of-type{border-bottom:none}
-    .summary-key{font-size:.84rem;color:rgba(255,255,255,.45);font-weight:300}
-    .summary-val{font-size:.84rem;color:#fff;font-weight:400;text-align:right}
-    .summary-trust{margin-top:20px;display:flex;flex-direction:column;gap:8px}
-    .trust-line{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.4);font-weight:300}
-
-    /* Confirmation */
-    .confirmation{text-align:center;padding:40px 20px;display:none}
-    .confirmation.active{display:block}
-    .confirmation-icon{font-size:56px;margin-bottom:20px}
-    .confirmation h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:12px}
-    .confirmation p{color:rgba(255,255,255,.55);font-weight:300;max-width:400px;margin:0 auto 28px}
-
-    /* Footer */
-    .footer{background:#060410;border-top:1px solid rgba(255,255,255,.05);padding:64px 24px 0}
-    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.05)}
-    .footer-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-    .footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,.35);font-size:.9rem;margin-bottom:12px}
-    .footer-desc{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.3);line-height:1.7;margin-bottom:18px}
-    .footer-socials{display:flex;gap:8px;margin-bottom:16px}
-    .footer-social{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:15px;color:rgba(255,255,255,.45);transition:background .2s,color .2s}
-    .footer-social:hover{background:rgba(123,53,196,.2);color:#fff}
-    .footer-faith{font-size:12px;color:rgba(255,255,255,.18)}
-    .footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:16px}
-    .footer-links-list{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .footer-links-list a{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.4);transition:color .2s}
-    .footer-links-list a:hover{color:rgba(255,255,255,.8)}
-    .footer-bottom{max-width:1200px;margin:0 auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.18)}
-    .footer-legal{display:flex;gap:20px}
-    .footer-legal a{font-size:.78rem;color:rgba(255,255,255,.18)}
-    .footer-legal a:hover{color:rgba(255,255,255,.5)}
-
-    @media(max-width:900px){.booking-layout{grid-template-columns:1fr}.booking-summary{display:none}}
-    @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.service-options{grid-template-columns:1fr}.vehicle-options{grid-template-columns:repeat(2,1fr)}.form-grid-2{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr;gap:28px}}
-    @media(max-width:480px){.footer-inner{grid-template-columns:1fr}.prog-connector{width:32px}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a Detail — Reclaimed Detailers · Montgomery, AL</title>
+<meta name="description" content="Book premium mobile auto detailing with Reclaimed Detailers in Montgomery, AL. Request your appointment online — we come to you." />
+<link rel="icon" href="images/reclaimed-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+.book-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(36px,5vw,56px);align-items:start}
+.form-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(26px,3vw,40px);box-shadow:var(--shadow-soft)}
+.next{list-style:none;display:flex;flex-direction:column;gap:18px}
+.next li{display:flex;gap:16px;align-items:flex-start}
+.next .n{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:rgba(var(--accent-rgb),.12);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:600}
+.next h4{font-size:1.15rem;margin-bottom:3px}
+.next p{font-size:.92rem;color:var(--muted);line-height:1.55}
+.assure{background:var(--dark);color:var(--on-dark);border-radius:var(--radius-lg);padding:28px;margin-top:24px}
+.assure h3{color:var(--on-dark);font-size:1.3rem;margin-bottom:10px}
+.assure p{color:var(--on-dark-mut);font-size:.92rem;line-height:1.6}
+@media(max-width:860px){.book-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-
-<!-- Nav -->
-<nav class="nav" id="nav">
+<nav class="nav over-hero" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img"></a>
+    <a href="index.html" class="nav-brand" aria-label="Reclaimed Detailers home"><img src="images/reclaimed-mark.png" alt="Reclaimed Detailers" /><span class="bw"><b>Reclaimed</b><small>Detailers</small></span></a>
     <ul class="nav-links">
-      <li class="has-dropdown"><a href="services.html">Services ▾</a><div class="nav-dropdown"><a href="services-exterior.html">Exterior Detailing<span>Wash, clay bar & protection</span></a><a href="services-interior.html">Interior Detailing<span>Deep clean & restoration</span></a><a href="services-paint-correction.html">Paint Correction<span>Swirl & scratch removal</span></a><a href="services-ceramic.html">Ceramic Coating<span>Covenant Coatings program</span></a></div></li>
+      <li class="has-dd"><a href="services.html">Services <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="services-exterior.html">Exterior Detail<small>Wash, clay bar &amp; protection</small></a>
+          <a href="services-interior.html">Interior Restoration<small>Deep clean &amp; restoration</small></a>
+          <a href="services-paint-correction.html">Paint Correction<small>Swirl &amp; scratch removal</small></a>
+          <a href="services-ceramic.html">Covenant Coatings<small>Ceramic protection program</small></a>
+        </div>
+      </li>
       <li><a href="membership.html">Membership</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
       <li><a href="service-areas.html">Areas</a></li>
-      <li><a href="book.html" class="nav-cta">Book Now</a></li>
     </ul>
-    <div class="nav-actions">
-      <button class="nav-hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
-    </div>
+    <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<nav class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-header"><a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Reclaimed Detailers" class="nav-logo-img"></a><button class="mobile-nav-close" id="mobileClose">✕</button></div>
-  <ul class="mobile-nav-links">
-    <li><a href="index.html">Home</a></li>
-    <span class="mobile-section-label">Services</span>
-    <li><a href="services.html" class="mobile-sub-link">All Services</a></li>
-    <li><a href="services-exterior.html" class="mobile-sub-link">Exterior Detailing</a></li>
-    <li><a href="services-interior.html" class="mobile-sub-link">Interior Detailing</a></li>
-    <li><a href="services-paint-correction.html" class="mobile-sub-link">Paint Correction</a></li>
-    <li><a href="services-ceramic.html" class="mobile-sub-link">Ceramic Coating</a></li>
-    <li><a href="membership.html">Membership</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="showcase.html">Gallery</a></li>
-    <li><a href="service-areas.html">Service Areas</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="book.html" class="mobile-cta-link">Book a Detail →</a></li>
-  </ul>
-</nav>
-
-<!-- Page Hero -->
-<div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
-  <div style="position:relative">
-    <div class="breadcrumb reveal"><a href="index.html">Home</a> / Book</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:12px;position:relative" class="reveal d1">Book Your Detail</h1>
-    <p style="font-size:1rem;font-weight:300;color:rgba(255,255,255,.5);max-width:460px;margin:0 auto;position:relative" class="reveal d2">Choose your service, tell us where you'll be, and we'll take care of the rest. No payment required to book.</p>
+<div class="drawer-scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-top"><img src="images/reclaimed-mark-white.png" alt="Reclaimed Detailers" /><button class="drawer-x" id="drawerX" aria-label="Close menu">&times;</button></div>
+  <a class="dl" href="index.html">Home</a>
+  <div class="dgroup">Services</div>
+  <a class="dl sub" href="services.html">All Services</a>
+  <a class="dl sub" href="services-exterior.html">Exterior Detail</a>
+  <a class="dl sub" href="services-interior.html">Interior Restoration</a>
+  <a class="dl sub" href="services-paint-correction.html">Paint Correction</a>
+  <a class="dl sub" href="services-ceramic.html">Covenant Coatings</a>
+  <a class="dl" href="membership.html">Membership</a>
+  <a class="dl" href="about.html">About</a>
+  <a class="dl" href="showcase.html">Gallery</a>
+  <a class="dl" href="service-areas.html">Service Areas</a>
+  <a class="dl" href="reviews.html">Reviews</a>
+  <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="contact.html">Contact</a>
+  <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
+</aside>
+<header class="subhero center" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumb reveal"><a href="index.html">Home</a> / Book</div>
+    <span class="eyebrow no-rule reveal" style="justify-content:center;color:var(--gold-lite);margin-top:18px">Book A Detail</span>
+    <h1 class="reveal d1">Reserve your<br>appointment.</h1>
+    <p class="reveal d2">Tell us what you drive and where you are — we will confirm your booking personally, usually the same day. We come to you.</p>
   </div>
-</div>
-
-<!-- Booking Form -->
-<div style="padding-top:48px;background:var(--bg-dark)">
-  <div style="max-width:600px;margin:0 auto;padding:0 24px">
-    <!-- Progress -->
-    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:48px" class="reveal">
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div class="prog-circle active" id="prog1">1</div>
-        <span class="prog-label">Service</span>
-      </div>
-      <div class="prog-connector" id="conn1"></div>
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div class="prog-circle" id="prog2">2</div>
-        <span class="prog-label">Details</span>
-      </div>
-      <div class="prog-connector" id="conn2"></div>
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div class="prog-circle" id="prog3">3</div>
-        <span class="prog-label">Confirm</span>
-      </div>
-    </div>
-
-    <!-- Step 1: Service -->
-    <div class="form-section active reveal" id="step1">
-      <div class="form-card">
-        <div class="form-card-title">Choose Your Service</div>
-        <div class="form-card-sub">Select the service you'd like. Not sure? Choose the closest option — we can discuss details when we confirm.</div>
-        <div class="service-options" id="serviceOptions">
-          <div class="service-option selected" data-service="Exterior Detailing" data-price="Starting at $80" data-time="~1.5 hrs">
-            <div class="svc-opt-name">Exterior Detailing</div>
-            <div class="svc-opt-price">Starting at $80</div>
-            <div class="svc-opt-time">~1.5 hours</div>
+</header>
+<section class="section bg-cream">
+  <div class="wrap">
+    <div class="book-grid">
+      <div class="form-card reveal">
+        <h2 style="font-size:1.9rem;margin-bottom:6px">Booking request</h2>
+        <p style="color:var(--muted);margin-bottom:24px">No payment now — this sends us your request and we confirm availability with you directly.</p>
+        <form id="bookForm" action="https://formspree.io/f/mzdqjbye" method="POST">
+          <input type="hidden" name="_subject" value="New Booking Request — Reclaimed Detailers" />
+          <div class="form-row">
+            <div class="field"><label for="bf-name">Name</label><input id="bf-name" name="name" type="text" placeholder="Your name" required /></div>
+            <div class="field"><label for="bf-phone">Phone</label><input id="bf-phone" name="phone" type="tel" placeholder="(334) 000-0000" required /></div>
           </div>
-          <div class="service-option" data-service="Interior Detailing" data-price="Starting at $100" data-time="~2 hrs">
-            <div class="svc-opt-name">Interior Detailing</div>
-            <div class="svc-opt-price">Starting at $100</div>
-            <div class="svc-opt-time">~2 hours</div>
+          <div class="field"><label for="bf-email">Email</label><input id="bf-email" name="email" type="email" placeholder="you@email.com" required /></div>
+          <div class="form-row">
+            <div class="field"><label for="bf-service">Service</label>
+              <select id="bf-service" name="service">
+                <option>Exterior Detail</option><option>Interior Restoration</option>
+                <option>Paint Correction</option><option>Covenant (Ceramic) Coating</option>
+                <option>The Full Detail</option><option>Maintenance Wash</option>
+                <option>Membership — Bronze / Silver / Gold</option><option>Not sure — help me choose</option>
+              </select>
+            </div>
+            <div class="field"><label for="bf-date">Preferred date</label><input id="bf-date" name="date" type="date" /></div>
           </div>
-          <div class="service-option" data-service="Full Detail (Interior + Exterior)" data-price="Starting at $200" data-time="~3.5 hrs">
-            <div class="svc-opt-name">Full Detail Package</div>
-            <div class="svc-opt-price">Starting at $200</div>
-            <div class="svc-opt-time">~3.5 hours</div>
+          <div class="form-row">
+            <div class="field"><label for="bf-vehicle">Vehicle</label><input id="bf-vehicle" name="vehicle" type="text" placeholder="Year, make &amp; model" /></div>
+            <div class="field"><label for="bf-city">City</label>
+              <select id="bf-city" name="city">
+                <option>Montgomery</option><option>Pike Road</option><option>Prattville</option>
+                <option>Millbrook</option><option>Wetumpka</option><option>Tallassee</option><option>Elmore County</option><option>Other</option>
+              </select>
+            </div>
           </div>
-          <div class="service-option" data-service="Paint Correction" data-price="Starting at $250" data-time="~4 hrs">
-            <div class="svc-opt-name">Paint Correction</div>
-            <div class="svc-opt-price">Starting at $250</div>
-            <div class="svc-opt-time">~4 hours</div>
-          </div>
-          <div class="service-option" data-service="Ceramic Coating" data-price="Contact for pricing" data-time="Full day">
-            <div class="svc-opt-name">Ceramic Coating</div>
-            <div class="svc-opt-price">Contact for pricing</div>
-            <div class="svc-opt-time">Full day</div>
-          </div>
-          <div class="service-option" data-service="Maintenance Wash" data-price="Starting at $45" data-time="~1 hr">
-            <div class="svc-opt-name">Maintenance Wash</div>
-            <div class="svc-opt-price">Starting at $45</div>
-            <div class="svc-opt-time">~1 hour</div>
-          </div>
-        </div>
-        <div style="margin-top:20px">
-          <label style="font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:10px">Your Vehicle Type</label>
-          <div class="vehicle-options" id="vehicleOptions">
-            <div class="veh-option selected" data-vehicle="Sedan/Coupe"><div class="veh-label">Sedan / Coupe</div></div>
-            <div class="veh-option" data-vehicle="SUV/Crossover"><div class="veh-label">SUV / Crossover</div></div>
-            <div class="veh-option" data-vehicle="Truck"><div class="veh-label">Truck</div></div>
-            <div class="veh-option" data-vehicle="Luxury/Exotic"><div class="veh-label">Luxury / Exotic</div></div>
-          </div>
-        </div>
-        <div class="form-actions"><div></div><button class="btn-next" onclick="nextStep(2)">Next: Scheduling →</button></div>
-      </div>
-    </div>
-
-    <!-- Step 2: Details -->
-    <div class="form-section" id="step2">
-      <div class="form-card">
-        <div class="form-card-title">When &amp; Where?</div>
-        <div class="form-card-sub">Pick a date and tell us where to find you. We're flexible — driveway, office parking lot, wherever works best.</div>
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label">Preferred Date</label>
-            <input type="date" class="form-input" id="prefDate" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Preferred Time</label>
-            <select class="form-select" id="prefTime">
-              <option value="">Select a time window</option>
-              <option>Morning (7am – 10am)</option>
-              <option>Midday (10am – 1pm)</option>
-              <option>Afternoon (1pm – 4pm)</option>
-              <option>Late Afternoon (4pm – 6pm)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Service Address</label>
-            <input type="text" class="form-input" id="address" placeholder="123 Main St, Montgomery, AL 36104" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Vehicle Make &amp; Model</label>
-            <input type="text" class="form-input" id="vehicle" placeholder="e.g. 2022 Ford F-150 Black" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Special Notes (optional)</label>
-            <textarea class="form-textarea" id="notes" placeholder="Any specific concerns, pet hair, heavy stains, etc..."></textarea>
-          </div>
-        </div>
-        <div class="form-actions">
-          <button class="btn-back" onclick="nextStep(1)">← Back</button>
-          <button class="btn-next" onclick="nextStep(3)">Next: Your Info →</button>
+          <div class="field"><label for="bf-notes">Notes (optional)</label><textarea id="bf-notes" name="notes" placeholder="Anything we should know — condition, special requests, gate codes..."></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Request Booking <span class="ar">&rarr;</span></button>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:14px;text-align:center">Prefer to talk? Call or text <a href="tel:+13346401831" style="color:var(--accent)">(334) 640-1831</a>.</p>
+        </form>
+        <div id="bookSuccess" style="display:none;text-align:center;padding:18px 0">
+          <div style="font-size:38px;color:var(--accent);line-height:1;margin-bottom:12px">&#10003;</div>
+          <h3 style="font-size:1.6rem;margin-bottom:8px">Request received — thank you!</h3>
+          <p style="color:var(--muted)">We&rsquo;ll confirm your booking personally, usually the same day. Need it sooner? Call or text <a href="tel:+13346401831" style="color:var(--accent)">(334) 640-1831</a>.</p>
         </div>
       </div>
-    </div>
-
-    <!-- Step 3: Contact -->
-    <div class="form-section" id="step3">
-      <div class="form-card">
-        <div class="form-card-title">Your Information</div>
-        <div class="form-card-sub">We'll use this to confirm your appointment. Ray personally reviews every booking and will reach out within a few hours.</div>
-        <div class="form-grid form-grid-2">
-          <div class="form-group">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" id="fname" placeholder="First name" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" id="lname" placeholder="Last name" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-input" id="phone" placeholder="(334) 555-0123" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" id="email" placeholder="you@email.com" />
-          </div>
+      <div class="reveal d1">
+        <div class="sec-head" style="margin-bottom:24px"><span class="eyebrow">After You Submit</span><h2 style="font-size:1.7rem;margin-top:12px">What happens next.</h2></div>
+        <ul class="next">
+          <li><span class="n">1</span><div><h4>We confirm</h4><p>Ray personally reviews your request and texts or emails to lock in the date and time.</p></div></li>
+          <li><span class="n">2</span><div><h4>We arrive</h4><p>On the day, we show up on time with our own water and power — no setup needed from you.</p></div></li>
+          <li><span class="n">3</span><div><h4>We deliver</h4><p>We walk you through the finished result. If it is not perfect, we fix it before we leave.</p></div></li>
+        </ul>
+        <div class="assure">
+          <h3>100% satisfaction guarantee</h3>
+          <p>Licensed, insured, and faith-driven. We treat your vehicle like our own — and we do not consider the job done until you are happy with it.</p>
         </div>
-        <div style="background:rgba(184,146,42,.06);border:1px solid rgba(184,146,42,.15);border-radius:var(--radius);padding:14px 16px;margin-top:16px;font-size:.85rem;font-weight:300;color:rgba(255,255,255,.5)">
-          <strong style="color:rgba(255,255,255,.75)">No payment required.</strong> Ray will confirm your booking by phone or text, and payment is collected after the service is complete and you're satisfied.
-        </div>
-        <div class="form-actions">
-          <button class="btn-back" onclick="nextStep(2)">← Back</button>
-          <button class="btn-next" onclick="submitBooking()">Confirm Booking →</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Confirmation -->
-    <div class="confirmation" id="confirmation">
-      <div class="confirmation-icon"></div>
-      <h2>You're Booked!</h2>
-      <p>Thank you for choosing Reclaimed Detailers. Ray will reach out within a few hours to confirm your appointment details.</p>
-      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px">
-        <a href="index.html" style="background:var(--purple);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:13px 24px;border-radius:10px;display:inline-flex;align-items:center;gap:8px">Back to Home</a>
-        <a href="tel:3346401831" style="color:rgba(255,255,255,.55);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em">Call Ray Directly</a>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Footer -->
-<div id="cookie-banner" style="position:fixed;bottom:24px;left:24px;right:24px;max-width:520px;background:#1e1428;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 24px;z-index:9999;display:none;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
-  <p style="font-size:0.88rem;color:rgba(255,255,255,0.6);margin-bottom:16px;line-height:1.5;">We use cookies to improve your experience. See our <a href="privacy-policy.html" style="color:#b07de8;">Privacy Policy</a>.</p>
-  <div style="display:flex;gap:10px;"><button id="cookieAccept" style="background:#7b35c4;color:#fff;border:none;padding:9px 20px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-size:0.85rem;">Accept</button><button id="cookieDecline" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1);padding:9px 16px;border-radius:6px;font-size:0.85rem;cursor:pointer;">Decline</button></div>
-</div>
-<footer class="footer" style="margin-top:0">
-  <div class="footer-inner">
-    <div><div class="footer-logo-row"><img src="images/logo.png" alt="Reclaimed Detailers" class="footer-logo-img"></div><p class="footer-tagline">"Restored. Refined. Reclaimed."</p><p class="footer-desc">Faith-driven mobile auto detailing serving Montgomery, AL.</p><div class="footer-socials"><a href="https://instagram.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://facebook.com/reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">FB</a><a href="https://tiktok.com/@reclaimeddetailers" class="footer-social" target="_blank" rel="noopener" aria-label="TikTok">TT</a></div><p class="footer-faith">✝ Faith First. Community Always.</p></div>
-    <div><div class="footer-col-title">Navigate</div><ul class="footer-links-list"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="membership.html">Membership</a></li><li><a href="about.html">About Us</a></li><li><a href="showcase.html">Gallery</a></li></ul></div>
-    <div><div class="footer-col-title">Services</div><ul class="footer-links-list"><li><a href="services-exterior.html">Exterior Detailing</a></li><li><a href="services-interior.html">Interior Detailing</a></li><li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Ceramic Coating</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-    <div><div class="footer-col-title">Contact</div><ul class="footer-links-list"><li><a href="tel:3346401831">(334) 640-1831</a></li><li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li><li><a href="contact.html">Contact Form</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>© 2026 Reclaimed Detailers LLC · Montgomery, Alabama</p><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div>
-</footer>
-
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
-  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  const ham = document.getElementById('hamburger'), mNav = document.getElementById('mobileNav'), mOvr = document.getElementById('mobileOverlay'), mCls = document.getElementById('mobileClose');
-  ham.addEventListener('click', () => { mNav.classList.add('open'); mOvr.classList.add('open'); document.body.style.overflow = 'hidden'; });
-  [mCls, mOvr].forEach(el => el.addEventListener('click', () => { mNav.classList.remove('open'); mOvr.classList.remove('open'); document.body.style.overflow = ''; }));
-
-  // Service selection
-  document.querySelectorAll('.service-option').forEach(opt => {
-    opt.addEventListener('click', () => { document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected')); opt.classList.add('selected'); });
-  });
-  document.querySelectorAll('.veh-option').forEach(opt => {
-    opt.addEventListener('click', () => { document.querySelectorAll('.veh-option').forEach(o => o.classList.remove('selected')); opt.classList.add('selected'); });
-  });
-
-  let currentStep = 1;
-  function nextStep(step) {
-    document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
-    if (step <= 3) { document.getElementById('step' + step).classList.add('active'); }
-    [1,2,3].forEach(i => {
-      const c = document.getElementById('prog' + i);
-      c.classList.remove('active','done');
-      if (i < step) c.classList.add('done');
-      else if (i === step) c.classList.add('active');
-      if (i < 3) { const conn = document.getElementById('conn' + i); conn.classList.toggle('done', i < step); }
-    });
-    currentStep = step;
-    window.scrollTo({ top: 300, behavior: 'smooth' });
-  }
-
-  async function submitBooking() {
-    const fname = document.getElementById('fname').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    if (!fname || !phone || !email) { alert('Please fill in your name, phone, and email.'); return; }
-
-    const service = document.querySelector('.service-option.selected')?.dataset.service || '';
-    const vehicle = document.querySelector('.veh-option.selected')?.dataset.vehicle || '';
-    const date = document.getElementById('prefDate').value;
-    const time = document.getElementById('prefTime').value;
-    const address = document.getElementById('address').value;
-    const vehicleDetail = document.getElementById('vehicle').value;
-    const notes = document.getElementById('notes').value;
-    const lname = document.getElementById('lname').value;
-
-    const body = new FormData();
-    body.append('name', fname + ' ' + lname);
-    body.append('email', email);
-    body.append('phone', phone);
-    body.append('service', service);
-    body.append('vehicle_type', vehicle);
-    body.append('vehicle_detail', vehicleDetail);
-    body.append('date', date);
-    body.append('time', time);
-    body.append('address', address);
-    body.append('notes', notes);
-    body.append('_subject', 'New Booking Request — Reclaimed Detailers');
-    body.append('_captcha', 'false');
-    body.append('_template', 'table');
-
-    const btn = document.querySelector('#step3 .btn-next');
-    const origText = btn.textContent;
-    btn.textContent = 'Submitting...';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/reclaimeddetailers@outlook.com', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: body
-      });
-      const json = await res.json();
-      if (json.success) {
-        document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
-        document.getElementById('confirmation').classList.add('active');
-        document.querySelectorAll('.prog-circle').forEach(c => { c.classList.remove('active'); c.classList.add('done'); });
-        window.scrollTo({ top: 300, behavior: 'smooth' });
-      } else {
-        btn.textContent = origText;
-        btn.disabled = false;
-        alert('Something went wrong. Please call Ray at (334) 640-1831.');
-      }
-    } catch(err) {
-      btn.textContent = origText;
-      btn.disabled = false;
-      alert('Could not submit. Please call Ray at (334) 640-1831.');
-    }
-  }
-
-  // Check for URL params to pre-select plan
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('plan') === 'silver' || params.get('plan') === 'gold' || params.get('plan') === 'bronze') {
-    // Could pre-select membership option - for now just loads the form
-  }
-  (function(){const b=document.getElementById('cookie-banner');if(b&&!localStorage.getItem('cookie-consent'))b.style.display='block';const a=document.getElementById('cookieAccept'),d=document.getElementById('cookieDecline');if(a)a.addEventListener('click',()=>{localStorage.setItem('cookie-consent','accepted');b.style.display='none';});if(d)d.addEventListener('click',()=>{localStorage.setItem('cookie-consent','declined');b.style.display='none';});})();
-</script>
-<div id="signupModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.7);backdrop-filter:blur(4px)" aria-modal="true" role="dialog">
-  <div style="background:#1a1020;border:1px solid rgba(123,53,196,.3);border-radius:20px;padding:40px 36px;max-width:440px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.7)">
-    <button id="signupClose" aria-label="Close" style="position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:none;cursor:pointer;font-size:16px">&#10005;</button>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b8922a;margin-bottom:12px">Stay in the Loop</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px">Weekly Updates &amp; Exclusive Deals</h2>
-    <p style="font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:24px">Sign up to receive detailing tips, seasonal specials, and community updates from Reclaimed Detailers.</p>
-    <form id="signupForm" action="https://formspree.io/f/mzdqjbye" method="POST">
-      <input type="email" name="email" placeholder="Your email address" required style="width:100%;padding:13px 16px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Barlow',sans-serif;font-size:.95rem;margin-bottom:12px;outline:none;box-sizing:border-box" />
-      <input type="hidden" name="_subject" value="New Email Signup — Reclaimed Detailers" />
-      <button type="submit" style="width:100%;padding:14px;background:#7b35c4;color:#fff;border:none;border-radius:10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">Sign Me Up</button>
-    </form>
-    <div id="signupSuccess" style="display:none;text-align:center;padding:12px 0"><p style="color:#b8922a;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em">Thank you! We'll be in touch soon.</p></div>
-    <p style="font-size:.75rem;color:rgba(255,255,255,.2);margin-top:14px;text-align:center">No spam. Unsubscribe anytime.</p>
-  </div>
-</div>
+</section>
 <script>
 (function(){
-  if(localStorage.getItem('signup-dismissed')||localStorage.getItem('signup-complete')) return;
-  var modal=document.getElementById('signupModal');
-  if(!modal) return;
-  setTimeout(function(){ modal.style.display='flex'; },4000);
-  document.getElementById('signupClose').addEventListener('click',function(){ modal.style.display='none'; localStorage.setItem('signup-dismissed','1'); });
-  modal.addEventListener('click',function(e){ if(e.target===modal){ modal.style.display='none'; localStorage.setItem('signup-dismissed','1'); } });
-  document.getElementById('signupForm').addEventListener('submit',function(e){
+  /* Submissions go to this Formspree endpoint. Replace with your own form ID to change the inbox. */
+  var f=document.getElementById('bookForm');
+  if(!f)return;
+  var ok=document.getElementById('bookSuccess');
+  f.addEventListener('submit',function(e){
     e.preventDefault();
-    var email=this.querySelector('[name="email"]').value;
-    fetch(this.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email:email,_subject:'New Email Signup — Reclaimed Detailers'})})
-    .then(function(r){ if(r.ok){ document.getElementById('signupForm').style.display='none'; document.getElementById('signupSuccess').style.display='block'; localStorage.setItem('signup-complete','1'); setTimeout(function(){ modal.style.display='none'; },2500); } })
-    .catch(function(){ document.getElementById('signupForm').submit(); });
+    var btn=f.querySelector('[type="submit"]');
+    if(btn){btn.dataset.label=btn.innerHTML;btn.innerHTML='Sending\u2026';btn.disabled=true;}
+    var d=new FormData(f);
+    fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){ f.style.display='none'; if(ok) ok.style.display='block'; }
+      else { throw new Error('submit failed'); }
+    })
+    .catch(function(){
+      /* Fallback: open the visitor's email app pre-filled so the request is never lost. */
+      var body='Name: '+(d.get('name')||'')+'%0D%0APhone: '+(d.get('phone')||'')+'%0D%0AEmail: '+(d.get('email')||'')+'%0D%0AService: '+(d.get('service')||'')+'%0D%0APreferred date: '+(d.get('date')||'')+'%0D%0AVehicle: '+(d.get('vehicle')||'')+'%0D%0ACity: '+(d.get('city')||'')+'%0D%0A%0D%0ANotes: '+(d.get('notes')||'');
+      window.location.href='mailto:reclaimeddetailers@outlook.com?subject=Booking%20Request%20%E2%80%94%20'+encodeURIComponent((d.get('service')||'Detail')+' / '+(d.get('name')||''))+'&body='+body;
+      if(btn){btn.innerHTML=btn.dataset.label||'Request Booking';btn.disabled=false;}
+    });
   });
 })();
 </script>
+<footer class="footer">
+  <div class="wrap cols">
+    <div>
+      <img src="images/reclaimed-logo-white.png" alt="Reclaimed Detailers" class="fmark" />
+      <div class="ftag">Restored. Refined. Reclaimed.</div>
+      <p class="fdesc">Premium mobile auto detailing in Montgomery, Alabama. Faith-driven, community-minded, and obsessive about the details.</p>
+      <div class="socials">
+        <a href="https://instagram.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+    <div><div class="ftitle">Navigate</div><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
+      <li><a href="showcase.html">Gallery</a></li></ul></div>
+    <div><div class="ftitle">Services</div><ul>
+      <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
+      <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
+      <li><a href="service-areas.html">Service Areas</a></li></ul></div>
+    <div><div class="ftitle">Contact</div><ul>
+      <li><a href="tel:+13346401831">(334) 640-1831</a></li>
+      <li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li>
+      <li><a href="contact.html">Contact Form</a></li>
+      <li><a href="book.html">Book Online</a></li>
+      <li><a href="reviews.html">Reviews</a></li></ul></div>
+  </div>
+  <div class="fbottom">
+    <p>&copy; 2026 Reclaimed Detailers LLC &middot; Montgomery, Alabama</p>
+    <div style="display:flex;gap:18px;align-items:center"><a href="privacy-policy.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Privacy</a><a href="terms.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Terms</a><span class="verse">"Faith First. Community Always."</span></div>
+  </div>
+</footer>
+
+<a href="book.html" class="btn btn-primary float-book" id="floatBook">Book Now</a>
+<div id="tweaks-root"></div>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="assets/reclaimed-tweaks.jsx"></script>
+
+
 </body>
 </html>

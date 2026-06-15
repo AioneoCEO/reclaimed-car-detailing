@@ -1,1249 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-accent="purple" data-fonts="editorial" data-motion="on" data-mood="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3D Vehicle Showcase | Reclaimed Detailers — See the Transformation</title>
-<meta name="description" content="Explore our interactive 3D detailing showcase. Drag to rotate and slide from neglected to pristine to see exactly what each level of service — Renewal, Restored, Reclaimed, and Ceramic — does for your vehicle.">
-<meta name="keywords" content="3D car detailing showcase, detailing before and after, ceramic coating demo, Montgomery AL detailing transformation">
-<meta name="author" content="Reclaimed Detailers LLC">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#7b35c4">
-<link rel="canonical" href="https://reclaimeddetailers.com/showcase">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Reclaimed Detailers LLC">
-<meta property="og:title" content="3D Vehicle Showcase | See the Transformation — Reclaimed Detailers">
-<meta property="og:description" content="An interactive 3D viewer — drag to rotate and slide from neglected to pristine to see what each detailing package delivers.">
-<meta property="og:url" content="https://reclaimeddetailers.com/showcase">
-<meta property="og:image" content="https://reclaimeddetailers.com/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery — Reclaimed Detailers · Montgomery, AL</title>
+<meta name="description" content="See before-and-after transformations and recent detailing work from Reclaimed Detailers in Montgomery, Alabama." />
+<link rel="icon" href="images/reclaimed-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --purple:        #7b35c4;
-    --purple-brand:  #9b5ce4;
-    --purple-light:  #b07de8;
-    --gold:          #b8922a;
-    --gold-light:    #d4aa4a;
-
-    --bg:       #080808;
-    --bg-2:     #0f0f0f;
-    --bg-card:  #141414;
-
-    --text:       #f5f3f0;
-    --text-muted: #a09890;
-    --text-dim:   #686460;
-
-    --border-gold:   rgba(184,146,42,0.20);
-    --border-purple: rgba(123,53,196,0.22);
-    --nav-bg:        rgba(8,8,8,0.94);
-  }
-
-  html, body { height: 100%; }
-  body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2.5rem; height: 68px;
-    background: rgba(5,5,5,0.92); backdrop-filter: blur(24px) saturate(1.4);
-    border-bottom: 1px solid var(--border-gold);
-    transition: height 0.3s ease, background 0.3s ease;
-  }
-  nav.scrolled { height: 60px; background: rgba(5,5,5,0.98); }
-
-  .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
-
-  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,243,240,0.5); text-decoration: none; transition: color 0.2s; position: relative; padding-bottom: 2px; }
-  .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--purple-brand); transition: width 0.25s ease; }
-  .nav-links a:hover, .nav-links a.active { color: #f5f3f0; }
-  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-  .nav-cta { color: #fff !important; background: var(--purple) !important; padding: 0.5rem 1.4rem !important; border-radius: 2px; transition: background 0.2s !important; }
-  .nav-cta::after { display: none !important; }
-  .nav-cta:hover { background: var(--purple-brand) !important; }
-
-  /* Hamburger + sidebar (mobile nav) */
-  .nav-left { display: flex; align-items: center; gap: 1rem; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border-radius: 4px; border: none; background: transparent; transition: background 0.2s; }
-  .hamburger:hover { background: rgba(255,255,255,0.06); }
-  .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(245,243,240,0.6); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 300; opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(4px); }
-  .sidebar-overlay.open { opacity: 1; pointer-events: all; }
-  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background: #0d0d0d; z-index: 400; transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); display: flex; flex-direction: column; border-right: 1px solid var(--border-gold); }
-  .sidebar.open { transform: translateX(0); }
-  .sidebar-header { padding: 1.5rem; border-bottom: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: space-between; }
-  .sidebar-close { width: 30px; height: 30px; border: 1px solid var(--border-gold); border-radius: 50%; background: transparent; cursor: pointer; color: var(--text-dim); font-size: 1.1rem; }
-  .sidebar-nav { flex: 1; padding: 1rem 0; }
-  .sidebar-nav a { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1.5rem; text-decoration: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 500; transition: background 0.2s, color 0.2s; border-left: 2px solid transparent; }
-  .sidebar-nav a:hover { background: rgba(255,255,255,0.04); color: var(--text); }
-  .sidebar-nav a.active { color: var(--purple-brand); border-left-color: var(--purple-brand); background: rgba(123,53,196,0.08); font-weight: 600; }
-  .sidebar-footer { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-gold); }
-  .sidebar-footer a { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-dim); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
-  .sidebar-footer a:hover { color: var(--purple-brand); }
-
-  /* HERO */
-  .showcase-hero {
-    padding: 7rem 4rem 3rem;
-    text-align: center;
-    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(123,53,196,0.22) 0%, transparent 70%), var(--bg);
-    border-bottom: 1px solid var(--border-gold);
-  }
-
-  .showcase-hero .eyebrow {
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
-    font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
-    color: var(--purple-brand); display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;
-  }
-
-  .showcase-hero h1 {
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: clamp(2.4rem, 5vw, 4rem); color: var(--text);
-    line-height: 1.1; margin-bottom: 0.75rem;
-  }
-
-  .showcase-hero h1 em { color: var(--purple-brand); font-style: italic; }
-
-  .showcase-hero p {
-    font-weight: 300; font-size: 1rem; color: var(--text-muted); max-width: 560px; margin: 0 auto;
-  }
-
-  /* 3D VIEWER */
-  .viewer-wrap {
-    position: relative;
-    background: linear-gradient(160deg, #0d0818 0%, #1a1030 40%, #0a0a0a 100%);
-    overflow: hidden;
-  }
-
-  .viewer-wrap::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(123,53,196,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(123,53,196,0.08) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-  }
-
-  #car-canvas {
-    width: 100%; height: 520px; display: block; cursor: grab;
-    touch-action: none;
-  }
-
-  #car-canvas:active { cursor: grabbing; }
-
-  .viewer-hint {
-    position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%);
-    font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: rgba(155,92,228,0.6);
-    display: flex; align-items: center; gap: 0.4rem;
-    pointer-events: none;
-    animation: fadeHint 3s ease 2s forwards;
-  }
-
-  @keyframes fadeHint { to { opacity: 0; } }
-
-  /* CONTROLS */
-  .viewer-controls {
-    background: linear-gradient(to bottom, #0a0818, #080810);
-    padding: 2rem 4rem 3rem;
-    position: relative;
-  }
-
-  .condition-label-wrap {
-    text-align: center;
-    margin-bottom: 1.75rem;
-  }
-
-  #condition-label {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: #e0d8f5;
-    line-height: 1;
-    transition: all 0.4s ease;
-  }
-
-  #condition-sub {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--purple-brand);
-    margin-top: 0.4rem;
-    transition: all 0.4s ease;
-  }
-
-  .slider-track {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .slider-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-  }
-
-  .slider-labels span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(176,125,232,0.45);
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-
-  .slider-labels span:hover { color: var(--purple-light); }
-  .slider-labels span.active-label { color: var(--purple-brand); }
-
-  #dirt-slider {
-    width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(to right, #7b35c4 30%, rgba(255,255,255,0.1) 30%);
-    -webkit-appearance: none;
-    appearance: none;
-    transition: background 0.1s;
-  }
-
-  #dirt-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: #9b5ce4;
-    border: 3px solid #fff;
-    box-shadow: 0 0 12px rgba(123,53,196,0.6);
-    cursor: grab;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  #dirt-slider::-webkit-slider-thumb:active {
-    transform: scale(1.2);
-    cursor: grabbing;
-  }
-
-  #dirt-slider::-moz-range-thumb {
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: #9b5ce4;
-    border: 3px solid #fff;
-    cursor: grab;
-  }
-
-  .slider-ends {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.75rem;
-  }
-
-  .slider-ends span {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .slider-ends .end-dirty { color: rgba(139,90,43,0.7); }
-  .slider-ends .end-clean { color: rgba(155,92,228,0.8); }
-
-  /* Progress dots */
-  .condition-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
-  }
-
-  .cond-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    border: 1px solid rgba(123,53,196,0.3);
-  }
-
-  .cond-dot.active { background: var(--purple-brand); transform: scale(1.4); }
-  .cond-dot:hover { background: rgba(155,92,228,0.4); }
-
-  /* Service card preview */
-  .service-preview {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1px;
-    background: rgba(123,53,196,0.15);
-    border: 1px solid rgba(123,53,196,0.2);
-    border-radius: 4px;
-    margin-top: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
-
-  .svc-step {
-    padding: 1.25rem 0.75rem;
-    text-align: center;
-    background: rgba(10,5,20,0.6);
-    transition: background 0.2s;
-    cursor: pointer;
-  }
-
-  .svc-step:hover, .svc-step.active { background: rgba(123,53,196,0.2); }
-
-  .svc-step-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem; font-weight: 900;
-    color: rgba(155,92,228,0.2);
-    line-height: 1; margin-bottom: 0.4rem;
-  }
-
-  .svc-step.active .svc-step-num { color: var(--purple-brand); }
-
-  .svc-step-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 0.62rem;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-  }
-
-  .svc-step.active .svc-step-name { color: #e0d8f5; }
-
-  .svc-step-price {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem; letter-spacing: 0.1em;
-    color: rgba(184,146,42,0.5);
-    margin-top: 0.2rem;
-  }
-
-  .svc-step.active .svc-step-price { color: var(--gold-light); }
-
-  /* CTA at bottom */
-  .viewer-cta {
-    background: var(--bg-2);
-    border-top: 1px solid var(--border-gold);
-    padding: 4rem;
-    text-align: center;
-  }
-
-  .viewer-cta h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: var(--text); margin-bottom: 0.75rem;
-  }
-
-  .viewer-cta p { font-weight: 300; color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem; line-height: 1.75; }
-
-  .btn-primary { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--purple); padding: 0.9rem 2.2rem; border-radius: 3px; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
-  .btn-primary:hover { background: var(--purple-brand); transform: translateY(-1px); }
-
-  .btn-outline { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); background: transparent; padding: 0.9rem 2.2rem; border-radius: 3px; border: 1px solid var(--border-gold); text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; margin-left: 1rem; }
-  .btn-outline:hover { border-color: var(--purple-brand); color: var(--purple-brand); }
-
-  /* FOOTER */
-  footer {
-    background: #050505;
-    border-top: 1px solid var(--border-gold);
-    color: rgba(245,243,240,0.45);
-    padding: 1.5rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-social { display: flex; gap: 0.6rem; }
-  .footer-social-btn {
-    width: 34px; height: 34px;
-    border: 1px solid rgba(155,92,228,0.25); border-radius: 3px;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none; transition: background 0.2s, border-color 0.2s, transform 0.2s;
-  }
-  .footer-social-btn:hover { transform: translateY(-2px); border-color: transparent; }
-  .footer-social-btn svg { width: 15px; height: 15px; }
-  .footer-social-btn svg path { fill: rgba(245,243,240,0.5); transition: fill 0.2s; }
-  .footer-social-btn:hover svg path { fill: #fff; }
-  .footer-social-btn.ig:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-  .footer-social-btn.fb:hover { background: #1877f2; }
-  .footer-social-btn.tt:hover { background: #010101; border-color: #25f4ee; }
-
-  @media (max-width: 768px) {
-    nav { padding: 0.85rem 1.25rem; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .showcase-hero { padding: 6rem 1.5rem 2rem; }
-    #car-canvas { height: 360px; }
-    .viewer-controls { padding: 1.5rem 1.25rem 2rem; }
-    .service-preview { grid-template-columns: 1fr 1fr; }
-    .viewer-cta { padding: 3rem 1.5rem; }
-    footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
-  }
+.gal{columns:3;column-gap:16px}
+.gal .tile{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line)}
+.gal .tile image-slot{width:100%;display:block}
+.gal .tile.t-tall image-slot{aspect-ratio:3/4}
+.gal .tile.t-wide image-slot{aspect-ratio:4/3}
+.gal .tile.t-sq image-slot{aspect-ratio:1/1}
+.gal .tag{position:absolute;left:12px;bottom:12px;z-index:3;background:rgba(15,12,22,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 14px;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.ba{position:relative;aspect-ratio:16/11;border-radius:var(--radius-lg);overflow:hidden;cursor:ew-resize;user-select:none;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+.ba .layer{position:absolute;inset:0}.ba .layer image-slot{width:100%;height:100%}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .lbl{position:absolute;top:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:100px;z-index:3}
+.ba .lbl-b{left:14px;background:rgba(15,12,22,.6);color:rgba(255,255,255,.7)}
+.ba .lbl-a{right:14px;background:rgba(var(--accent-rgb),.7);color:#fff}
+.ba .divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(255,255,255,.85);transform:translateX(-50%);z-index:4;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 4px 16px rgba(0,0,0,.4);z-index:4}
+.ba .cap{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(15,12,22,.62);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;z-index:3;white-space:nowrap}
+@media(max-width:900px){.gal{columns:2}}
+@media(max-width:600px){.gal{columns:1}.ba-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<!-- Loading Screen -->
-<div id="loading-screen" style="position:fixed;inset:0;z-index:900;background:#0a0514;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transition:opacity 0.5s;">
-  <svg width="72" height="72" viewBox="0 0 100 100" aria-hidden="true">
-    <circle cx="50" cy="50" r="47" fill="none" stroke="#7b35c4" stroke-width="2.5"/>
-    <g transform="translate(50,20) scale(0.55)" fill="#9b5ce4"><polygon points="-18,16 -18,-2 -9,6 0,-12 9,6 18,-2 18,16" opacity="0.9"/><rect x="-18" y="16" width="36" height="4" rx="1"/><circle cx="-18" cy="-2" r="2.5"/><circle cx="0" cy="-12" r="2.5"/><circle cx="18" cy="-2" r="2.5"/></g>
-    <text x="50" y="62" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#c8c8d0" letter-spacing="2">RD</text>
-  </svg>
-  <div style="width:200px;height:2px;background:rgba(155,92,228,0.2);border-radius:2px;overflow:hidden;">
-    <div id="load-bar" style="height:100%;width:0%;background:linear-gradient(to right,#7b35c4,#9b5ce4);transition:width 0.3s;"></div>
+<nav class="nav over-hero" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Reclaimed Detailers home"><img src="images/reclaimed-mark.png" alt="Reclaimed Detailers" /><span class="bw"><b>Reclaimed</b><small>Detailers</small></span></a>
+    <ul class="nav-links">
+      <li class="has-dd"><a href="services.html">Services <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="services-exterior.html">Exterior Detail<small>Wash, clay bar &amp; protection</small></a>
+          <a href="services-interior.html">Interior Restoration<small>Deep clean &amp; restoration</small></a>
+          <a href="services-paint-correction.html">Paint Correction<small>Swirl &amp; scratch removal</small></a>
+          <a href="services-ceramic.html">Covenant Coatings<small>Ceramic protection program</small></a>
+        </div>
+      </li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="showcase.html">Gallery</a></li>
+      <li><a href="service-areas.html">Areas</a></li>
+    </ul>
+    <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
+    <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,243,240,0.4);">Loading 3D Viewer...</div>
-</div>
-
-<!-- Sidebar overlay -->
-<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
-<!-- Sidebar (mobile nav) -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <a href="index.html" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
-      <img src="images/logo.png" alt="Reclaimed Detailers" style="height:36px;width:auto;display:block;">
-    </a>
-    <button class="sidebar-close" onclick="closeSidebar()" aria-label="Close menu">&#x2715;</button>
-  </div>
-  <nav class="sidebar-nav">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#gallery">Gallery</a>
-    <a href="about.html">About Us</a>
-    <a href="showcase.html" class="active">3D Showcase</a>
-    <a href="membership.html">Memberships</a>
-    <a href="index.html#contact">Book Now</a>
-  </nav>
-  <div class="sidebar-footer">
-    <a href="tel:3346401831">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.6a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      (334) 640-1831
-    </a>
-    <a href="mailto:reclaimeddetailers@outlook.com">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      reclaimeddetailers@outlook.com
-    </a>
-  </div>
-</aside>
-
-<nav>
-  <div class="nav-left">
-    <button class="hamburger" id="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Reclaimed Detailers" style="height:42px;width:auto;display:block;">
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#gallery">Gallery</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="showcase.html" class="active">3D Showcase</a></li>
-    <li><a href="membership.html">Memberships</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Book Now</a></li>
-  </ul>
 </nav>
-
-<div class="showcase-hero">
-  <div class="eyebrow">
-    <svg width="28" height="1" viewBox="0 0 28 1"><line x1="0" y1="0.5" x2="28" y2="0.5" stroke="#9b5ce4" stroke-width="2"/></svg>
-    Interactive 3D Viewer
+<div class="drawer-scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-top"><img src="images/reclaimed-mark-white.png" alt="Reclaimed Detailers" /><button class="drawer-x" id="drawerX" aria-label="Close menu">&times;</button></div>
+  <a class="dl" href="index.html">Home</a>
+  <div class="dgroup">Services</div>
+  <a class="dl sub" href="services.html">All Services</a>
+  <a class="dl sub" href="services-exterior.html">Exterior Detail</a>
+  <a class="dl sub" href="services-interior.html">Interior Restoration</a>
+  <a class="dl sub" href="services-paint-correction.html">Paint Correction</a>
+  <a class="dl sub" href="services-ceramic.html">Covenant Coatings</a>
+  <a class="dl" href="membership.html">Membership</a>
+  <a class="dl" href="about.html">About</a>
+  <a class="dl" href="showcase.html">Gallery</a>
+  <a class="dl" href="service-areas.html">Service Areas</a>
+  <a class="dl" href="reviews.html">Reviews</a>
+  <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="contact.html">Contact</a>
+  <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
+</aside>
+<header class="subhero center" id="top"><div class="glow"></div><div class="wrap">
+  <div class="crumb reveal"><a href="index.html">Home</a> / Gallery</div>
+  <span class="eyebrow no-rule reveal" style="justify-content:center;color:var(--gold-lite);margin-top:18px">The Gallery</span>
+  <h1 class="reveal d1">The work speaks<br>for itself.</h1>
+  <p class="reveal d2">A look at what reclaimed looks like. Drop your own photos into these frames — they are ready and waiting for your real work.</p>
+</div></header>
+<section class="section bg-alt"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Before &amp; After</span><h2 class="sec-title">Drag to reveal.</h2><p class="sec-sub">Real transformations, side by side. Pull the handle to compare.</p></div>
+  <div class="ba-grid">
+    <div class="ba" data-ba><div class="layer before"><image-slot id="gba1-b" fit="cover" placeholder="Before"></image-slot></div>
+  <div class="layer after"><image-slot id="gba1-a" fit="cover" placeholder="After"></image-slot></div>
+  <span class="lbl lbl-b">Before</span><span class="lbl lbl-a">After</span>
+  <div class="divider"></div><div class="knob">&#8644;</div><span class="cap">Paint Correction</span></div>
+    <div class="ba" data-ba><div class="layer before"><image-slot id="gba2-b" fit="cover" placeholder="Before"></image-slot></div>
+  <div class="layer after"><image-slot id="gba2-a" fit="cover" placeholder="After"></image-slot></div>
+  <span class="lbl lbl-b">Before</span><span class="lbl lbl-a">After</span>
+  <div class="divider"></div><div class="knob">&#8644;</div><span class="cap">Interior Restoration</span></div>
   </div>
-  <h1>See the <em>Transformation</em></h1>
-  <p>Drag to rotate the vehicle. Move the slider to see exactly what each level of service does — from neglected to pristine.</p>
-</div>
-
-<div class="viewer-wrap">
-  <canvas id="car-canvas"></canvas>
-  <div class="viewer-hint">&#x27F3; Drag to rotate &nbsp;&middot;&nbsp; Scroll to zoom</div>
-  <div id="control-hints" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);border-radius:50px;padding:0.55rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,243,240,0.75);pointer-events:none;opacity:0;transition:opacity 0.5s;">Drag to rotate &nbsp;&middot;&nbsp; Scroll to zoom</div>
-</div>
-
-<div class="viewer-controls">
-  <div class="condition-label-wrap">
-    <div id="condition-label">Renewal</div>
-    <div id="condition-sub">Basic Wash &amp; Detail &middot; Starting at $80</div>
+</div></section>
+<section class="section bg-cream"><div class="wrap">
+  <div class="sec-head reveal"><span class="eyebrow">Recent Work</span><h2 class="sec-title">From the driveway.</h2><p class="sec-sub">A mix of exteriors, interiors, engine bays, and the little details that make the difference.</p></div>
+  <div class="gal"><div class="tile t-tall"><image-slot id="gal1" fit="cover" placeholder="Gallery photo — Exterior · Sedan"></image-slot><span class="tag">Exterior · Sedan</span></div>
+<div class="tile t-wide"><image-slot id="gal2" fit="cover" placeholder="Gallery photo — Engine Bay"></image-slot><span class="tag">Engine Bay</span></div>
+<div class="tile t-sq"><image-slot id="gal3" fit="cover" placeholder="Gallery photo — Wheel Detail"></image-slot><span class="tag">Wheel Detail</span></div>
+<div class="tile t-wide"><image-slot id="gal4" fit="cover" placeholder="Gallery photo — Interior · Leather"></image-slot><span class="tag">Interior · Leather</span></div>
+<div class="tile t-tall"><image-slot id="gal5" fit="cover" placeholder="Gallery photo — Ceramic Gloss"></image-slot><span class="tag">Ceramic Gloss</span></div>
+<div class="tile t-sq"><image-slot id="gal6" fit="cover" placeholder="Gallery photo — Paint Correction"></image-slot><span class="tag">Paint Correction</span></div>
+<div class="tile t-wide"><image-slot id="gal7" fit="cover" placeholder="Gallery photo — Full Detail"></image-slot><span class="tag">Full Detail</span></div>
+<div class="tile t-tall"><image-slot id="gal8" fit="cover" placeholder="Gallery photo — Truck · Exterior"></image-slot><span class="tag">Truck · Exterior</span></div>
+<div class="tile t-sq"><image-slot id="gal9" fit="cover" placeholder="Gallery photo — Trim Restored"></image-slot><span class="tag">Trim Restored</span></div></div>
+</div></section>
+<section class="section final dark">
+  <div class="glow"></div><div class="wrap"><div class="reveal">
+    <span class="eyebrow no-rule" style="justify-content:center;color:var(--gold-lite)">Your Vehicle Next</span>
+    <h2 style="margin-top:18px">Let us add yours to the gallery.</h2>
+    <p class="sec-sub" style="margin:22px auto 0;text-align:center">Book a detail and see the Reclaimed difference on your own vehicle.</p>
+    <div class="ctas"><a href="book.html" class="btn btn-primary">Book a Detail <span class="ar">&rarr;</span></a><a href="services.html" class="btn btn-ghost">View Services</a></div>
+  </div></div></section>
+<footer class="footer">
+  <div class="wrap cols">
+    <div>
+      <img src="images/reclaimed-logo-white.png" alt="Reclaimed Detailers" class="fmark" />
+      <div class="ftag">Restored. Refined. Reclaimed.</div>
+      <p class="fdesc">Premium mobile auto detailing in Montgomery, Alabama. Faith-driven, community-minded, and obsessive about the details.</p>
+      <div class="socials">
+        <a href="https://instagram.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://facebook.com/reclaimeddetailers" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a href="https://tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+    <div><div class="ftitle">Navigate</div><ul>
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+      <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
+      <li><a href="showcase.html">Gallery</a></li></ul></div>
+    <div><div class="ftitle">Services</div><ul>
+      <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
+      <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
+      <li><a href="service-areas.html">Service Areas</a></li></ul></div>
+    <div><div class="ftitle">Contact</div><ul>
+      <li><a href="tel:+13346401831">(334) 640-1831</a></li>
+      <li><a href="mailto:reclaimeddetailers@outlook.com">Email Us</a></li>
+      <li><a href="contact.html">Contact Form</a></li>
+      <li><a href="book.html">Book Online</a></li>
+      <li><a href="reviews.html">Reviews</a></li></ul></div>
   </div>
-
-  <div class="slider-track">
-    <div class="slider-labels">
-      <span onclick="setSlider(0)"  data-val="0">No Maintenance</span>
-      <span onclick="setSlider(25)" data-val="25">Renewal</span>
-      <span onclick="setSlider(50)" data-val="50">Restored</span>
-      <span onclick="setSlider(75)" data-val="75">Reclaimed</span>
-      <span onclick="setSlider(100)" data-val="100">Ceramic</span>
-    </div>
-
-    <input type="range" id="dirt-slider" min="0" max="100" value="30" step="1">
-
-    <div class="slider-ends">
-      <span class="end-dirty">Neglected</span>
-      <span class="end-clean">Pristine</span>
-    </div>
-  </div>
-
-  <div class="condition-dots">
-    <div class="cond-dot" onclick="setSlider(0)"   title="No Maintenance"></div>
-    <div class="cond-dot active" onclick="setSlider(25)"  title="Renewal"></div>
-    <div class="cond-dot" onclick="setSlider(50)"  title="Restored"></div>
-    <div class="cond-dot" onclick="setSlider(75)"  title="Reclaimed"></div>
-    <div class="cond-dot" onclick="setSlider(100)" title="Ceramic Coating"></div>
-  </div>
-
-  <div class="service-preview">
-    <div class="svc-step" data-val="0" onclick="setSlider(0)">
-      <div class="svc-step-num">&#x2014;</div>
-      <div class="svc-step-name">No Maintenance</div>
-      <div class="svc-step-price">Neglected</div>
-    </div>
-    <div class="svc-step active" data-val="25" onclick="setSlider(25)">
-      <div class="svc-step-num">01</div>
-      <div class="svc-step-name">Renewal</div>
-      <div class="svc-step-price">From $80</div>
-    </div>
-    <div class="svc-step" data-val="50" onclick="setSlider(50)">
-      <div class="svc-step-num">02</div>
-      <div class="svc-step-name">Restored</div>
-      <div class="svc-step-price">From $150</div>
-    </div>
-    <div class="svc-step" data-val="75" onclick="setSlider(75)">
-      <div class="svc-step-num">03</div>
-      <div class="svc-step-name">Reclaimed</div>
-      <div class="svc-step-price">From $500</div>
-    </div>
-    <div class="svc-step" data-val="100" onclick="setSlider(100)">
-      <div class="svc-step-num">&#x2736;</div>
-      <div class="svc-step-name">Ceramic</div>
-      <div class="svc-step-price">Ask for Pricing</div>
-    </div>
-  </div>
-</div>
-
-<div class="viewer-cta">
-  <h2>Ready to Reclaim Yours?</h2>
-  <p>Whether it's a quick renewal or a full restoration, we'll make your vehicle look exactly like the right end of that slider.</p>
-  <a href="index.html#contact" class="btn-primary">Book a Detail</a>
-  <a href="index.html#services" class="btn-outline">View Packages</a>
-</div>
-
-<footer>
-  <span>&copy; 2026 Reclaimed Detailers LLC &nbsp;&middot;&nbsp; All Rights Reserved &nbsp;&middot;&nbsp; Montgomery, AL</span>
-  <div class="footer-social">
-    <a href="https://www.instagram.com/reclaimeddetailers" target="_blank" rel="noopener" class="footer-social-btn ig" title="Instagram" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="https://www.facebook.com/reclaimeddetailers" target="_blank" rel="noopener" class="footer-social-btn fb" title="Facebook" aria-label="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <a href="https://www.tiktok.com/@reclaimeddetailers" target="_blank" rel="noopener" class="footer-social-btn tt" title="TikTok" aria-label="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-    </a>
-  </div>
-  <div style="display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;">
-    <span>&#x271D; Faith-Driven &middot; Excellence</span>
-    <a href="privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a>
-    <a href="terms.html" style="color:inherit;text-decoration:none;">Terms</a>
+  <div class="fbottom">
+    <p>&copy; 2026 Reclaimed Detailers LLC &middot; Montgomery, Alabama</p>
+    <div style="display:flex;gap:18px;align-items:center"><a href="privacy-policy.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Privacy</a><a href="terms.html" style="font-size:.8rem;color:rgba(244,240,234,.34)">Terms</a><span class="verse">"Faith First. Community Always."</span></div>
   </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a0610;border-top:1px solid rgba(123,53,196,0.4);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-  <p style="color:rgba(245,243,240,0.75);font-family:'Barlow',sans-serif;font-size:0.88rem;margin:0;max-width:700px;">
-    We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our use of cookies.
-    <a href="privacy-policy.html" style="color:#9b5ce4;text-decoration:none;margin-left:0.3rem;">Learn more</a>
-  </p>
-  <div style="display:flex;gap:0.75rem;flex-shrink:0;">
-    <button onclick="declineCookies()" style="background:transparent;border:1px solid rgba(245,243,240,0.2);color:rgba(245,243,240,0.5);font-family:'Barlow',sans-serif;font-size:0.85rem;padding:0.45rem 1.1rem;border-radius:4px;cursor:pointer;">Decline</button>
-    <button onclick="acceptCookies()" style="background:#7b35c4;border:none;color:#fff;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:600;padding:0.45rem 1.4rem;border-radius:4px;cursor:pointer;">Accept</button>
-  </div>
-</div>
-<script>
-  (function() {
-    var consent = localStorage.getItem('cookie-consent');
-    if (!consent) document.getElementById('cookie-banner').style.display = 'flex';
-  })();
-  function acceptCookies() {
-    localStorage.setItem('cookie-consent', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-  function declineCookies() {
-    localStorage.setItem('cookie-consent', 'declined');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-</script>
+<a href="book.html" class="btn btn-primary float-book" id="floatBook">Book Now</a>
+<div id="tweaks-root"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-/* ── SIDEBAR (mobile nav) ── */
-function toggleSidebar() {
-  const open = document.getElementById('sidebar').classList.toggle('open');
-  document.getElementById('sidebar-overlay').classList.toggle('open', open);
-  document.getElementById('hamburger-btn').classList.toggle('open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
-}
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebar-overlay').classList.remove('open');
-  document.getElementById('hamburger-btn').classList.remove('open');
-  document.body.style.overflow = '';
-}
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="assets/reclaimed-tweaks.jsx"></script>
 
-/* ── THREE.JS SCENE ── */
-(function() {
-  const canvas = document.getElementById('car-canvas');
 
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.25;
-
-  const W = canvas.clientWidth, H = canvas.clientHeight;
-  renderer.setSize(W, H);
-
-  const scene = new THREE.Scene();
-
-  const camera = new THREE.PerspectiveCamera(36, W / H, 0.1, 200);
-  camera.position.set(5.5, 1.9, 6.2);
-  camera.lookAt(0, 0.65, 0);
-
-  /* ── LIGHTS ── */
-  scene.add(new THREE.AmbientLight(0xffffff, 0.50));
-
-  const sunLight = new THREE.DirectionalLight(0xfff5e8, 1.8);
-  sunLight.position.set(8, 14, 5);
-  sunLight.castShadow = true;
-  sunLight.shadow.mapSize.set(2048, 2048);
-  sunLight.shadow.camera.near = 0.5;
-  sunLight.shadow.camera.far = 40;
-  sunLight.shadow.camera.left = -10;
-  sunLight.shadow.camera.right = 10;
-  sunLight.shadow.camera.top = 10;
-  sunLight.shadow.camera.bottom = -10;
-  scene.add(sunLight);
-
-  const purpleFill = new THREE.DirectionalLight(0x9b5ce4, 1.0);
-  purpleFill.position.set(-8, 5, -5);
-  scene.add(purpleFill);
-
-  const goldRim = new THREE.PointLight(0xd4aa4a, 3.5, 20);
-  goldRim.position.set(0, 5, -8);
-  scene.add(goldRim);
-
-  const underGlow = new THREE.PointLight(0x7b35c4, 2.2, 8);
-  underGlow.position.set(0, 0.05, 0);
-  scene.add(underGlow);
-
-  const frontFill = new THREE.DirectionalLight(0xffffff, 0.6);
-  frontFill.position.set(10, 4, 4);
-  scene.add(frontFill);
-
-  /* ── GROUND ── */
-  const groundMat = new THREE.MeshStandardMaterial({ color: 0x080510, roughness: 0.85, metalness: 0.18 });
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(50, 50), groundMat);
-  ground.rotation.x = -Math.PI / 2;
-  ground.receiveShadow = true;
-  scene.add(ground);
-
-  const grid = new THREE.GridHelper(40, 40, 0x7b35c4, 0x1a0830);
-  grid.position.y = 0.001;
-  grid.material.opacity = 0.38;
-  grid.material.transparent = true;
-  scene.add(grid);
-
-  const glowPlane = new THREE.Mesh(
-    new THREE.PlaneGeometry(6, 13),
-    new THREE.MeshBasicMaterial({ color: 0x7b35c4, transparent: true, opacity: 0.10, depthWrite: false })
-  );
-  glowPlane.rotation.x = -Math.PI / 2;
-  glowPlane.position.y = 0.003;
-  scene.add(glowPlane);
-
-  /* ── SHARED MATERIALS ── */
-  const paintMat  = new THREE.MeshStandardMaterial({ color: 0x7b35c4, roughness: 0.09, metalness: 0.92 });
-  const goldMat   = new THREE.MeshStandardMaterial({ color: 0xb8922a, roughness: 0.14, metalness: 0.92 });
-  const blackMat  = new THREE.MeshStandardMaterial({ color: 0x060606, roughness: 0.90, metalness: 0.08 });
-  const glassMat  = new THREE.MeshStandardMaterial({ color: 0x6688bb, roughness: 0.0,  metalness: 0.06, transparent: true, opacity: 0.28, side: THREE.DoubleSide });
-  const chromeMat = new THREE.MeshStandardMaterial({ color: 0xf2f2f8, roughness: 0.03, metalness: 0.99 });
-  const rubberMat = new THREE.MeshStandardMaterial({ color: 0x0d0d0d, roughness: 0.96, metalness: 0.00 });
-  const headMat   = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 2.2, roughness: 0.05 });
-  const drlMat    = new THREE.MeshStandardMaterial({ color: 0xeef4ff, emissive: 0xeef4ff, emissiveIntensity: 1.8, roughness: 0.08 });
-  const tailLitMat= new THREE.MeshStandardMaterial({ color: 0xff2525, emissive: 0xff1010, emissiveIntensity: 2.0, roughness: 0.08 });
-  const rotorMat  = new THREE.MeshStandardMaterial({ color: 0x8a8a99, roughness: 0.20, metalness: 0.92 });
-  const intakeMat = new THREE.MeshStandardMaterial({ color: 0x050505, roughness: 0.98, metalness: 0.02 });
-
-  const bodyMeshes = [];
-
-  /* Car group */
-  const carGroup = new THREE.Group();
-  scene.add(carGroup);
-
-  /* ════════════════════════════════════════════════════════════
-     MAIN BODY — ExtrudeGeometry from Lamborghini Huracán-style
-     side profile. Profile in XY plane, extruded along Z (width).
-     Front = +X, up = +Y, width = Z direction.
-     Ground = Y=0, wheel center = Y=0.38, car bottom = Y=0.11
-     ════════════════════════════════════════════════════════════ */
-
-  const sideProfile = new THREE.Shape();
-  // Lamborghini-style profile (front at right, rear at left)
-  sideProfile.moveTo( 2.18, 0.24);
-  sideProfile.bezierCurveTo( 2.22, 0.20,  2.16, 0.12,  2.00, 0.11);
-  sideProfile.lineTo( 1.52, 0.11);
-  // front wheel arch step-down in profile
-  sideProfile.bezierCurveTo( 1.42, 0.11,  1.34, 0.10,  1.30, 0.10);
-  sideProfile.bezierCurveTo( 1.26, 0.10,  1.18, 0.11,  1.08, 0.11);
-  sideProfile.lineTo(-1.08, 0.11);
-  // rear wheel arch step-down
-  sideProfile.bezierCurveTo(-1.18, 0.11, -1.26, 0.10, -1.30, 0.10);
-  sideProfile.bezierCurveTo(-1.34, 0.10, -1.42, 0.11, -1.52, 0.11);
-  sideProfile.lineTo(-1.88, 0.11);
-  sideProfile.bezierCurveTo(-2.06, 0.13, -2.20, 0.24, -2.24, 0.40);
-  sideProfile.lineTo(-2.24, 0.64);
-  sideProfile.bezierCurveTo(-2.22, 0.72, -2.14, 0.78, -2.02, 0.80);
-  sideProfile.lineTo(-1.72, 0.82);
-  sideProfile.lineTo(-1.16, 0.86);
-  sideProfile.bezierCurveTo(-0.82, 0.88, -0.60, 0.94, -0.42, 1.02);
-  sideProfile.bezierCurveTo(-0.22, 1.11,  0.06, 1.19,  0.42, 1.19);
-  sideProfile.bezierCurveTo( 0.74, 1.19,  0.98, 1.10,  1.18, 0.98);
-  sideProfile.bezierCurveTo( 1.38, 0.82,  1.50, 0.70,  1.56, 0.62);
-  sideProfile.bezierCurveTo( 1.74, 0.48,  1.96, 0.35,  2.10, 0.30);
-  sideProfile.bezierCurveTo( 2.18, 0.27,  2.22, 0.26,  2.18, 0.24);
-
-  /* Wheel arch holes punched through the side profile */
-  const frontArchHole = new THREE.Path();
-  frontArchHole.absarc(1.30, 0.38, 0.45, 0, Math.PI * 2, true);
-  sideProfile.holes.push(frontArchHole);
-
-  const rearArchHole = new THREE.Path();
-  rearArchHole.absarc(-1.30, 0.38, 0.45, 0, Math.PI * 2, true);
-  sideProfile.holes.push(rearArchHole);
-
-  const BODY_WIDTH = 1.78;
-  const extrudeOpts = {
-    depth: BODY_WIDTH,
-    bevelEnabled: true,
-    bevelThickness: 0.055,
-    bevelSize: 0.055,
-    bevelSegments: 4,
-    steps: 1,
-  };
-
-  const bodyGeo = new THREE.ExtrudeGeometry(sideProfile, extrudeOpts);
-  bodyGeo.translate(0, 0, -(BODY_WIDTH / 2));
-
-  const bodyMesh = new THREE.Mesh(bodyGeo, paintMat.clone());
-  bodyMesh.castShadow = true;
-  bodyMesh.receiveShadow = true;
-  carGroup.add(bodyMesh);
-  bodyMeshes.push(bodyMesh);
-
-  /* ── WHEEL ARCH LINER (inner black ring visible inside arch) ── */
-  const archLinerMat = new THREE.MeshStandardMaterial({ color: 0x0a0a0a, roughness: 0.9, metalness: 0.1 });
-  for (const [ax, az] of [[1.30, 0], [-1.30, 0]]) {
-    for (const side of [-1, 1]) {
-      const liner = new THREE.Mesh(
-        new THREE.TorusGeometry(0.45, 0.03, 8, 48, Math.PI),
-        archLinerMat
-      );
-      liner.position.set(ax, 0.38, side * (BODY_WIDTH / 2));
-      liner.rotation.x = Math.PI / 2;
-      liner.rotation.z = Math.PI;
-      carGroup.add(liner);
-    }
-  }
-
-  /* ── FRONT SPLITTER & LOWER CHIN ── */
-  const splitter = new THREE.Mesh(
-    new THREE.BoxGeometry(0.55, 0.04, 1.44),
-    blackMat
-  );
-  splitter.position.set(2.08, 0.11, 0);
-  splitter.castShadow = true;
-  carGroup.add(splitter);
-
-  // Front vent strips
-  for (let i = 0; i < 3; i++) {
-    const strip = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.02, 1.28), blackMat);
-    strip.position.set(2.16, 0.12 + i * 0.034, 0);
-    carGroup.add(strip);
-  }
-
-  /* ── REAR DIFFUSER ── */
-  const diffuser = new THREE.Mesh(
-    new THREE.BoxGeometry(0.40, 0.06, 1.68),
-    intakeMat
-  );
-  diffuser.position.set(-2.16, 0.15, 0);
-  diffuser.rotation.x = 0.18;
-  diffuser.castShadow = true;
-  carGroup.add(diffuser);
-
-  for (let i = -3; i <= 3; i++) {
-    const fin = new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.08, 0.016), blackMat);
-    fin.position.set(-2.16, 0.14, i * 0.23);
-    carGroup.add(fin);
-  }
-
-  /* ── SIDE SKIRTS ── */
-  for (const sz of [0.93, -0.93]) {
-    const skirt = new THREE.Mesh(new THREE.BoxGeometry(3.45, 0.07, 0.09), intakeMat);
-    skirt.position.set(-0.08, 0.15, sz);
-    skirt.castShadow = true;
-    carGroup.add(skirt);
-  }
-
-  /* ── GOLD BODY CREASE LINE ── */
-  const crease = new THREE.Mesh(new THREE.BoxGeometry(1.95, 0.016, BODY_WIDTH + 0.01), goldMat);
-  crease.position.set(-0.05, 0.50, 0);
-  carGroup.add(crease);
-
-  /* ── SIDE AIR INTAKES (behind doors) ── */
-  for (const sz of [0.90, -0.90]) {
-    const intakeBox = new THREE.Mesh(new THREE.BoxGeometry(0.68, 0.18, 0.06), intakeMat);
-    intakeBox.position.set(-0.55, 0.40, sz);
-    intakeBox.castShadow = true;
-    carGroup.add(intakeBox);
-
-    // Intake grille bars
-    for (let g = 0; g < 3; g++) {
-      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.016, 0.065), blackMat);
-      bar.position.set(-0.55, 0.32 + g * 0.055, sz);
-      carGroup.add(bar);
-    }
-  }
-
-  /* ── REAR WING ── */
-  // Pillars
-  for (const sz of [-0.55, 0.55]) {
-    const pillar = new THREE.Mesh(new THREE.BoxGeometry(0.045, 0.30, 0.045), paintMat.clone());
-    pillar.position.set(-1.74, 0.78, sz);
-    pillar.castShadow = true;
-    carGroup.add(pillar);
-    bodyMeshes.push(pillar);
-  }
-  // Wing blade (with slight angle of attack)
-  const wingBlade = new THREE.Mesh(new THREE.BoxGeometry(0.50, 0.055, 1.35), paintMat.clone());
-  wingBlade.position.set(-1.74, 0.96, 0);
-  wingBlade.rotation.x = -0.10;
-  wingBlade.castShadow = true;
-  carGroup.add(wingBlade);
-  bodyMeshes.push(wingBlade);
-  // End plates
-  for (const sz of [-0.68, 0.68]) {
-    const ep = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.13, 0.04), paintMat.clone());
-    ep.position.set(-1.74, 0.96, sz);
-    ep.castShadow = true;
-    carGroup.add(ep);
-    bodyMeshes.push(ep);
-  }
-
-  /* ── ROOF SCOOP (engine intake) ── */
-  const scoop = new THREE.Mesh(new THREE.BoxGeometry(0.70, 0.06, 0.38), paintMat.clone());
-  scoop.position.set(-1.10, 0.90, 0);
-  scoop.castShadow = true;
-  carGroup.add(scoop);
-  bodyMeshes.push(scoop);
-  const scoopOpening = new THREE.Mesh(new THREE.BoxGeometry(0.60, 0.05, 0.28), intakeMat);
-  scoopOpening.position.set(-1.10, 0.92, 0);
-  carGroup.add(scoopOpening);
-
-  /* ── WINDOWS ── */
-  // Windshield (sloped plane: bottom ~(1.56,0.62), top ~(1.00,1.08), width=1.48)
-  {
-    const wsGeo = new THREE.PlaneGeometry(0.62, 1.50);
-    const ws = new THREE.Mesh(wsGeo, glassMat.clone());
-    ws.position.set(1.24, 0.86, 0);
-    ws.rotation.z = -0.68;
-    ws.rotation.y = Math.PI / 2;
-    carGroup.add(ws);
-  }
-  // Rear window (sloped toward rear)
-  {
-    const rwGeo = new THREE.PlaneGeometry(0.52, 1.46);
-    const rw = new THREE.Mesh(rwGeo, glassMat.clone());
-    rw.position.set(-0.88, 0.97, 0);
-    rw.rotation.z = 0.52;
-    rw.rotation.y = Math.PI / 2;
-    carGroup.add(rw);
-  }
-  // Side windows
-  for (const sz of [0.82, -0.82]) {
-    const swGeo = new THREE.PlaneGeometry(1.08, 0.30);
-    const sw = new THREE.Mesh(swGeo, glassMat.clone());
-    sw.position.set(-0.14, 0.88, sz);
-    carGroup.add(sw);
-  }
-
-  /* ── HEADLIGHTS ── */
-  // Outer housing blocks
-  for (const sz of [0.58, -0.58]) {
-    const hlHouse = new THREE.Mesh(new THREE.BoxGeometry(0.10, 0.16, 0.70), paintMat.clone());
-    hlHouse.position.set(2.17, 0.30, sz);
-    hlHouse.castShadow = true;
-    carGroup.add(hlHouse);
-    bodyMeshes.push(hlHouse);
-  }
-  // LED DRL strips (horizontal across front)
-  const drlBar = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.022, 1.64), drlMat);
-  drlBar.position.set(2.18, 0.40, 0);
-  carGroup.add(drlBar);
-  // Inner headlight cluster strips (L/R)
-  for (const sz of [0.54, -0.54]) {
-    const drlSide = new THREE.Mesh(new THREE.BoxGeometry(0.055, 0.018, 0.82), drlMat);
-    drlSide.position.set(2.18, 0.30, sz);
-    carGroup.add(drlSide);
-  }
-  // Main beam lens (half-sphere)
-  for (const sz of [0.56, -0.56]) {
-    const lens = new THREE.Mesh(
-      new THREE.SphereGeometry(0.075, 12, 8, 0, Math.PI * 2, 0, Math.PI * 0.55),
-      headMat
-    );
-    lens.position.set(2.21, 0.30, sz);
-    lens.rotation.y = Math.PI / 2;
-    carGroup.add(lens);
-  }
-
-  /* ── TAILLIGHTS ── */
-  // Full-width LED strip (Lamborghini signature)
-  const tlStrip = new THREE.Mesh(new THREE.BoxGeometry(0.052, 0.020, BODY_WIDTH - 0.10), tailLitMat);
-  tlStrip.position.set(-2.20, 0.55, 0);
-  carGroup.add(tlStrip);
-  // Main taillight blocks
-  for (const sz of [0.60, -0.60]) {
-    const tlBlock = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.18, 0.72), tailLitMat);
-    tlBlock.position.set(-2.21, 0.44, sz);
-    carGroup.add(tlBlock);
-  }
-
-  /* ── EXHAUST TIPS ── */
-  for (const sz of [0.48, -0.48]) {
-    const exh = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.048, 0.10, 14), chromeMat);
-    exh.position.set(-2.23, 0.24, sz);
-    exh.rotation.z = Math.PI / 2;
-    carGroup.add(exh);
-  }
-
-  /* ═══════════════════════════════════════
-     WHEELS — TorusGeometry tires + 5-spoke rims
-     Wheel axle = Z axis. Tire ring in XY plane.
-     ═══════════════════════════════════════ */
-  const WHEEL_POSITIONS = [
-    [ 1.30, 0.38,  0.93],
-    [ 1.30, 0.38, -0.93],
-    [-1.30, 0.38,  0.93],
-    [-1.30, 0.38, -0.93],
-  ];
-
-  WHEEL_POSITIONS.forEach(([wx, wy, wz]) => {
-    const wg = new THREE.Group();
-    wg.position.set(wx, wy, wz);
-    carGroup.add(wg);
-
-    // Tire: TorusGeometry gives proper rounded tire profile
-    // Ring radius 0.295 + tube 0.085 = outer 0.38 (touches ground at Y=0)
-    const tire = new THREE.Mesh(
-      new THREE.TorusGeometry(0.295, 0.085, 22, 56),
-      rubberMat.clone()
-    );
-    tire.castShadow = true;
-    wg.add(tire);
-
-    // Tire white lettering band (subtle)
-    const letterBand = new THREE.Mesh(
-      new THREE.TorusGeometry(0.295, 0.010, 8, 56),
-      new THREE.MeshStandardMaterial({ color: 0x888880, roughness: 0.9, metalness: 0 })
-    );
-    letterBand.position.z = Math.sign(wz) * 0.065;
-    wg.add(letterBand);
-
-    // Rim face (disc behind spokes)
-    const rimDisc = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.272, 0.272, 0.016, 36),
-      goldMat.clone()
-    );
-    rimDisc.rotation.x = Math.PI / 2;
-    rimDisc.position.z = Math.sign(wz) * 0.038;
-    rimDisc.castShadow = true;
-    wg.add(rimDisc);
-
-    // 5 spokes radiating in XY plane
-    const SPOKES = 5;
-    const spokeL = 0.220;
-    for (let i = 0; i < SPOKES; i++) {
-      const angle = (i / SPOKES) * Math.PI * 2;
-      const spoke = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.014, 0.032, spokeL, 6),
-        goldMat.clone()
-      );
-      // Default cylinder along Y. Rotate around Z so it points at angle in XY plane.
-      spoke.rotation.z = angle;
-      // Position center of spoke along its direction
-      spoke.position.set(
-        Math.sin(angle) * (spokeL / 2),
-        Math.cos(angle) * (spokeL / 2),
-        0
-      );
-      spoke.castShadow = true;
-      wg.add(spoke);
-    }
-
-    // Rim edge ring
-    const rimRing = new THREE.Mesh(
-      new THREE.TorusGeometry(0.268, 0.022, 8, 36),
-      chromeMat.clone()
-    );
-    rimRing.castShadow = true;
-    wg.add(rimRing);
-
-    // Hub center
-    const hub = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.055, 0.055, 0.055, 18),
-      chromeMat.clone()
-    );
-    hub.rotation.x = Math.PI / 2;
-    hub.castShadow = true;
-    wg.add(hub);
-
-    // Brake disc (slot-drilled pattern)
-    const disc = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.215, 0.215, 0.018, 36),
-      rotorMat.clone()
-    );
-    disc.rotation.x = Math.PI / 2;
-    disc.position.z = -Math.sign(wz) * 0.035;
-    disc.castShadow = true;
-    wg.add(disc);
-
-    // Caliper (gold, at bottom of wheel)
-    const caliper = new THREE.Mesh(
-      new THREE.BoxGeometry(0.035, 0.10, 0.10),
-      new THREE.MeshStandardMaterial({ color: 0xd4aa4a, roughness: 0.22, metalness: 0.82 })
-    );
-    caliper.position.set(0, -0.22, 0);
-    caliper.castShadow = true;
-    wg.add(caliper);
-  });
-
-  /* ── GRIME OVERLAY (slightly enlarged copy for dirty effect) ── */
-  const grimeMat = new THREE.MeshStandardMaterial({
-    color: 0x4a2c0e, roughness: 0.98, metalness: 0, transparent: true, opacity: 0,
-    depthWrite: false, side: THREE.FrontSide
-  });
-
-  // Create grime using same ExtrudeGeometry but slightly larger scale
-  const grimeBodyGeo = new THREE.ExtrudeGeometry(sideProfile, extrudeOpts);
-  grimeBodyGeo.translate(0, 0, -(BODY_WIDTH / 2));
-  const grimeMesh = new THREE.Mesh(grimeBodyGeo, grimeMat.clone());
-  grimeMesh.scale.set(1.004, 1.004, 1.006);
-  grimeMesh.renderOrder = 1;
-  carGroup.add(grimeMesh);
-  const grimeMeshes = [grimeMesh];
-
-  /* ── DIRT PARTICLES ── */
-  const dirtParticles = (() => {
-    const geo = new THREE.BufferGeometry();
-    const count = 380;
-    const pos = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      pos[i*3]   = (Math.random() - 0.5) * 4.4;
-      pos[i*3+1] = Math.random() * 1.1 + 0.05;
-      pos[i*3+2] = (Math.random() - 0.5) * 1.8;
-    }
-    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    const mat = new THREE.PointsMaterial({ color: 0x6b4515, size: 0.035, transparent: true, opacity: 0 });
-    const pts = new THREE.Points(geo, mat);
-    carGroup.add(pts);
-    return pts;
-  })();
-
-  /* ── CONDITION UPDATE ── */
-  const DIRTY_COLOR = new THREE.Color(0x3a1f06);
-  const CLEAN_COLOR = new THREE.Color(0x7b35c4);
-
-  function updateCondition(v) {
-    const t = v / 100;
-
-    const col = DIRTY_COLOR.clone().lerp(CLEAN_COLOR, t);
-    const roughness = 0.97 - 0.87 * t;
-    const metalness = 0.0  + 0.92 * t;
-    const emissiveI  = t > 0.85 ? (t - 0.85) / 0.15 * 0.18 : 0;
-
-    bodyMeshes.forEach(m => {
-      if (!m.material) return;
-      m.material.color.copy(col);
-      m.material.roughness  = roughness;
-      m.material.metalness  = metalness;
-      m.material.emissiveIntensity = emissiveI;
-      m.material.emissive = new THREE.Color(0xaa66ff);
-      m.material.needsUpdate = true;
-    });
-
-    // Grime opacity: dirty=0.72, clean=0
-    const grimeAlpha = Math.max(0, (1 - t) * 0.75);
-    grimeMeshes.forEach(m => { m.material.opacity = grimeAlpha; m.material.needsUpdate = true; });
-
-    // Dirt particles
-    dirtParticles.material.opacity = Math.max(0, (1 - t) * 0.8);
-
-    // Under glow intensity
-    underGlow.intensity = 1.0 + t * 2.0;
-    underGlow.color.set(t > 0.85 ? 0x9b5ce4 : 0x7b35c4);
-
-    // Labels
-    const stages = [
-      { max: 20,  label: 'No Maintenance',  sub: 'Vehicle needs immediate professional attention' },
-      { max: 40,  label: 'Renewal',          sub: 'Basic Wash & Detail · Starting at $80' },
-      { max: 62,  label: 'Restored',         sub: 'Deep Clean Package · Starting at $150' },
-      { max: 82,  label: 'Reclaimed',        sub: 'Full Restoration · Starting at $500' },
-      { max: 101, label: 'Ceramic Coating',  sub: 'Lifetime Paint Protection · Ask for Pricing' },
-    ];
-
-    const stage = stages.find(s => v <= s.max);
-    document.getElementById('condition-label').textContent = stage.label;
-    document.getElementById('condition-sub').textContent   = stage.sub;
-
-    // Slider gradient
-    document.getElementById('dirt-slider').style.background =
-      `linear-gradient(to right, #7b35c4 ${v}%, rgba(255,255,255,0.12) ${v}%)`;
-
-    // Dots & cards
-    const thresholds = [0, 25, 50, 75, 100];
-    const dotEls = document.querySelectorAll('.cond-dot');
-    const cardEls = document.querySelectorAll('.svc-step');
-    const labelEls = document.querySelectorAll('.slider-labels span');
-    const activeIdx = v <= 10 ? 0 : v <= 37 ? 1 : v <= 56 ? 2 : v <= 87 ? 3 : 4;
-
-    dotEls.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
-    cardEls.forEach((c, i) => c.classList.toggle('active', i === activeIdx));
-    labelEls.forEach((l, i) => l.classList.toggle('active-label', i === activeIdx));
-  }
-
-  // Slider input
-  document.getElementById('dirt-slider').addEventListener('input', function() {
-    updateCondition(+this.value);
-  });
-
-  // Init
-  updateCondition(30);
-
-  /* ── MOUSE / TOUCH ROTATION ── */
-  let isDragging = false;
-  let lastMX = 0, lastMY = 0;
-  let rotY = -0.3, rotX = 0.08;
-
-  canvas.addEventListener('mousedown',  e => { isDragging = true; lastMX = e.clientX; lastMY = e.clientY; });
-  window.addEventListener('mouseup',    () => isDragging = false);
-  window.addEventListener('mousemove',  e => {
-    if (!isDragging) return;
-    rotY += (e.clientX - lastMX) * 0.012;
-    rotX += (e.clientY - lastMY) * 0.006;
-    rotX = Math.max(-0.55, Math.min(0.6, rotX));
-    lastMX = e.clientX; lastMY = e.clientY;
-  });
-
-  canvas.addEventListener('touchstart', e => { isDragging = true; lastMX = e.touches[0].clientX; lastMY = e.touches[0].clientY; }, {passive: true});
-  canvas.addEventListener('touchend',   () => isDragging = false);
-  canvas.addEventListener('touchmove',  e => {
-    if (!isDragging) return;
-    rotY += (e.touches[0].clientX - lastMX) * 0.012;
-    rotX += (e.touches[0].clientY - lastMY) * 0.006;
-    rotX = Math.max(-0.55, Math.min(0.6, rotX));
-    lastMX = e.touches[0].clientX; lastMY = e.touches[0].clientY;
-  }, {passive: true});
-
-  /* Zoom with scroll */
-  let zoom = 9.5;
-  canvas.addEventListener('wheel', e => {
-    zoom = Math.max(5, Math.min(16, zoom + e.deltaY * 0.01));
-    e.preventDefault();
-  }, {passive: false});
-
-  /* ── ANIMATE ── */
-  let autoSpin = true;
-  canvas.addEventListener('mousedown', () => autoSpin = false);
-  canvas.addEventListener('mouseup',   () => setTimeout(() => autoSpin = true, 3000));
-  canvas.addEventListener('touchstart',() => autoSpin = false, {passive:true});
-  canvas.addEventListener('touchend',  () => setTimeout(() => autoSpin = true, 3000));
-
-  function animate() {
-    requestAnimationFrame(animate);
-
-    if (autoSpin) rotY += 0.004;
-
-    // Turntable: the car spins on its vertical axis (horizontal drag + auto-spin).
-    // The camera stays put and only its height (vertical drag) and distance (zoom) change,
-    // so rotation is applied exactly once — no doubling.
-    carGroup.rotation.y = rotY;
-
-    const camHeight = Math.max(0.7, 2.0 + rotX * 3.0);
-    camera.position.set(0, camHeight, zoom * 0.85);
-    camera.lookAt(0, 0.45, 0);
-
-    // Slight undercar glow pulse
-    underGlow.intensity = underGlow.intensity * 0.98 + (1.8 + Math.sin(Date.now() * 0.002) * 0.3) * 0.02;
-
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  /* ── LOADING SCREEN ── */
-  const loadingScreen = document.getElementById('loading-screen');
-  const loadBar = document.getElementById('load-bar');
-  const controlHints = document.getElementById('control-hints');
-
-  if (loadBar) {
-    setTimeout(() => { loadBar.style.width = '40%'; }, 100);
-    setTimeout(() => { loadBar.style.width = '75%'; }, 400);
-    setTimeout(() => { loadBar.style.width = '100%'; }, 800);
-    setTimeout(() => {
-      if (loadingScreen) {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-        }, 500);
-      }
-      if (controlHints) {
-        controlHints.style.opacity = '1';
-        setTimeout(() => { controlHints.style.opacity = '0'; }, 3000);
-      }
-    }, 1100);
-  }
-
-  /* Resize */
-  window.addEventListener('resize', () => {
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    renderer.setSize(w, h);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-  });
-})();
-
-/* ── SLIDER JUMP ── */
-function setSlider(val) {
-  const slider = document.getElementById('dirt-slider');
-  slider.value = val;
-  slider.dispatchEvent(new Event('input'));
-}
-</script>
 </body>
 </html>
