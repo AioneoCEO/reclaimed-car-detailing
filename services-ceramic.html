@@ -10,6 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Ceramic Coating",
+  "provider": {"@type":"LocalBusiness","name":"Reclaimed Detailers LLC","telephone":"+1-334-640-1831","url":"https://reclaimeddetailers.com/"},
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Autauga County, AL"},
+    {"@type":"City","name":"Prattville, AL"},
+    {"@type":"City","name":"Millbrook, AL"},
+    {"@type":"City","name":"Montgomery, AL"},
+    {"@type":"City","name":"Wetumpka, AL"},
+    {"@type":"City","name":"Pike Road, AL"},
+    {"@type":"AdministrativeArea","name":"Elmore County, AL"}
+  ],
+  "url": "https://reclaimeddetailers.com/services-ceramic.html",
+  "offers": {"@type":"Offer","priceCurrency":"USD","price":"600"}
+}
+</script>
 <style>
 .svc-hero{position:relative;background:var(--dark);color:var(--on-dark);overflow:hidden;padding:clamp(140px,18vh,196px) 0 clamp(48px,7vh,80px)}
 .svc-hero .glow{position:absolute;width:680px;height:560px;top:-160px;left:50%;transform:translateX(-30%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.28),transparent 65%);pointer-events:none}
@@ -50,7 +69,18 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
       <li><a href="membership.html">Membership</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
-      <li><a href="service-areas.html">Areas</a></li>
+      <li class="has-dd"><a href="service-areas.html">Areas <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="service-areas.html">All Service Areas<small>Where we detail</small></a>
+          <a href="detailing-prattville-al.html">Prattville<small>Home base</small></a>
+          <a href="detailing-millbrook-al.html">Millbrook<small>~8 miles away</small></a>
+          <a href="detailing-montgomery-al.html">Montgomery<small>~15 miles away</small></a>
+          <a href="detailing-wetumpka-al.html">Wetumpka<small>~17 miles away</small></a>
+          <a href="detailing-pike-road-al.html">Pike Road<small>~33 miles away</small></a>
+          <a href="detailing-elmore-county-al.html">Elmore County<small>13&ndash;25 miles away</small></a>
+        </div>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
     <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -69,9 +99,17 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
   <a class="dl" href="membership.html">Membership</a>
   <a class="dl" href="about.html">About</a>
   <a class="dl" href="showcase.html">Gallery</a>
-  <a class="dl" href="service-areas.html">Service Areas</a>
+  <div class="dgroup">Service Areas</div>
+  <a class="dl sub" href="service-areas.html">All Service Areas</a>
+  <a class="dl sub" href="detailing-prattville-al.html">Prattville</a>
+  <a class="dl sub" href="detailing-millbrook-al.html">Millbrook</a>
+  <a class="dl sub" href="detailing-montgomery-al.html">Montgomery</a>
+  <a class="dl sub" href="detailing-wetumpka-al.html">Wetumpka</a>
+  <a class="dl sub" href="detailing-pike-road-al.html">Pike Road</a>
+  <a class="dl sub" href="detailing-elmore-county-al.html">Elmore County</a>
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="blog.html">Blog</a>
   <a class="dl" href="contact.html">Contact</a>
   <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
 </aside>
@@ -137,7 +175,7 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
     <div><div class="ftitle">Navigate</div><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
       <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
-      <li><a href="showcase.html">Gallery</a></li></ul></div>
+      <li><a href="showcase.html">Gallery</a></li><li><a href="blog.html">Blog</a></li></ul></div>
     <div><div class="ftitle">Services</div><ul>
       <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
       <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
