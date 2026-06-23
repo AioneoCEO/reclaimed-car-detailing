@@ -10,6 +10,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Reclaimed Detailers LLC",
+  "alternateName": "Reclaimed Detailers",
+  "image": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
+  "logo": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
+  "url": "https://reclaimeddetailers.com/membership.html",
+  "telephone": "+1-334-640-1831",
+  "email": "reclaimeddetailers@outlook.com",
+  "priceRange": "$$",
+  "description": "Bronze, Silver, and Gold mobile detailing membership plans from Reclaimed Detailers in Autauga County, Alabama.",
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Autauga County, AL"},
+    {"@type":"City","name":"Prattville, AL"},
+    {"@type":"City","name":"Millbrook, AL"},
+    {"@type":"City","name":"Montgomery, AL"},
+    {"@type":"City","name":"Wetumpka, AL"},
+    {"@type":"City","name":"Pike Road, AL"},
+    {"@type":"AdministrativeArea","name":"Elmore County, AL"}
+  ],
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"17:30","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"17:30","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"}
+  ],
+  "sameAs": [
+    "https://instagram.com/reclaimeddetailers",
+    "https://facebook.com/reclaimeddetailers",
+    "https://tiktok.com/@reclaimeddetailers"
+  ]
+}
+</script>
 <style>
 html[data-fonts="classic"]{--font-display:'Playfair Display',Georgia,serif}
 html[data-fonts="modern"]{--font-display:'Hanken Grotesk',system-ui,sans-serif}
@@ -90,7 +126,18 @@ html[data-mood="dark"] .ctable td{color:var(--on-dark-mut);border-color:var(--on
       <li><a href="membership.html">Membership</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
-      <li><a href="service-areas.html">Areas</a></li>
+      <li class="has-dd"><a href="service-areas.html">Areas <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="service-areas.html">All Service Areas<small>Where we detail</small></a>
+          <a href="detailing-prattville-al.html">Prattville<small>Home base</small></a>
+          <a href="detailing-millbrook-al.html">Millbrook<small>~8 miles away</small></a>
+          <a href="detailing-montgomery-al.html">Montgomery<small>~15 miles away</small></a>
+          <a href="detailing-wetumpka-al.html">Wetumpka<small>~17 miles away</small></a>
+          <a href="detailing-pike-road-al.html">Pike Road<small>~33 miles away</small></a>
+          <a href="detailing-elmore-county-al.html">Elmore County<small>13&ndash;25 miles away</small></a>
+        </div>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
     <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -109,9 +156,17 @@ html[data-mood="dark"] .ctable td{color:var(--on-dark-mut);border-color:var(--on
   <a class="dl" href="membership.html">Membership</a>
   <a class="dl" href="about.html">About</a>
   <a class="dl" href="showcase.html">Gallery</a>
-  <a class="dl" href="service-areas.html">Service Areas</a>
+  <div class="dgroup">Service Areas</div>
+  <a class="dl sub" href="service-areas.html">All Service Areas</a>
+  <a class="dl sub" href="detailing-prattville-al.html">Prattville</a>
+  <a class="dl sub" href="detailing-millbrook-al.html">Millbrook</a>
+  <a class="dl sub" href="detailing-montgomery-al.html">Montgomery</a>
+  <a class="dl sub" href="detailing-wetumpka-al.html">Wetumpka</a>
+  <a class="dl sub" href="detailing-pike-road-al.html">Pike Road</a>
+  <a class="dl sub" href="detailing-elmore-county-al.html">Elmore County</a>
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="blog.html">Blog</a>
   <a class="dl" href="contact.html">Contact</a>
   <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
 </aside>
@@ -225,7 +280,7 @@ html[data-mood="dark"] .ctable td{color:var(--on-dark-mut);border-color:var(--on
     <div><div class="ftitle">Navigate</div><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
       <li><a href="membership.html">Membership</a></li><li><a href="about.html">About</a></li>
-      <li><a href="showcase.html">Gallery</a></li></ul></div>
+      <li><a href="showcase.html">Gallery</a></li><li><a href="blog.html">Blog</a></li></ul></div>
     <div><div class="ftitle">Services</div><ul>
       <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
       <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>

@@ -10,6 +10,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Reclaimed Detailers LLC",
+  "alternateName": "Reclaimed Detailers",
+  "image": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
+  "logo": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
+  "url": "https://reclaimeddetailers.com/",
+  "telephone": "+1-334-640-1831",
+  "email": "reclaimeddetailers@outlook.com",
+  "priceRange": "$$",
+  "description": "Faith-driven mobile auto detailing serving Autauga County, Alabama and surrounding communities. Paint correction, ceramic coatings, interior detailing, and maintenance memberships \u2014 we come to you.",
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Autauga County, AL"},
+    {"@type":"City","name":"Prattville, AL"},
+    {"@type":"City","name":"Millbrook, AL"},
+    {"@type":"City","name":"Montgomery, AL"},
+    {"@type":"City","name":"Wetumpka, AL"},
+    {"@type":"City","name":"Pike Road, AL"},
+    {"@type":"AdministrativeArea","name":"Elmore County, AL"}
+  ],
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"07:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"17:30","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"07:00","closes":"17:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"17:30","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"07:00","closes":"19:00"}
+  ],
+  "sameAs": [
+    "https://instagram.com/reclaimeddetailers",
+    "https://facebook.com/reclaimeddetailers",
+    "https://tiktok.com/@reclaimeddetailers"
+  ]
+}
+</script>
 <style>
 /* ============ HOMEPAGE-SPECIFIC ============ */
 
@@ -274,7 +310,18 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
       <li><a href="membership.html">Membership</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="showcase.html">Gallery</a></li>
-      <li><a href="service-areas.html">Areas</a></li>
+      <li class="has-dd"><a href="service-areas.html">Areas <span class="caret">&#9662;</span></a>
+        <div class="dd">
+          <a href="service-areas.html">All Service Areas<small>Where we detail</small></a>
+          <a href="detailing-prattville-al.html">Prattville<small>Home base</small></a>
+          <a href="detailing-millbrook-al.html">Millbrook<small>~8 miles away</small></a>
+          <a href="detailing-montgomery-al.html">Montgomery<small>~15 miles away</small></a>
+          <a href="detailing-wetumpka-al.html">Wetumpka<small>~17 miles away</small></a>
+          <a href="detailing-pike-road-al.html">Pike Road<small>~33 miles away</small></a>
+          <a href="detailing-elmore-county-al.html">Elmore County<small>13&ndash;25 miles away</small></a>
+        </div>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="book.html" class="btn btn-primary btn-sm nav-cta">Book Now</a>
     <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -297,9 +344,17 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
   <a class="dl" href="membership.html">Membership</a>
   <a class="dl" href="about.html">About</a>
   <a class="dl" href="showcase.html">Gallery</a>
-  <a class="dl" href="service-areas.html">Service Areas</a>
+  <div class="dgroup">Service Areas</div>
+  <a class="dl sub" href="service-areas.html">All Service Areas</a>
+  <a class="dl sub" href="detailing-prattville-al.html">Prattville</a>
+  <a class="dl sub" href="detailing-millbrook-al.html">Millbrook</a>
+  <a class="dl sub" href="detailing-montgomery-al.html">Montgomery</a>
+  <a class="dl sub" href="detailing-wetumpka-al.html">Wetumpka</a>
+  <a class="dl sub" href="detailing-pike-road-al.html">Pike Road</a>
+  <a class="dl sub" href="detailing-elmore-county-al.html">Elmore County</a>
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
+  <a class="dl" href="blog.html">Blog</a>
   <a class="dl" href="contact.html">Contact</a>
   <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
 </aside>
@@ -492,6 +547,25 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
   </div>
 </section>
 
+<!-- ================= WHY RECLAIMED DETAILERS ================= -->
+<section class="section bg-cream" id="why-us">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow no-rule" style="justify-content:center">Why Reclaimed Detailers</span>
+      <h2 class="sec-title">What sets us apart.</h2>
+      <p class="sec-sub">Not every mobile detailer operates the same way. Here's what you're actually getting when you book with us.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><span class="ic">&#128737;</span><h3>Licensed &amp; Insured</h3><p>Your vehicle is in accountable, professional hands — not a gamble with an unverified operator.</p></div>
+      <div class="card reveal d1"><span class="ic">&#128167;</span><h3>We Bring The Shop To You</h3><p>Our own water and power, every visit. No driving across town, no waiting room, no borrowed outlet.</p></div>
+      <div class="card reveal d2"><span class="ic">&#9201;</span><h3>One Vehicle, Full Attention</h3><p>We focus on a single vehicle for the entire appointment — no other car competing for our time.</p></div>
+      <div class="card reveal"><span class="ic">&#10013;</span><h3>Faith-Driven, Not Corporate</h3><p>Personal service from an owner-operator who treats your vehicle like it's his own.</p></div>
+      <div class="card reveal d1"><span class="ic">&#128203;</span><h3>Transparent Pricing</h3><p>Itemized quotes before we start, every time. No surprise invoices when the work is done.</p></div>
+      <div class="card reveal d2"><span class="ic">&#10004;</span><h3>100% Satisfaction Guarantee</h3><p>We don't leave until the work meets our standard. If something's not right, we fix it first.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= BEFORE / AFTER ================= -->
 <section class="section bg-alt" id="transformations">
   <div class="wrap">
@@ -668,6 +742,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         <li><a href="membership.html">Membership</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="showcase.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
     <div>
