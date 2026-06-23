@@ -186,7 +186,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;letter
 .footer ul a{font-size:.92rem;color:var(--on-dark-mut);transition:color .2s}
 .footer ul a:hover{color:var(--on-dark)}
 .footer .socials{display:flex;gap:10px;margin-top:6px}
-.footer .socials a{width:40px;height:40px;border:1px solid var(--on-dark-line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--on-dark-mut);transition:all .2s;letter-spacing:0}
+.footer .socials a{width:40px;height:40px;border:1px solid var(--on-dark-line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--on-dark-mut);transition:all .2s}
+.footer .socials a svg{width:18px;height:18px}
 .footer .socials a:hover{border-color:var(--accent-soft);color:#fff;background:rgba(var(--accent-rgb),.2)}
 .footer .fbottom{max-width:var(--maxw);margin:0 auto;padding:24px var(--pad-x);display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
 .footer .fbottom p{font-size:.8rem;color:rgba(244,240,234,.32)}
