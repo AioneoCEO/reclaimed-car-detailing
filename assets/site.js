@@ -1,5 +1,10 @@
 /* Reclaimed Detailers — shared page behaviours (nav, drawer, reveal-on-scroll). */
 (function(){
+  /* skip-to-content link for keyboard/screen-reader users */
+  var sk=document.createElement('a');
+  sk.className='skip-link';sk.href='#top';sk.textContent='Skip to content';
+  document.body.insertBefore(sk,document.body.firstChild);
+
   var nav=document.getElementById('nav');
   var top=document.getElementById('top');
   function onScroll(){
@@ -15,10 +20,23 @@
 
   var d=document.getElementById('drawer'),s=document.getElementById('scrim');
   if(d&&s){
-    var open=function(){d.classList.add('open');s.classList.add('open')};
-    var close=function(){d.classList.remove('open');s.classList.remove('open')};
+    d.setAttribute('aria-hidden','true');
     var b=document.getElementById('burger'),x=document.getElementById('drawerX');
-    if(b)b.onclick=open; if(x)x.onclick=close; s.onclick=close;
+    var open=function(){
+      d.classList.add('open');s.classList.add('open');
+      d.setAttribute('aria-hidden','false');
+      if(b)b.setAttribute('aria-expanded','true');
+      var first=d.querySelector('a,button');if(first)first.focus();
+    };
+    var close=function(){
+      d.classList.remove('open');s.classList.remove('open');
+      d.setAttribute('aria-hidden','true');
+      if(b){b.setAttribute('aria-expanded','false');b.focus();}
+    };
+    if(b){b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','drawer');b.onclick=open;}
+    if(x)x.onclick=close;
+    s.onclick=close;
+    d.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
     d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
   }
 
