@@ -11,7 +11,7 @@
   --bg-card:   #fffdf9;
   --ink:       #1c1922;   /* charcoal, faint aubergine */
   --ink-2:     #3a3645;
-  --muted:     #6c6776;
+  --muted:     #5c5866;
   --line:      rgba(28,25,34,.10);
   --line-2:    rgba(28,25,34,.16);
 
@@ -27,7 +27,7 @@
   --dark-2:    #1e1830;
   --dark-card: #241d36;
   --on-dark:   #f4f0ea;
-  --on-dark-mut: rgba(244,240,234,.58);
+  --on-dark-mut: rgba(244,240,234,.70);
   --on-dark-line: rgba(255,255,255,.10);
 
   /* the live accent (tweakable: purple / gold / green) */
@@ -181,7 +181,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;letter
 .footer img.fmark{height:64px;margin-bottom:18px}
 .footer .ftag{font-family:var(--font-display);font-style:italic;font-size:1.25rem;color:rgba(244,240,234,.7);margin-bottom:14px}
 .footer .fdesc{font-size:.92rem;color:var(--on-dark-mut);line-height:1.7;max-width:34ch;margin-bottom:20px}
-.footer .ftitle{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,240,234,.4);margin-bottom:18px;font-weight:600}
+.footer .ftitle{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,240,234,.60);margin-bottom:18px;font-weight:600}
 .footer ul{list-style:none;display:flex;flex-direction:column;gap:11px}
 .footer ul a{font-size:.92rem;color:var(--on-dark-mut);transition:color .2s}
 .footer ul a:hover{color:var(--on-dark)}
@@ -250,7 +250,8 @@ html[data-mood="dark"] .nav-brand .bw b{color:var(--on-dark)}
 .dd{position:absolute;top:calc(100% + 10px);left:-6px;min-width:268px;background:var(--bg-card);border:1px solid var(--line);
   border-radius:var(--radius);padding:8px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(-8px);
   transition:opacity .2s,transform .2s}
-.has-dd:hover .dd{opacity:1;pointer-events:auto;transform:translateY(0)}
+.has-dd:hover .dd,.has-dd:focus-within .dd{opacity:1;pointer-events:auto;transform:translateY(0)}
+.has-dd:focus-within>a .caret{transform:rotate(180deg)}
 .nav.over-hero:not(.scrolled) .dd{background:var(--dark-card);border-color:var(--on-dark-line)}
 .dd a{display:block;padding:11px 14px;border-radius:9px;text-transform:none;letter-spacing:.01em;font-size:14px;font-weight:600;color:var(--ink)}
 .dd a small{display:block;font-weight:400;font-size:11.5px;letter-spacing:.01em;color:var(--muted);margin-top:2px;text-transform:none}
@@ -400,3 +401,24 @@ body:has(.cookie-bar.show) .float-book{bottom:96px}
   .cookie-bar .wrap{flex-direction:column;align-items:stretch}
   .cookie-bar .cookie-actions{justify-content:flex-end}
 }
+
+/* ---------- accessibility ---------- */
+/* skip-to-content link — visible on keyboard focus only */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus-visible{position:fixed;top:12px;left:12px;width:auto;height:auto;
+  background:var(--purple);color:#fff;padding:11px 20px;border-radius:100px;z-index:9999;
+  font-size:14px;font-weight:600;letter-spacing:.08em;text-decoration:none;
+  box-shadow:0 4px 18px rgba(106,47,192,.5)}
+
+/* visible focus ring — applies to keyboard nav, not mouse clicks */
+a:focus-visible,button:focus-visible,summary:focus-visible,
+input:focus-visible,select:focus-visible,textarea:focus-visible,
+[tabindex]:focus-visible{
+  outline:2.5px solid var(--purple);
+  outline-offset:3px;
+  border-radius:4px;
+}
+.btn:focus-visible{border-radius:100px;outline-offset:4px}
+.nav-burger:focus-visible,.drawer-x:focus-visible{border-radius:10px}
+/* suppress focus ring on mouse interactions — let :focus-visible handle it */
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
