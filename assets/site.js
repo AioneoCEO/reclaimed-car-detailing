@@ -2,7 +2,7 @@
 (function(){
   /* skip-to-content link for keyboard/screen-reader users */
   var sk=document.createElement('a');
-  sk.className='skip-link';sk.href='#top';sk.textContent='Skip to content';
+  sk.className='skip-link';sk.href='#main-content';sk.textContent='Skip to content';
   document.body.insertBefore(sk,document.body.firstChild);
 
   /* theme toggle — moon/sun button injected before the hamburger */

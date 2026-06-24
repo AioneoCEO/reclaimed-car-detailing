@@ -21,6 +21,7 @@
   --purple-soft: #8a5fd6;
   --gold:        #a8842f;
   --gold-lite:   #cda85a;
+  --gold-text:   #7a5e1d;   /* accessible gold: 6.1:1 on cream */
 
   /* dark feature sections (deep aubergine-charcoal) */
   --dark:      #16121f;
@@ -242,6 +243,20 @@ html[data-mood="dark"] .nav.scrolled{background:rgba(22,18,31,.82)}
 html[data-mood="dark"] .nav-links a{color:rgba(244,240,234,.78)}
 html[data-mood="dark"] .nav-brand .bw b{color:var(--on-dark)}
 
+/* ---- global variable substitution: every component auto-flips in dark mode ---- */
+html[data-mood="dark"]{
+  --bg:        var(--dark);
+  --bg-2:      var(--dark-2);
+  --bg-card:   var(--dark-card);
+  --ink:       var(--on-dark);
+  --ink-2:     rgba(244,240,234,.80);
+  --muted:     var(--on-dark-mut);
+  --line:      var(--on-dark-line);
+  --line-2:    rgba(255,255,255,.16);
+  --shadow:    0 18px 50px -24px rgba(0,0,0,.60);
+  --gold-text: var(--gold-lite);
+}
+
 /* ---------- nav dropdown (Services) ---------- */
 .has-dd{position:relative}
 .has-dd>a{display:inline-flex;align-items:center;gap:6px}
@@ -353,7 +368,7 @@ body:has(.cookie-bar.show) .float-book{bottom:96px}
 .verse-card{display:flex;gap:16px;align-items:flex-start;margin-top:28px;padding:22px 24px;border-left:2px solid var(--gold);background:rgba(168,132,47,.06);border-radius:0 var(--radius) var(--radius) 0}
 .verse-card .q{font-family:var(--font-display);font-style:italic;font-size:1.18rem;line-height:1.5;color:var(--ink)}
 .dark .verse-card .q{color:var(--on-dark)}
-.verse-card cite{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:10px;font-style:normal}
+.verse-card cite{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin-top:10px;font-style:normal}
 
 /* prose (legal pages) */
 .prose{max-width:760px;margin:0 auto}
