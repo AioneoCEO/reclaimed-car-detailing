@@ -4,7 +4,7 @@
 - **Business Name:** Reclaimed Detailers LLC
 - **Tagline:** Restored. Refined. Reclaimed.
 - **Type:** Faith-driven mobile auto detailing business
-- **Location:** Autauga County, Alabama (mobile — no fixed shop address)
+- **Location:** Elmore County, Alabama — based in Tallassee (mobile — no fixed shop address, never put address on site)
 - **Phone:** (334) 640-1831
 - **Email:** reclaimeddetailers@outlook.com
 - **Instagram:** @reclaimeddetailers
@@ -18,7 +18,7 @@ The brand is built on three pillars: **Faith, Community, Excellence**. Every pie
 - Use phrases like "Restored. Refined. Reclaimed." and "Faith First. Community Always."
 - Avoid generic marketing language ("best in class," "top-tier," etc.)
 - The ✝ symbol is intentional and meaningful — keep it in footers and brand moments
-- The business serves Autauga County, AL and surrounding areas (Prattville, Millbrook, Montgomery, Wetumpka, Pike Road, Elmore County)
+- The business serves Elmore County, AL (home county) and surrounding areas (Tallassee, Wetumpka, Montgomery, Prattville, Millbrook, Pike Road)
 - The business is mobile-only with no fixed location — never add a street address to the website
 
 ## Site Structure
@@ -86,7 +86,7 @@ font-family: 'Barlow Condensed', sans-serif; /* Labels, caps, nav links */
 - Hosted on **Vercel** via GitHub integration (repo: `ReclaimedDetailersLLC/reclaimed-detailers-site`)
 
 ## Development Branch
-- Active branch: `claude/adoring-dirac-Y7pgy`
+- Active branch: `claude/detailer-local-seo-ranking-5seyb2`
 - Always commit and push to this branch
 - Do NOT push directly to `main` without user approval
 
