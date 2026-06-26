@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing Sheet — Reclaimed Auto Detailing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 11pt;
+    color: #111;
+    background: #fff;
+    padding: 28px 36px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  .header-left h1 {
+    font-size: 22pt;
+    letter-spacing: .03em;
+    line-height: 1;
+  }
+  .header-left .tagline {
+    font-size: 8.5pt;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 4px;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 9pt;
+    line-height: 1.8;
+    color: #333;
+  }
+  .header-right strong {
+    font-size: 10pt;
+    color: #111;
+  }
+
+  /* ── Section headings ── */
+  .section-title {
+    font-size: 8pt;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #7b35c4;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin: 22px 0 10px;
+  }
+
+  /* ── Service table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #555;
+    text-align: left;
+    padding: 5px 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  td {
+    padding: 7px 8px;
+    font-size: 10pt;
+    vertical-align: top;
+    border-bottom: 1px solid #eee;
+  }
+  td.price {
+    text-align: right;
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+  td.desc {
+    font-size: 9pt;
+    color: #555;
+    padding-top: 3px;
+  }
+  tr.service-row td { padding-top: 8px; }
+  tr.desc-row td { padding-top: 0; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+  tr.desc-row:last-child td { border-bottom: none; }
+
+  /* ── Add-ons grid ── */
+  .addons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .addon-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px 6px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 10pt;
+  }
+  .addon-item b {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+  }
+
+  /* ── Membership ── */
+  .plans {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .plan {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .plan.featured {
+    border: 1.5px solid #7b35c4;
+  }
+  .plan-tier {
+    font-family: Arial, sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #7b35c4;
+  }
+  .plan h3 {
+    font-size: 14pt;
+    margin: 2px 0 1px;
+  }
+  .plan-sub {
+    font-size: 8pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .plan-price {
+    font-family: Arial, sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .plan-price span {
+    font-size: 9pt;
+    font-weight: 400;
+    color: #555;
+  }
+  .plan-save {
+    font-size: 8pt;
+    color: #555;
+    margin: 3px 0 8px;
+    font-style: italic;
+  }
+  .plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .plan ul li {
+    font-size: 8.5pt;
+    color: #333;
+    padding: 2.5px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .plan ul li::before {
+    content: '✓';
+    color: #7b35c4;
+    font-size: 8pt;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .plan ul li:last-child { border-bottom: none; }
+
+  /* ── Footer note ── */
+  .footnotes {
+    margin-top: 22px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 8pt;
+    color: #666;
+    line-height: 1.7;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  /* ── Print rules ── */
+  @media print {
+    body { padding: 18px 24px; }
+    @page { margin: 0.6in; size: letter; }
+    .section-title { color: #555; }
+    .plan.featured { border-color: #555; }
+    .plan-tier, .plan ul li::before { color: #333; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <h1>Reclaimed Auto Detailing</h1>
+    <div class="tagline">Restored &middot; Refined &middot; Reclaimed &middot; ✝</div>
+  </div>
+  <div class="header-right">
+    <strong>(334) 640-1831</strong><br>
+    reclaimeddetailers@outlook.com<br>
+    @reclaimeddetailers<br>
+    reclaimeddetailers.com
+  </div>
+</div>
+
+<!-- Services -->
+<div class="section-title">Services</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:38%">Service</th>
+      <th>What's included</th>
+      <th style="width:80px" class="price">Starting at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="service-row">
+      <td><strong>Exterior Detail</strong></td>
+      <td>Hand wash, dry, tire shine &amp; dressing, glass cleaning</td>
+      <td class="price">$160</td>
+    </tr>
+    <tr class="service-row">
+      <td><strong>Interior Restoration</strong></td>
+      <td>Full vacuum, wipe-down, glass, odor treatment</td>
+      <td class="price">$180</td>
+    </tr>
+    <tr class="service-row">
+      <td><strong>The Full Detail</strong></td>
+      <td>Complete interior + exterior in one visit</td>
+      <td class="price">$330</td>
+    </tr>
+    <tr class="service-row">
+      <td><strong>Paint Correction</strong></td>
+      <td>Remove swirls, scratches &amp; oxidation — multi-stage polish</td>
+      <td class="price">$400</td>
+    </tr>
+    <tr class="service-row" style="border-bottom:none">
+      <td><strong>Covenant Coatings</strong><br><span style="font-size:8.5pt;color:#666;font-style:italic">Ceramic protection</span></td>
+      <td>Long-term ceramic coating — protects paint for years</td>
+      <td class="price" style="font-size:9pt;font-weight:400">Quote</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Add-ons -->
+<div class="section-title">Add-Ons <span style="font-weight:400;color:#888;letter-spacing:.05em;text-transform:none;font-size:8pt">&nbsp;— added to any service</span></div>
+<div class="addons-grid">
+  <div class="addon-item"><span>Clay bar treatment</span> <b>+$40</b></div>
+  <div class="addon-item"><span>Iron fallout removal</span> <b>+$45</b></div>
+  <div class="addon-item"><span>Chemical decontamination</span> <b>+$40</b></div>
+  <div class="addon-item"><span>Bug &amp; tar removal</span> <b>+$25</b></div>
+  <div class="addon-item"><span>Pet hair removal</span> <b>+$40</b></div>
+  <div class="addon-item"><span>Heavy mud &amp; dirt removal</span> <b>+$50</b></div>
+</div>
+<p style="font-size:8pt;color:#777;margin-top:6px;font-style:italic">Dirtier vehicles may require an additional assessment — Ray will advise before any work begins.</p>
+
+<!-- Membership -->
+<div class="section-title">Membership Plans <span style="font-weight:400;color:#888;letter-spacing:.05em;text-transform:none;font-size:8pt">&nbsp;— recurring monthly care, cancel anytime</span></div>
+<div class="plans">
+
+  <div class="plan">
+    <div class="plan-tier">Entry</div>
+    <h3>Bronze</h3>
+    <div class="plan-sub">The Covenant Wash</div>
+    <div class="plan-price">$159 <span>/mo</span></div>
+    <div class="plan-save">Save $171/mo vs. one-time</div>
+    <ul>
+      <li>One visit per month</li>
+      <li>Full exterior hand wash &amp; dry</li>
+      <li>Tire shine &amp; dressing</li>
+      <li>Interior wipe-down &amp; vacuum</li>
+      <li>Exterior glass cleaning</li>
+    </ul>
+  </div>
+
+  <div class="plan featured">
+    <div class="plan-tier">★ Most Popular</div>
+    <h3>Silver</h3>
+    <div class="plan-sub">The Refined Detail</div>
+    <div class="plan-price">$329 <span>/mo</span></div>
+    <div class="plan-save">~$600 in care for $329/mo</div>
+    <ul>
+      <li>Two visits per month</li>
+      <li>Full exterior detail + sealant</li>
+      <li>Complete interior detail</li>
+      <li>Priority 48-hr scheduling</li>
+      <li>Quarterly engine-bay refresh</li>
+      <li>Member-only add-on pricing</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-tier">Elite</div>
+    <h3>Gold</h3>
+    <div class="plan-sub">The Covenant Elite</div>
+    <div class="plan-price">$549 <span>/mo</span></div>
+    <div class="plan-save">~$900 in elite care for $549/mo</div>
+    <ul>
+      <li>2&ndash;3 visits per month</li>
+      <li>Full interior + exterior each visit</li>
+      <li>Quarterly ceramic maintenance</li>
+      <li>Annual paint correction</li>
+      <li>First-priority scheduling</li>
+      <li>Direct line to Ray</li>
+    </ul>
+  </div>
+
+</div>
+<p style="font-size:8pt;color:#777;margin-top:8px;font-style:italic">Membership requires a completed full detail service prior to enrollment. Member add-on pricing is private — ask Ray for your rate.</p>
+
+<!-- Footnotes -->
+<div class="footnotes">
+  <div>
+    <strong>Travel:</strong> Free within 15 miles of Tallassee. $1.25/mile (one-way) beyond that.
+    Serving Tallassee, Wetumpka, Montgomery, Prattville, Millbrook &amp; Pike Road.
+  </div>
+  <div style="text-align:right;white-space:nowrap">
+    <strong>Book or inquire:</strong><br>
+    (334) 640-1831<br>
+    reclaimeddetailers.com/book
+  </div>
+</div>
+
+</body>
+</html>
