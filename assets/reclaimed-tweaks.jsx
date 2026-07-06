@@ -1,4 +1,4 @@
-/* Reclaimed Detailers — shared Tweaks control surface.
+/* Reclaimed Auto Care — shared Tweaks control surface.
    Loads on every page so accent / type / hero / mood persist site-wide.
    Content stays static HTML; this only flips data-* attributes on <html>. */
 var _storedMood=(function(){try{return localStorage.getItem('rd_theme')}catch(e){return null}})();
