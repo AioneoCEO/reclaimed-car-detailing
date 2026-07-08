@@ -80,6 +80,13 @@ html[data-mood="dark"] .srow p,html[data-mood="dark"] .incl li{color:var(--on-da
 .srow .price{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--accent)}
 .srow .price b{font-family:var(--font-display);font-size:1.7rem;letter-spacing:0;color:var(--ink)}
 html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
+.size-pricing{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(var(--accent-rgb),.16)}
+.size-pricing li{font-size:.86rem;color:var(--muted)}
+.size-pricing li b{color:var(--ink);font-weight:600}
+html[data-mood="dark"] .size-pricing li{color:var(--on-dark-mut)}
+html[data-mood="dark"] .size-pricing li b{color:var(--on-dark)}
+.pricing-note{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:10px}
+html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
 
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:20px;position:relative}
 .step{position:relative;padding:0 18px;text-align:center}
@@ -201,7 +208,8 @@ html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
           <li>Tire cleaning &amp; dressing</li><li>Spray sealant protection</li>
           <li>Exterior glass &amp; trim</li><li>Door jambs wiped down</li>
         </ul>
-        <div class="meta"><div class="price">From <b>$160</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <div class="meta"><div class="price">From <b>$130</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$130</b></li><li>Sedan <b>$150</b></li><li>Mid-Size <b>$170</b></li><li>XL-Size <b>$195</b></li></ul>
       </div>
     </div>
 
@@ -216,7 +224,8 @@ html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
           <li>Console, vents &amp; cupholders</li><li>Door panels</li>
           <li>Interior glass</li><li>Light deodorize</li>
         </ul>
-        <div class="meta"><div class="price">From <b>$180</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <div class="meta"><div class="price">From <b>$130</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$130</b></li><li>Sedan <b>$150</b></li><li>Mid-Size <b>$170</b></li><li>XL-Size <b>$205</b></li></ul>
       </div>
     </div>
 
@@ -275,10 +284,60 @@ html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
           <li>Foam pre-soak &amp; hand wash</li><li>Wheel faces wiped down</li>
           <li>Tire dressing</li><li>Exterior glass</li>
         </ul>
-        <div class="meta"><div class="price"><b>$75</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
-        <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-top:10px">Requires a completed full exterior detail on file before booking.</p>
+        <div class="meta"><div class="price">From <b>$45</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$45</b></li><li>Sedan <b>$50</b></li><li>Mid-Size <b>$55</b></li><li>XL-Size <b>$60</b></li><li>Truck / Mini Van <b>$65</b></li></ul>
+        <p class="pricing-note">Requires a completed full exterior detail on file before booking.</p>
       </div>
     </div>
+
+    <div class="srow reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-refined" fit="cover" placeholder="The Refined Detail — elevated hand detail"></image-slot></div></div>
+      <div>
+        <div class="num">07 · Elevated</div>
+        <h2>The Refined Detail</h2>
+        <p>A step above the basics — an elevated hand detail with extra time and care given to every surface, inside and out.</p>
+        <ul class="incl">
+          <li>Full exterior hand wash</li><li>Full interior wipe-down &amp; vacuum</li>
+          <li>Wheels, tires &amp; glass</li><li>Interior conditioning touch-ups</li>
+          <li>Extra finishing attention</li><li>Final walkthrough</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$180</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$180</b></li><li>Sedan <b>$330</b></li><li>Mid-Size <b>$280</b></li><li>XL-Size <b>$330</b></li></ul>
+      </div>
+    </div>
+
+    <div class="srow flip reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-reclaimed" fit="cover" placeholder="The Reclaimed — flagship full transformation"></image-slot></div></div>
+      <div>
+        <div class="num">08 · Flagship</div>
+        <h2>The Reclaimed</h2>
+        <p>Our top-tier package — the complete Reclaimed experience, elevated. The most thorough transformation we offer, inside and out.</p>
+        <ul class="incl">
+          <li>Full interior + exterior detail</li><li>Paint enhancement</li>
+          <li>Premium interior conditioning</li><li>Wheels, tires &amp; glass</li>
+          <li>Sealant protection</li><li>Final quality inspection</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$480</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$480</b></li><li>Sedan <b>$580</b></li><li>Mid-Size <b>$680</b></li><li>XL-Size <b>$780</b></li></ul>
+      </div>
+    </div>
+
+    <div class="srow reveal">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-maintdetail" fit="cover" placeholder="Maintenance detail — interior and exterior upkeep"></image-slot></div></div>
+      <div>
+        <div class="num">09 · Upkeep</div>
+        <h2>Maintenance Detail</h2>
+        <p>The maintenance wash plus an interior refresh — a combined upkeep visit that keeps the whole vehicle feeling cared for between full details.</p>
+        <ul class="incl">
+          <li>Exterior maintenance wash</li><li>Interior vacuum &amp; wipe-down</li>
+          <li>Interior glass</li><li>Light deodorize</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$135</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Sedan <b>$135</b></li><li>Midsize SUV <b>$185</b></li><li>Large SUV <b>$235</b></li><li>Truck / Mini Van <b>$285</b></li></ul>
+      </div>
+    </div>
+
+    <p class="pricing-note" style="text-align:center;margin-top:44px">Pricing varies by vehicle size and condition — final pricing confirmed at booking.</p>
 
     <div class="addons reveal">
       <div class="addons-head"><span class="eyebrow no-rule">À la carte</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service above</span></div>
@@ -286,10 +345,12 @@ html[data-mood="dark"] .srow .price b{color:var(--on-dark)}
         <div class="addon"><span>Clay bar treatment</span><b>+$40</b></div>
         <div class="addon"><span>Iron fallout removal</span><b>+$45</b></div>
         <div class="addon"><span>Chemical decontamination</span><b>+$40</b></div>
-        <div class="addon"><span>Bug &amp; tar removal</span><b>+$25</b></div>
+        <div class="addon"><span>Bug &amp; tar removal</span><b>+$70</b></div>
         <div class="addon"><span>Pet hair removal</span><b>+$40</b></div>
-        <div class="addon"><span>Heavy mud &amp; dirt removal</span><b>+$50</b></div>
+        <div class="addon"><span>Heavy mud &amp; dirt removal</span><b>+$70</b></div>
+        <div class="addon"><span>Headliner cleaning</span><b>+$150</b></div>
       </div>
+      <p class="pricing-note">Pricing varies by vehicle condition — final pricing confirmed at booking.</p>
     </div>
 
   </div>
