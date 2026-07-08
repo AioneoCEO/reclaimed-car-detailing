@@ -28,7 +28,6 @@ The brand is built on three pillars: **Faith, Community, Excellence**. Every pie
 | `index.html` | Main homepage — services, gallery, memberships, contact |
 | `about.html` | Brand story, owner background, faith/community mission |
 | `showcase.html` | 3D car viewer + before/after gallery |
-| `membership.html` | Membership/subscription plans |
 | `privacy-policy.html` | GDPR/CCPA compliant privacy policy |
 | `terms.html` | Terms & Conditions — Alabama law |
 | `sitemap.xml` | SEO sitemap (add when domain is confirmed) |
@@ -110,7 +109,7 @@ font-family: 'Barlow Condensed', sans-serif; /* Labels, caps, nav links */
 - Paint correction
 - Ceramic coating ("Covenant Coatings")
 - Interior detailing
-- Maintenance memberships (Bronze, Silver, Gold tiers)
+- Maintenance wash ($75 flat)
 - Mobile — comes to the customer
 
 ## Pending / TODO

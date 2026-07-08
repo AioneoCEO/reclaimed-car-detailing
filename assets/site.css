@@ -458,6 +458,8 @@ html[data-mood="dark"] .prose p,html[data-mood="dark"] .prose li{color:var(--on-
   background:rgba(255,255,255,.025);
   border-bottom:1px solid var(--on-dark-line);
   padding:clamp(22px,3vh,36px) 0;
+  margin-top:-24px;
+  position:relative;
 }
 .footer-form-layout{
   display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
