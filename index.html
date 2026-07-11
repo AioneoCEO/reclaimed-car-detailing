@@ -171,6 +171,9 @@ html[data-hero="minimal"] .hero-scrim{background:linear-gradient(180deg,rgba(15,
 html[data-mood="dark"] .svc .price b{color:var(--on-dark)}
 .svc-edge{position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),transparent);opacity:0;transition:opacity calc(.3s*var(--motion))}
 .svc:hover .svc-edge{opacity:1}
+.svc .for-tag{display:inline-block;font-size:.76rem;line-height:1.4;color:var(--accent-deep,var(--accent));background:rgba(var(--accent-rgb),.09);border:1px solid rgba(var(--accent-rgb),.22);border-radius:100px;padding:5px 13px;margin-bottom:14px}
+html[data-mood="dark"] .svc .for-tag{color:var(--accent-soft,var(--on-dark))}
+.svc .card-ctas{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px}
 
 /* ---- TIMELINE ---- */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:20px;position:relative}
@@ -499,58 +502,84 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
     <div class="svc-grid">
       <article class="svc gloss reveal"><span class="svc-edge"></span>
         <div class="num">01</div><h3>Exterior Detail</h3>
+        <p class="for-tag"><b>Best for:</b> a daily driver whose outside just needs to look sharp again</p>
         <p>Foam bath, hand wash, wheels, tires, and glass with a protective spray sealant — a clean, refreshed exterior. Build it up with clay bar, bug &amp; tar, or fallout decon.</p>
         <div class="price">From <b>$130</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="card-ctas">
+          <a href="services.html#exterior-detail" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
       <article class="svc gloss reveal d1"><span class="svc-edge"></span>
         <div class="num">02</div><h3>Interior Restoration</h3>
+        <p class="for-tag"><b>Best for:</b> a cabin that needs a deep refresh — pet hair, spills, everyday wear</p>
         <p>Full vacuum, surface wipe-down, interior glass, and a fresh-smelling cabin. Add pet hair removal or heavy mud &amp; dirt extraction when you need it.</p>
         <div class="price">From <b>$130</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="card-ctas">
+          <a href="services.html#interior-restoration" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
       <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">03</div><h3>Paint Correction</h3>
-        <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth and clarity.</p>
-        <div class="price">From <b>$400</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="num">03</div><h3>The Refined Detail</h3>
+        <p class="for-tag"><b>Best for:</b> a vehicle already in decent shape that's due for a thorough refresh</p>
+        <p>Interior and exterior together, with extra time and care given to every surface — a step above the basics.</p>
+        <div class="price">From <b>$180</b></div>
+        <div class="card-ctas">
+          <a href="services.html#refined-detail" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
       <article class="svc gloss reveal"><span class="svc-edge"></span>
-        <div class="num">04</div><h3>Covenant Coatings</h3>
-        <p>Professional-grade ceramic protection lasting years — hydrophobic, UV-resistant, and self-cleaning. Our flagship protection program.</p>
-        <div class="price">Bespoke quote</div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="num">04</div><h3>The Reclaimed</h3>
+        <p class="for-tag"><b>Best for:</b> a true transformation — a neglected vehicle, or the full experience</p>
+        <p>Our top-tier package — the complete interior and exterior transformation, with paint enhancement and premium care throughout.</p>
+        <div class="price">From <b>$480</b></div>
+        <div class="card-ctas">
+          <a href="services.html#reclaimed" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
       <article class="svc gloss reveal d1"><span class="svc-edge"></span>
         <div class="num">05</div><h3>Maintenance Wash</h3>
+        <p class="for-tag"><b>Best for:</b> existing customers keeping a coated exterior fresh between full details</p>
         <p>A quick, budget-friendly exterior wash that preserves your coating investment and keeps the vehicle showroom-ready between full details.</p>
         <div class="price">From <b>$45</b></div>
         <p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-top:6px">Requires a full exterior detail on file first.</p>
-        <a href="services.html#maintenance-wash" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="card-ctas">
+          <a href="services.html#maintenance-wash" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
       <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">06</div><h3>Full Detail</h3>
-        <p>The complete Reclaimed experience — interior and exterior in one visit. Your vehicle transformed, inside and out, in a single appointment.</p>
-        <div class="price">From <b>$330</b></div>
-        <a href="#book" class="link-arrow">Book now <span class="ar">&rarr;</span></a>
-      </article>
-      <article class="svc gloss reveal"><span class="svc-edge"></span>
-        <div class="num">07</div><h3>The Refined Detail</h3>
-        <p>A step above the basics — an elevated hand detail with extra time and care given to every surface, inside and out.</p>
-        <div class="price">From <b>$180</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
-      </article>
-      <article class="svc gloss reveal d1"><span class="svc-edge"></span>
-        <div class="num">08</div><h3>The Reclaimed</h3>
-        <p>Our top-tier package — the complete Reclaimed experience, elevated. The most thorough transformation we offer, inside and out.</p>
-        <div class="price">From <b>$480</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
-      </article>
-      <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">09</div><h3>Maintenance Detail</h3>
+        <div class="num">06</div><h3>Maintenance Detail</h3>
+        <p class="for-tag"><b>Best for:</b> existing customers who want interior + exterior upkeep in one visit</p>
         <p>The maintenance wash plus an interior refresh — a combined upkeep visit that keeps the whole vehicle feeling cared for between full details.</p>
         <div class="price">From <b>$135</b></div>
-        <a href="services.html" class="link-arrow">Learn more <span class="ar">&rarr;</span></a>
+        <div class="card-ctas">
+          <a href="services.html#maintenance-detail" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
+      </article>
+      <article class="svc gloss reveal"><span class="svc-edge"></span>
+        <div class="num">07</div><h3>Paint Correction</h3>
+        <p class="for-tag"><b>Best for:</b> swirls, light scratches, or oxidation dulling the paint's finish</p>
+        <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth and clarity.</p>
+        <div class="price">From <b>$400</b></div>
+        <div class="card-ctas">
+          <a href="services.html#paint-correction" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
+      </article>
+      <article class="svc gloss reveal d1"><span class="svc-edge"></span>
+        <div class="num">08</div><h3>Covenant Coatings</h3>
+        <p class="for-tag"><b>Best for:</b> long-term protection on a vehicle you plan to keep</p>
+        <p>Professional-grade ceramic protection lasting years — hydrophobic, UV-resistant, and self-cleaning. Our flagship protection program.</p>
+        <div class="price">Bespoke quote</div>
+        <div class="card-ctas">
+          <a href="services.html#covenant-coatings" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
+          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
+        </div>
       </article>
     </div>
     <div class="addons reveal">

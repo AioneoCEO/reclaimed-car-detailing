@@ -72,6 +72,9 @@ html[data-mood="dark"] .srow p,html[data-mood="dark"] .incl li{color:var(--on-da
 .srow .num{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px}
 .srow h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 .srow p{color:var(--muted);font-size:1.02rem;line-height:1.75;margin-top:16px}
+.srow .for-tag{display:inline-block;font-size:.82rem;line-height:1.5;color:var(--accent-deep,var(--accent));background:rgba(var(--accent-rgb),.09);border:1px solid rgba(var(--accent-rgb),.22);border-radius:100px;padding:7px 16px;margin-top:18px}
+.srow .for-tag b{font-weight:700}
+html[data-mood="dark"] .srow .for-tag{color:var(--accent-soft,var(--on-dark))}
 .incl{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin:24px 0 26px}
 .incl li{font-size:.94rem;display:flex;gap:10px;align-items:flex-start;color:var(--ink-2)}
 .incl li::before{content:"";width:16px;height:16px;flex-shrink:0;margin-top:3px;border-radius:50%;background:rgba(var(--accent-rgb),.14);
@@ -197,11 +200,12 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
 <section class="section bg-cream">
   <div class="wrap">
 
-    <div class="srow reveal">
+    <div class="srow reveal" id="exterior-detail">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-ext" fit="cover" placeholder="Exterior detail — clean panel, beading water"></image-slot></div></div>
       <div>
         <div class="num">01 · Exterior</div>
         <h2>Exterior Detail</h2>
+        <p class="for-tag"><b>Best for:</b> a daily driver whose outside just needs to look sharp again</p>
         <p>A clean, refreshed exterior — the honest basics done well. Add clay bar, bug &amp; tar, or fallout decontamination when the paint needs more.</p>
         <ul class="incl">
           <li>Foam pre-soak &amp; hand wash</li><li>Wheel faces &amp; barrels</li>
@@ -213,11 +217,12 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
-    <div class="srow flip reveal">
+    <div class="srow flip reveal" id="interior-restoration">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-int" fit="cover" placeholder="Interior — conditioned leather, restored cabin"></image-slot></div></div>
       <div>
         <div class="num">02 · Interior</div>
         <h2>Interior Restoration</h2>
+        <p class="for-tag"><b>Best for:</b> a cabin that needs a deep refresh — pet hair, spills, everyday wear</p>
         <p>A fresh, clean cabin — vacuumed, wiped down, and deodorized. Add pet hair removal or heavy mud &amp; dirt extraction as needed.</p>
         <ul class="incl">
           <li>Full vacuum &amp; air purge</li><li>Surface wipe-down</li>
@@ -229,56 +234,46 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
-    <div class="srow reveal">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-pc" fit="cover" placeholder="Paint correction — swirl-free reflection"></image-slot></div></div>
+    <div class="srow reveal" id="refined-detail">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-refined" fit="cover" placeholder="The Refined Detail — elevated hand detail"></image-slot></div></div>
       <div>
-        <div class="num">03 · Correction</div>
-        <h2>Paint Correction</h2>
-        <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth, gloss, and clarity.</p>
+        <div class="num">03 · Elevated</div>
+        <h2>The Refined Detail</h2>
+        <p class="for-tag"><b>Best for:</b> a vehicle already in decent shape that's due for a thorough, unhurried refresh</p>
+        <p>Interior and exterior together, with extra time and care given to every surface. A step above the basics — more attention, more finishing touches.</p>
         <ul class="incl">
-          <li>Paint depth assessment</li><li>Single or multi-stage cut</li>
-          <li>Swirl &amp; haze removal</li><li>Oxidation correction</li>
-          <li>Gloss refinement</li><li>Pre-coating prep</li>
+          <li>Full exterior hand wash</li><li>Full interior wipe-down &amp; vacuum</li>
+          <li>Wheels, tires &amp; glass</li><li>Interior conditioning touch-ups</li>
+          <li>Extra finishing attention</li><li>Final walkthrough</li>
         </ul>
-        <div class="meta"><div class="price">From <b>$400</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <div class="meta"><div class="price">From <b>$180</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$180</b></li><li>Sedan <b>$330</b></li><li>Mid-Size <b>$280</b></li><li>XL-Size <b>$330</b></li></ul>
       </div>
     </div>
 
-    <div class="srow flip reveal">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-cc" fit="cover" placeholder="Ceramic coating — water sheeting off paint"></image-slot></div></div>
+    <div class="srow flip reveal" id="reclaimed">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-reclaimed" fit="cover" placeholder="The Reclaimed — flagship full transformation"></image-slot></div></div>
       <div>
-        <div class="num">04 · Protection</div>
-        <h2>Covenant Coatings</h2>
-        <p>Our flagship ceramic protection program. A professional-grade coating bonds to your paint — hydrophobic, UV-resistant, and self-cleaning — protecting your finish for years.</p>
-        <ul class="incl">
-          <li>Decontamination &amp; prep</li><li>Correction as needed</li>
-          <li>Multi-year ceramic coat</li><li>Hydrophobic finish</li>
-          <li>UV &amp; chemical resistance</li><li>Maintenance guidance</li>
-        </ul>
-        <div class="meta"><div class="price">Bespoke quote</div><a href="book.html" class="btn btn-primary btn-sm">Request Quote <span class="ar">&rarr;</span></a></div>
-      </div>
-    </div>
-
-    <div class="srow reveal">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-full" fit="cover" placeholder="Full detail — inside and out, finished"></image-slot></div></div>
-      <div>
-        <div class="num">05 · Complete</div>
-        <h2>The Full Detail</h2>
-        <p>The complete Reclaimed experience — interior and exterior combined into one visit. Your vehicle transformed, inside and out, in a single appointment.</p>
+        <div class="num">04 · Flagship</div>
+        <h2>The Reclaimed</h2>
+        <p class="for-tag"><b>Best for:</b> a true transformation — a neglected vehicle, or an owner who wants the full experience</p>
+        <p>Our top-tier package — the complete interior and exterior transformation, in a single visit, with paint enhancement and premium care throughout. The most thorough work we do.</p>
         <ul class="incl">
           <li>Everything exterior</li><li>Everything interior</li>
-          <li>Sealant protection</li><li>Wheels &amp; tires dressed</li>
-          <li>All glass</li><li>Final inspection</li>
+          <li>Paint enhancement</li><li>Premium interior conditioning</li>
+          <li>Sealant protection</li><li>Final quality inspection</li>
         </ul>
-        <div class="meta"><div class="price">From <b>$330</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <div class="meta"><div class="price">From <b>$480</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Coupe <b>$480</b></li><li>Sedan <b>$580</b></li><li>Mid-Size <b>$680</b></li><li>XL-Size <b>$780</b></li></ul>
       </div>
     </div>
 
-    <div class="srow flip reveal" id="maintenance-wash">
+    <div class="srow reveal" id="maintenance-wash">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-maint" fit="cover" placeholder="Maintenance wash — quick exterior refresh"></image-slot></div></div>
       <div>
-        <div class="num">06 · Upkeep</div>
+        <div class="num">05 · Upkeep</div>
         <h2>Maintenance Wash</h2>
+        <p class="for-tag"><b>Best for:</b> existing customers keeping a coated exterior fresh between full details</p>
         <p>A quick, budget-friendly exterior wash that preserves your coating investment and keeps the vehicle showroom-ready between full details.</p>
         <ul class="incl">
           <li>Foam pre-soak &amp; hand wash</li><li>Wheel faces wiped down</li>
@@ -290,43 +285,12 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
-    <div class="srow reveal">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-refined" fit="cover" placeholder="The Refined Detail — elevated hand detail"></image-slot></div></div>
-      <div>
-        <div class="num">07 · Elevated</div>
-        <h2>The Refined Detail</h2>
-        <p>A step above the basics — an elevated hand detail with extra time and care given to every surface, inside and out.</p>
-        <ul class="incl">
-          <li>Full exterior hand wash</li><li>Full interior wipe-down &amp; vacuum</li>
-          <li>Wheels, tires &amp; glass</li><li>Interior conditioning touch-ups</li>
-          <li>Extra finishing attention</li><li>Final walkthrough</li>
-        </ul>
-        <div class="meta"><div class="price">From <b>$180</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
-        <ul class="size-pricing"><li>Coupe <b>$180</b></li><li>Sedan <b>$330</b></li><li>Mid-Size <b>$280</b></li><li>XL-Size <b>$330</b></li></ul>
-      </div>
-    </div>
-
-    <div class="srow flip reveal">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-reclaimed" fit="cover" placeholder="The Reclaimed — flagship full transformation"></image-slot></div></div>
-      <div>
-        <div class="num">08 · Flagship</div>
-        <h2>The Reclaimed</h2>
-        <p>Our top-tier package — the complete Reclaimed experience, elevated. The most thorough transformation we offer, inside and out.</p>
-        <ul class="incl">
-          <li>Full interior + exterior detail</li><li>Paint enhancement</li>
-          <li>Premium interior conditioning</li><li>Wheels, tires &amp; glass</li>
-          <li>Sealant protection</li><li>Final quality inspection</li>
-        </ul>
-        <div class="meta"><div class="price">From <b>$480</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
-        <ul class="size-pricing"><li>Coupe <b>$480</b></li><li>Sedan <b>$580</b></li><li>Mid-Size <b>$680</b></li><li>XL-Size <b>$780</b></li></ul>
-      </div>
-    </div>
-
-    <div class="srow reveal">
+    <div class="srow flip reveal" id="maintenance-detail">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-maintdetail" fit="cover" placeholder="Maintenance detail — interior and exterior upkeep"></image-slot></div></div>
       <div>
-        <div class="num">09 · Upkeep</div>
+        <div class="num">06 · Upkeep</div>
         <h2>Maintenance Detail</h2>
+        <p class="for-tag"><b>Best for:</b> existing customers who want interior + exterior upkeep in one recurring visit</p>
         <p>The maintenance wash plus an interior refresh — a combined upkeep visit that keeps the whole vehicle feeling cared for between full details.</p>
         <ul class="incl">
           <li>Exterior maintenance wash</li><li>Interior vacuum &amp; wipe-down</li>
@@ -334,6 +298,38 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
         </ul>
         <div class="meta"><div class="price">From <b>$135</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
         <ul class="size-pricing"><li>Sedan <b>$135</b></li><li>Midsize SUV <b>$185</b></li><li>Large SUV <b>$235</b></li><li>Truck / Mini Van <b>$285</b></li></ul>
+      </div>
+    </div>
+
+    <div class="srow reveal" id="paint-correction">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-pc" fit="cover" placeholder="Paint correction — swirl-free reflection"></image-slot></div></div>
+      <div>
+        <div class="num">07 · Correction</div>
+        <h2>Paint Correction</h2>
+        <p class="for-tag"><b>Best for:</b> swirls, light scratches, or oxidation dulling the paint's finish</p>
+        <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth, gloss, and clarity.</p>
+        <ul class="incl">
+          <li>Paint depth assessment</li><li>Single or multi-stage cut</li>
+          <li>Swirl &amp; haze removal</li><li>Oxidation correction</li>
+          <li>Gloss refinement</li><li>Pre-coating prep</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$400</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
+      </div>
+    </div>
+
+    <div class="srow flip reveal" id="covenant-coatings">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-cc" fit="cover" placeholder="Ceramic coating — water sheeting off paint"></image-slot></div></div>
+      <div>
+        <div class="num">08 · Protection</div>
+        <h2>Covenant Coatings</h2>
+        <p class="for-tag"><b>Best for:</b> long-term protection on a vehicle you plan to keep</p>
+        <p>Our flagship ceramic protection program. A professional-grade coating bonds to your paint — hydrophobic, UV-resistant, and self-cleaning — protecting your finish for years.</p>
+        <ul class="incl">
+          <li>Decontamination &amp; prep</li><li>Correction as needed</li>
+          <li>Multi-year ceramic coat</li><li>Hydrophobic finish</li>
+          <li>UV &amp; chemical resistance</li><li>Maintenance guidance</li>
+        </ul>
+        <div class="meta"><div class="price">Bespoke quote</div><a href="book.html" class="btn btn-primary btn-sm">Request Quote <span class="ar">&rarr;</span></a></div>
       </div>
     </div>
 

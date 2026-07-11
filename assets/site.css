@@ -137,7 +137,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.05;letter
 /* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .35s,box-shadow .35s,border-color .35s}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad-x);height:86px;display:flex;align-items:center;gap:30px}
-.nav.scrolled{background:rgba(245,241,234,.82);backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 1px 0 var(--line)}
+.nav.scrolled{background:rgba(245,241,234,.97);backdrop-filter:blur(18px) saturate(1.1);box-shadow:0 1px 0 var(--line)}
 .nav-brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .nav-brand img{height:42px;width:auto}
 .nav-brand .bw{display:flex;flex-direction:column;line-height:1}
@@ -239,7 +239,7 @@ html[data-mood="dark"] .bg-cream .card p,html[data-mood="dark"] .bg-alt .card p,
 html[data-mood="dark"] .bg-cream .faq-a,html[data-mood="dark"] .bg-alt .faq-a,
 html[data-mood="dark"] .bg-cream .stat small,html[data-mood="dark"] .bg-alt .stat small{color:var(--on-dark-mut)}
 html[data-mood="dark"] .bg-cream .btn-ghost,html[data-mood="dark"] .bg-alt .btn-ghost{color:var(--on-dark);border-color:var(--on-dark-line)}
-html[data-mood="dark"] .nav.scrolled{background:rgba(22,18,31,.82)}
+html[data-mood="dark"] .nav.scrolled{background:rgba(22,18,31,.97)}
 html[data-mood="dark"] .nav-links a{color:rgba(244,240,234,.78)}
 html[data-mood="dark"] .nav-brand .bw b{color:var(--on-dark)}
 
