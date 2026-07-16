@@ -31,7 +31,6 @@
     {"@type":"City","name":"Montgomery, AL"},
     {"@type":"City","name":"Wetumpka, AL"},
     {"@type":"City","name":"Pike Road, AL"},
-    {"@type":"AdministrativeArea","name":"Elmore County, AL"},
     {"@type":"City","name":"Tallassee, AL"}
   ],
   "openingHoursSpecification": [
@@ -64,7 +63,7 @@ html[data-mood="dark"] .bg-cream,html[data-mood="dark"] .bg-alt{color:var(--on-d
 html[data-mood="dark"] .bg-cream h1,html[data-mood="dark"] .bg-cream h2,html[data-mood="dark"] .bg-cream h3,
 html[data-mood="dark"] .bg-alt h1,html[data-mood="dark"] .bg-alt h2,html[data-mood="dark"] .bg-alt h3{color:var(--on-dark)}
 html[data-mood="dark"] .bg-cream .sec-sub,html[data-mood="dark"] .bg-alt .sec-sub{color:var(--on-dark-mut)}
-html[data-mood="dark"] .card,html[data-mood="dark"] .svc,html[data-mood="dark"] .step,html[data-mood="dark"] .faq,html[data-mood="dark"] .plan{background:var(--dark-card);border-color:var(--on-dark-line);color:var(--on-dark)}
+html[data-mood="dark"] .card,html[data-mood="dark"] .svc,html[data-mood="dark"] .faq,html[data-mood="dark"] .plan{background:var(--dark-card);border-color:var(--on-dark-line);color:var(--on-dark)}
 html[data-mood="dark"] .svc p,html[data-mood="dark"] .plan-feats li,html[data-mood="dark"] .faq-a,html[data-mood="dark"] .tw p{color:var(--on-dark-mut)}
 html[data-mood="dark"] .btn-ghost{color:var(--on-dark);border-color:var(--on-dark-line)}
 html[data-mood="dark"] .nav.scrolled{background:rgba(22,18,31,.82)}
@@ -139,20 +138,11 @@ html[data-hero="minimal"] .hero-scrim{background:linear-gradient(180deg,rgba(15,
 .stage-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:30px;margin-top:18px}
 .stage{position:relative;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;
   background:radial-gradient(ellipse at 50% 120%,rgba(var(--accent-rgb),.22),transparent 60%),linear-gradient(180deg,#221c34,#14101f);
-  border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 50px 90px -50px rgba(0,0,0,.7);
-  cursor:grab;user-select:none;touch-action:pan-y}
-.stage.grabbing{cursor:grabbing}
+  border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 50px 90px -50px rgba(0,0,0,.7)}
 .stage-floor{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.5));pointer-events:none}
 .stage-view{position:absolute;inset:0;opacity:0;transition:opacity calc(.6s*var(--motion)) ease;display:flex;align-items:center;justify-content:center}
 .stage-view.active{opacity:1}
 .stage-view image-slot{width:100%;height:100%}
-.spin-inner{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
-.stage-ring{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;display:flex;align-items:center;gap:10px;
-  background:rgba(15,12,22,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:7px 16px;color:rgba(255,255,255,.7);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
-.stage-ring .deg{color:var(--gold-lite);min-width:46px;text-align:center}
-.stage-hint{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:5;
-  background:rgba(15,12,22,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:7px 16px;
-  color:rgba(255,255,255,.85);font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;pointer-events:none;display:flex;align-items:center;gap:8px}
 .view-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .view-tab{display:flex;flex-direction:column;align-items:center;gap:4px;padding:13px 22px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:rgba(244,240,234,.62);transition:all calc(.25s*var(--motion))}
 .view-tab b{font-family:var(--font-sans);font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--on-dark)}
@@ -339,7 +329,6 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
           <a href="detailing-montgomery-al.html">Montgomery<small>~38 miles away</small></a>
           <a href="detailing-wetumpka-al.html">Wetumpka<small>~22 miles away</small></a>
           <a href="detailing-pike-road-al.html">Pike Road<small>~38 miles away</small></a>
-          <a href="detailing-elmore-county-al.html">Elmore County<small>Home county</small></a>
           <a href="detailing-tallassee-al.html">Tallassee<small>Home base</small></a>
         </div>
       </li>
@@ -373,7 +362,6 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
   <a class="dl sub" href="detailing-montgomery-al.html">Montgomery</a>
   <a class="dl sub" href="detailing-wetumpka-al.html">Wetumpka</a>
   <a class="dl sub" href="detailing-pike-road-al.html">Pike Road</a>
-  <a class="dl sub" href="detailing-elmore-county-al.html">Elmore County</a>
   <a class="dl sub" href="detailing-tallassee-al.html">Tallassee</a>
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
@@ -454,16 +442,14 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
     <div class="sec-head center reveal">
       <span class="eyebrow no-rule" style="justify-content:center">The Reclaim</span>
       <h2 class="sec-title">Your vehicle can be reclaimed.</h2>
-      <p class="sec-sub">Drag to inspect the finish from every angle — then step through each area we restore. Every surface, considered.</p>
+      <p class="sec-sub">Step through each area we restore. Every surface, considered.</p>
     </div>
 
     <div class="stage-wrap reveal d1">
-      <div class="stage" id="stage" aria-label="Interactive vehicle showcase — drag to rotate">
-        <!-- EXTERIOR (rotatable) -->
+      <div class="stage" id="stage" aria-label="Vehicle showcase">
+        <!-- EXTERIOR -->
         <div class="stage-view active" data-view="exterior">
-          <div class="spin-inner" id="spinInner">
-            <image-slot id="show-exterior" fit="cover" src="images/exterior-detail-yukon.jpg" placeholder="Drop the full exterior — 3/4 front of the detailed vehicle (for a true 360° spin, send a 24–36 frame sequence)"></image-slot>
-          </div>
+          <image-slot id="show-exterior" fit="cover" src="images/exterior-detail-yukon.jpg" placeholder="Drop the full exterior — 3/4 front of the detailed vehicle"></image-slot>
         </div>
         <!-- WHEEL -->
         <div class="stage-view" data-view="wheel">
@@ -479,12 +465,10 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
 
         <div class="stage-floor"></div>
-        <div class="stage-hint" id="stageHint">&#8644;&nbsp; Drag to rotate</div>
-        <div class="stage-ring"><span>Angle</span><span class="deg" id="degOut">0&deg;</span></div>
       </div>
 
       <div class="view-tabs">
-        <button class="view-tab active" data-view="exterior"><b>Exterior</b><small>360° finish</small></button>
+        <button class="view-tab active" data-view="exterior"><b>Exterior</b><small>Full detail</small></button>
         <button class="view-tab" data-view="wheel"><b>Wheels</b><small>Faces &amp; barrels</small></button>
         <button class="view-tab" data-view="engine"><b>Engine Bay</b><small>Dressed &amp; clean</small></button>
         <button class="view-tab" data-view="interior"><b>Interior</b><small>Restored cabin</small></button>
@@ -626,12 +610,12 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
       <p class="sec-sub">Not every mobile detailer operates the same way. Here's what you're actually getting when you book with us.</p>
     </div>
     <div class="grid-3">
-      <div class="card reveal"><span class="ic">&#128737;</span><h3>Licensed &amp; Insured</h3><p>Your vehicle is in accountable, professional hands — not a gamble with an unverified operator.</p></div>
-      <div class="card reveal d1"><span class="ic">&#128167;</span><h3>We Bring The Shop To You</h3><p>Our own water and power, every visit. No driving across town, no waiting room, no borrowed outlet.</p></div>
-      <div class="card reveal d2"><span class="ic">&#9201;</span><h3>One Vehicle, Full Attention</h3><p>We focus on a single vehicle for the entire appointment — no other car competing for our time.</p></div>
-      <div class="card reveal"><span class="ic">&#10013;</span><h3>Faith-Driven, Not Corporate</h3><p>Personal service from an owner-operator who treats your vehicle like it's his own.</p></div>
-      <div class="card reveal d1"><span class="ic">&#128203;</span><h3>Transparent Pricing</h3><p>Itemized quotes before we start, every time. No surprise invoices when the work is done.</p></div>
-      <div class="card reveal d2"><span class="ic">&#10004;</span><h3>100% Satisfaction Guarantee</h3><p>We don't leave until the work meets our standard. If something's not right, we fix it first.</p></div>
+      <div class="card reveal"><h3>Licensed &amp; Insured</h3><p>Your vehicle is in accountable, professional hands — not a gamble with an unverified operator.</p></div>
+      <div class="card reveal d1"><h3>We Bring The Shop To You</h3><p>No driving across town, no waiting room — we set up right at your home or workplace. (We do ask for a nearby power outlet and water source until our own self-contained equipment is up and running.)</p></div>
+      <div class="card reveal d2"><h3>One Vehicle, Full Attention</h3><p>We focus on a single vehicle for the entire appointment — no other car competing for our time.</p></div>
+      <div class="card reveal"><h3>Faith-Driven, Not Corporate</h3><p>Personal service from an owner-operator who treats your vehicle like it's his own.</p></div>
+      <div class="card reveal d1"><h3>Transparent Pricing</h3><p>Itemized quotes before we start, every time. No surprise invoices when the work is done.</p></div>
+      <div class="card reveal d2"><h3>100% Satisfaction Guarantee</h3><p>We don't leave until the work meets our standard. If something's not right, we fix it first.</p></div>
     </div>
   </div>
 </section>
@@ -708,7 +692,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
     </div>
     <div class="faq-list">
       <details class="faq reveal"><summary>Do you really come to me?<span class="plus"></span></summary>
-        <div class="faq-a">Yes — we're fully mobile. We bring our own water and power and detail your vehicle at your home or workplace anywhere in our service area across Elmore County, Tallassee, Wetumpka, Montgomery, Prattville, Millbrook, and Pike Road.</div></details>
+        <div class="faq-a">Yes — we're fully mobile and detail your vehicle at your home or workplace anywhere in our service area across Tallassee, Wetumpka, Montgomery, Prattville, Millbrook, and Pike Road. We're working toward purchasing our own self-contained water and power equipment, but don't have it yet, so we'll need access to a nearby power outlet and water source at the service location.</div></details>
       <details class="faq reveal"><summary>How long does a full detail take?<span class="plus"></span></summary>
         <div class="faq-a">Most full details take three to five hours depending on the vehicle's size and condition. Paint correction and ceramic coatings are scheduled separately as they're multi-stage, multi-hour services.</div></details>
       <details class="faq reveal"><summary>What is a ceramic coating, and is it worth it?<span class="plus"></span></summary>
@@ -848,43 +832,17 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
   window.addEventListener('scroll',snap,{passive:true});
 })();
 
-/* ---------- showcase: view tabs + drag-to-rotate (exterior) ---------- */
+/* ---------- showcase: view tabs ---------- */
 (function(){
   var stage=document.getElementById('stage');
-  var spin=document.getElementById('spinInner');
-  var degOut=document.getElementById('degOut');
-  var hint=document.getElementById('stageHint');
   var views=stage.querySelectorAll('.stage-view');
   var tabs=document.querySelectorAll('.view-tab');
-  var current='exterior';
-  var angle=0, dragging=false, startX=0, startA=0;
 
   function setView(v){
-    current=v;
     views.forEach(function(el){el.classList.toggle('active', el.dataset.view===v)});
     tabs.forEach(function(t){t.classList.toggle('active', t.dataset.view===v)});
-    hint.style.opacity = (v==='exterior') ? '' : '0';
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){setView(t.dataset.view)})});
-
-  function render(){
-    // simulate a turn: rotateY tilt + slight horizontal parallax of the image
-    var clamped=Math.max(-32,Math.min(32,angle));
-    spin.style.transform='perspective(1400px) rotateY('+clamped+'deg)';
-    var slot=spin.querySelector('image-slot');
-    if(slot) slot.style.objectPosition=(50 - clamped*0.9)+'% 50%';
-    degOut.textContent=Math.round(angle)+'\u00B0';
-  }
-  function down(x){ if(current!=='exterior')return; dragging=true; startX=x; startA=angle; stage.classList.add('grabbing'); if(hint)hint.style.opacity='0'; }
-  function move(x){ if(!dragging)return; angle=startA+(x-startX)*0.35; render(); }
-  function up(){ dragging=false; stage.classList.remove('grabbing'); }
-  stage.addEventListener('mousedown',function(e){down(e.clientX)});
-  window.addEventListener('mousemove',function(e){move(e.clientX)});
-  window.addEventListener('mouseup',up);
-  stage.addEventListener('touchstart',function(e){down(e.touches[0].clientX)},{passive:true});
-  stage.addEventListener('touchmove',function(e){move(e.touches[0].clientX)},{passive:true});
-  stage.addEventListener('touchend',up);
-  render();
 })();
 
 /* ---------- scroll-spy ---------- */
