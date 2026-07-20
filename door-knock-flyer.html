@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services Flyer — Reclaimed Auto Care</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 12.5pt;
+    color: #111;
+    background: #fff;
+    padding: 36px 44px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 3px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+  .header img {
+    width: 78px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  .header-text h1 {
+    font-size: 26pt;
+    letter-spacing: .01em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .header-text .tagline {
+    font-size: 11pt;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #444;
+    margin-top: 7px;
+  }
+  .header-cta {
+    margin-left: auto;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .header-cta .phone {
+    font-family: Arial, sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+  .header-cta .call-note {
+    font-size: 9.5pt;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 3px;
+  }
+
+  /* ── Intro ── */
+  .intro {
+    font-size: 12.5pt;
+    line-height: 1.55;
+    color: #222;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+  }
+  .intro strong { color: #000; }
+
+  /* ── Section headings ── */
+  .section-title {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #111;
+    margin: 0 0 10px;
+  }
+
+  /* ── Services grid ── */
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 26px;
+    margin-bottom: 14px;
+  }
+  .service-item {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+  .service-item:nth-last-child(-n+2) { border-bottom: none; }
+  .service-item .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .service-item .name {
+    font-weight: 700;
+    font-size: 12.5pt;
+  }
+  .service-item .price {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    white-space: nowrap;
+  }
+  .service-item .desc {
+    font-size: 10.5pt;
+    color: #555;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  /* ── Mission strip ── */
+  .mission {
+    text-align: center;
+    font-size: 11pt;
+    font-style: italic;
+    color: #333;
+    letter-spacing: .02em;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+  }
+
+  /* ── Bottom grid: contact / socials / referral ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: end;
+  }
+  .contact-block {
+    font-size: 11pt;
+    line-height: 2;
+  }
+  .contact-block .label {
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: #666;
+    display: block;
+    margin-top: 10px;
+  }
+  .contact-block .label:first-child { margin-top: 0; }
+  .contact-block .website-note {
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #555;
+  }
+
+  .referral-box {
+    border: 2.5px solid #111;
+    padding: 16px 18px;
+    text-align: center;
+    justify-self: end;
+    width: 100%;
+  }
+  .referral-box .headline {
+    font-family: Arial, sans-serif;
+    font-size: 10.5pt;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .referral-box .amount {
+    font-family: Arial, sans-serif;
+    font-size: 28pt;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .referral-box .amount span { font-size: 13pt; font-weight: 400; }
+  .referral-box .fine {
+    font-size: 9.5pt;
+    color: #444;
+    margin-top: 6px;
+    line-height: 1.45;
+  }
+
+  .footer-cross {
+    text-align: center;
+    font-size: 10pt;
+    color: #666;
+    letter-spacing: .05em;
+    margin-top: 16px;
+  }
+
+  /* ── Print rules ── */
+  @media print {
+    body { padding: 20px 26px; }
+    @page { margin: 0.55in; size: letter; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <img src="images/reclaimed-mark-bw.png" alt="Reclaimed Auto Care lion mark" />
+  <div class="header-text">
+    <h1>Reclaimed Auto Care</h1>
+    <div class="tagline">Restored &middot; Refined &middot; Reclaimed</div>
+  </div>
+  <div class="header-cta">
+    <div class="phone">(334) 640-1831</div>
+    <div class="call-note">Call or Text to Book</div>
+  </div>
+</div>
+
+<!-- Intro -->
+<p class="intro">
+  Hi neighbor — we're <strong>Reclaimed Auto Care</strong>, a faith-driven mobile detailing
+  business based right here in Elmore County. We come straight to your driveway with
+  everything we need, so you get a showroom-quality detail without ever leaving home.
+</p>
+
+<!-- Services -->
+<div class="section-title">Our Services</div>
+<div class="services">
+  <div class="service-item">
+    <div class="row"><span class="name">Exterior Detail</span><span class="price">From $130</span></div>
+    <div class="desc">Hand wash, dry, tire shine &amp; dressing, glass cleaning</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">Interior Restoration</span><span class="price">From $130</span></div>
+    <div class="desc">Full vacuum, wipe-down, glass, odor treatment</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">The Refined Detail</span><span class="price">From $180</span></div>
+    <div class="desc">Elevated hand detail, extra care inside &amp; out</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">The Reclaimed</span><span class="price">From $480</span></div>
+    <div class="desc">Our flagship top-to-bottom transformation</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">Maintenance Wash</span><span class="price">From $45</span></div>
+    <div class="desc">Quick exterior wash between full details</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">Maintenance Detail</span><span class="price">From $135</span></div>
+    <div class="desc">Interior + exterior upkeep, on a recurring basis</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">Paint Correction</span><span class="price">From $400</span></div>
+    <div class="desc">Removes swirls, scratches &amp; oxidation</div>
+  </div>
+  <div class="service-item">
+    <div class="row"><span class="name">Covenant Coatings</span><span class="price">Free Quote</span></div>
+    <div class="desc">Long-term ceramic coating, protects paint for years</div>
+  </div>
+</div>
+
+<!-- Mission -->
+<p class="mission">Faith First. Community Always. &nbsp;&mdash;&nbsp; Proudly serving Tallassee, Wetumpka, Montgomery, Prattville, Millbrook &amp; Pike Road</p>
+
+<!-- Bottom: contact / socials + referral -->
+<div class="bottom-grid">
+  <div class="contact-block">
+    <span class="label">Book an Appointment</span>
+    (334) 640-1831<br>reclaimedautocare@gmail.com
+
+    <span class="label">Website</span>
+    reclaimeddetailers.com<br>
+    <span class="website-note">Coming soon &mdash; we're already booking and detailing now, call or text!</span>
+
+    <span class="label">Follow Us — @reclaimedautocare</span>
+    Facebook &middot; Instagram &middot; TikTok
+  </div>
+
+  <div class="referral-box">
+    <div class="headline">Refer a Friend</div>
+    <div class="amount">$10<span>&nbsp;off</span></div>
+    <div class="fine">Get $10 off your next detail<br>when a friend you refer books with us!</div>
+  </div>
+</div>
+
+<p class="footer-cross">✝ Reclaimed Auto Care &nbsp;&middot;&nbsp; Restored. Refined. Reclaimed.</p>
+
+</body>
+</html>
