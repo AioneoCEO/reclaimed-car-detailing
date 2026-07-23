@@ -19,8 +19,15 @@ The brand is built on three pillars: **Faith, Community, Excellence**. Every pie
 - Use phrases like "Restored. Refined. Reclaimed." and "Faith First. Community Always."
 - Avoid generic marketing language ("best in class," "top-tier," etc.)
 - The ✝ symbol is intentional and meaningful — keep it in footers and brand moments
-- The business serves Elmore County, AL (home county) and surrounding areas (Tallassee, Wetumpka, Montgomery, Prattville, Millbrook, Pike Road)
+- The business serves Elmore County, AL (home county) and surrounding areas (Tallassee, Wetumpka, Pike Road, Montgomery, Millbrook, Prattville, Auburn)
 - The business is mobile-only with no fixed location — never add a street address to the website
+
+## Service Area Travel Fee
+- Free travel within a 25-mile radius of the Tallassee home base
+- Beyond 25 miles: a flat **$1 per additional mile** (e.g. 30 miles away = 25 free + $5)
+- Current distances from home base: Wetumpka ~15mi (no fee), Pike Road ~15mi (no fee), Montgomery ~25mi (no fee), Millbrook ~30mi (+$5), Prattville ~35mi (+$10), Auburn ~45mi (+$20)
+- Tallassee itself stays branded as the home base (0 miles, never a fee) regardless of actual driving distance
+- Each served city has its own `detailing-<city>-al.html` landing page; keep mileage/fee figures consistent across that page, `service-areas.html`, and the shared nav "Areas" dropdown across all pages
 
 ## Site Structure
 | File | Purpose |
