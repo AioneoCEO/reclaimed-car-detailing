@@ -168,6 +168,11 @@ html[data-mood="dark"] .svc .price b{color:var(--on-dark)}
 html[data-mood="dark"] .svc .for-tag{color:var(--accent-soft,var(--on-dark))}
 .svc .card-ctas{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px}
 
+.recur-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:rgba(var(--accent-rgb),.06);border:1px solid rgba(var(--accent-rgb),.2);border-radius:var(--radius-lg);padding:28px 32px;margin-top:36px}
+.recur-banner h3{font-size:1.3rem;margin-top:8px;max-width:46ch}
+html[data-mood="dark"] .recur-banner{background:rgba(var(--accent-rgb),.1)}
+@media (max-width:720px){.recur-banner{flex-direction:column;align-items:flex-start}}
+
 /* ---- TIMELINE ---- */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:20px;position:relative}
 .step{position:relative;padding:0 18px;text-align:center}
@@ -377,7 +382,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
   <a class="dl" href="blog.html">Blog</a>
-  <a class="dl" href="subscriptions.html">Membership</a>
+  <a class="dl" href="subscriptions.html">Recurring Clients</a>
   <a class="dl" href="contact.html">Contact</a>
   <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
 </aside>
@@ -495,7 +500,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
     <div class="sec-head reveal">
       <span class="eyebrow">What We Do</span>
       <h2 class="sec-title">Every surface, done with intent.</h2>
-      <p class="sec-sub">From a basic maintenance wash to multi-stage paint correction and ceramic protection — clean, honest base services you can build up with à la carte add-ons.</p>
+      <p class="sec-sub">From exterior details to multi-stage paint correction and ceramic protection — clean, honest base services you can build up with optional add-ons.</p>
     </div>
     <div class="svc-grid">
       <article class="svc gloss reveal"><span class="svc-edge"></span>
@@ -538,29 +543,8 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
           <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
         </div>
       </article>
-      <article class="svc gloss reveal d1"><span class="svc-edge"></span>
-        <div class="num">05</div><h3>Maintenance Wash</h3>
-        <p class="for-tag"><b>Best for:</b> existing customers keeping a coated exterior fresh between full details</p>
-        <p>A quick, budget-friendly exterior wash that preserves your coating investment and keeps the vehicle showroom-ready between full details.</p>
-        <div class="price">From <b>$45</b></div>
-        <p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-top:6px">Requires a full exterior detail on file first.</p>
-        <div class="card-ctas">
-          <a href="services.html#maintenance-wash" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
-          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
-        </div>
-      </article>
-      <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">06</div><h3>Maintenance Detail</h3>
-        <p class="for-tag"><b>Best for:</b> existing customers who want interior + exterior upkeep in one visit</p>
-        <p>The maintenance wash plus an interior refresh — a combined upkeep visit that keeps the whole vehicle feeling cared for between full details.</p>
-        <div class="price">From <b>$135</b></div>
-        <div class="card-ctas">
-          <a href="services.html#maintenance-detail" class="link-arrow">Specifics <span class="ar">&rarr;</span></a>
-          <a href="book.html" class="btn btn-primary btn-sm">Book This</a>
-        </div>
-      </article>
       <article class="svc gloss reveal"><span class="svc-edge"></span>
-        <div class="num">07</div><h3>Paint Correction</h3>
+        <div class="num">05</div><h3>Paint Correction</h3>
         <p class="for-tag"><b>Best for:</b> swirls, light scratches, or oxidation dulling the paint's finish</p>
         <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth and clarity.</p>
         <div class="price">From <b>$400</b></div>
@@ -570,7 +554,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
       <article class="svc gloss reveal d1"><span class="svc-edge"></span>
-        <div class="num">08</div><h3>Covenant Coatings</h3>
+        <div class="num">06</div><h3>Covenant Coatings</h3>
         <p class="for-tag"><b>Best for:</b> long-term protection on a vehicle you plan to keep</p>
         <p>Professional-grade ceramic protection lasting years — hydrophobic, UV-resistant, and self-cleaning. Our flagship protection program.</p>
         <div class="price">Bespoke quote</div>
@@ -580,7 +564,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
       <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">09</div><h3>Boat Detailing</h3>
+        <div class="num">07</div><h3>Boat Detailing</h3>
         <p class="for-tag"><b>Best for:</b> boat owners who want the same hand-detail standard on the water</p>
         <p>Wash, wax, polish, oxidation removal, and ceramic protection for your boat — priced per foot so you only pay for what it needs.</p>
         <div class="price">From <b>$5/ft</b></div>
@@ -590,7 +574,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
       <article class="svc gloss reveal"><span class="svc-edge"></span>
-        <div class="num">10</div><h3>Heavy Equipment</h3>
+        <div class="num">08</div><h3>Heavy Equipment</h3>
         <p class="for-tag"><b>Best for:</b> contractors and owners who need caked grease and mud broken down safely</p>
         <p>Pressure washing and degreasing for skid steers, excavators, and bulldozers — billed hourly with a straightforward minimum.</p>
         <div class="price">From <b>$75/hr</b></div>
@@ -600,7 +584,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
       <article class="svc gloss reveal d1"><span class="svc-edge"></span>
-        <div class="num">11</div><h3>Golf Cart / UTV / ATV</h3>
+        <div class="num">09</div><h3>Golf Cart / UTV / ATV</h3>
         <p class="for-tag"><b>Best for:</b> golf cart, side-by-side, and ATV owners who want the same hand-detail care</p>
         <p>Wash, full detail, or extreme mud clean for golf carts, UTVs, and ATVs — three tiers sized to the machine.</p>
         <div class="price">From <b>$45</b></div>
@@ -610,7 +594,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
       <article class="svc gloss reveal d2"><span class="svc-edge"></span>
-        <div class="num">12</div><h3>Motorcycle</h3>
+        <div class="num">10</div><h3>Motorcycle</h3>
         <p class="for-tag"><b>Best for:</b> riders who want chrome, paint, and bodywork done by hand</p>
         <p>Wash and wax for sport bikes, deep cleaning and polishing for full-dress touring bikes with fairings and bags.</p>
         <div class="price">From <b>$80</b></div>
@@ -620,8 +604,15 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         </div>
       </article>
     </div>
+    <div class="recur-banner reveal">
+      <div>
+        <span class="eyebrow no-rule">Already Booked With Us?</span>
+        <h3>Maintenance wash, maintenance detail &amp; membership pricing live on one page for recurring clients.</h3>
+      </div>
+      <a href="subscriptions.html" class="btn btn-primary">Recurring Clients <span class="ar">&rarr;</span></a>
+    </div>
     <div class="addons reveal">
-      <div class="addons-head"><span class="eyebrow no-rule">À la carte</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service</span></div>
+      <div class="addons-head"><span class="eyebrow no-rule">Extras</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service</span></div>
       <div class="addons-grid">
         <div class="addon"><span>Clay bar treatment</span><b>+$40</b></div>
         <div class="addon"><span>Iron fallout removal</span><b>+$45</b></div>
@@ -816,7 +807,7 @@ html[data-mood="dark"] .faq summary{color:var(--on-dark)}
         <li><a href="about.html">About</a></li>
         <li><a href="showcase.html">Gallery</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="subscriptions.html">Membership</a></li>
+        <li><a href="subscriptions.html">Recurring Clients</a></li>
       </ul>
     </div>
     <div>
