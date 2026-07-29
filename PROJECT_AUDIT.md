@@ -9,7 +9,7 @@
 |---|---|---|
 | 1 | OG tags missing on 15 of 18 pages | ✅ Fixed by Claude |
 | 2 | Twitter/X card meta tags missing on all pages | ✅ Fixed by Claude |
-| 3 | Canonical domain mismatch on showcase.html, privacy-policy.html, terms.html (used vercel.app instead of reclaimeddetailers.com) | ✅ Fixed by Claude |
+| 3 | Canonical domain mismatch on showcase.html, privacy-policy.html, terms.html (used vercel.app instead of reclaimedautocare.com) | ✅ Fixed by Claude |
 | 4 | Missing canonical tag on services.html | ✅ Fixed by Claude |
 | 5 | Canonical tags added to all 5 new service pages | ✅ Fixed by Claude |
 | 6 | og:url, og:site_name, og:image missing from index.html | ✅ Fixed by Claude |
@@ -79,7 +79,7 @@ Semantic HTML structure used throughout (`<nav>`, `<footer>`, `<section>`, `<but
 - ✅ Covenant Coatings™ premium positioning
 
 **What's blocking a hard-launch:**
-- ❌ Domain DNS not pointed to Vercel (site lives at vercel.app URL, not reclaimeddetailers.com)
+- ❌ Domain DNS not pointed to Vercel (site lives at vercel.app URL, not reclaimedautocare.com)
 - ❌ No real photography (huge trust and conversion impact)
 - ❌ Google Business Profile not live (biggest local SEO factor)
 - ❌ Forms don't deliver to your email inbox

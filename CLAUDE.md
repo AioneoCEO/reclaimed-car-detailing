@@ -11,7 +11,7 @@
 - **Facebook:** /reclaimedautocare
 - **TikTok:** @reclaimedautocare
 - **Owner:** Ray Compton
-- **Domain:** reclaimeddetailers.com (unchanged — not part of this rebrand; update here if the domain is ever repointed)
+- **Domain:** reclaimedautocare.com (site-wide domain, repointed from reclaimeddetailers.com — see SEO Status below for DNS/Vercel status)
 
 ## Mission & Brand Voice
 The brand is built on three pillars: **Faith, Community, Excellence**. Every piece of writing, UI copy, and design decision should feel premium, purposeful, and personal — not corporate. The tone is confident but warm, like a trusted professional who also cares about people.
@@ -99,10 +99,12 @@ font-family: 'Barlow Condensed', sans-serif; /* Labels, caps, nav links */
 
 ## SEO Status
 - Google Search Console: verification file added, pending domain setup
-- Meta descriptions: not yet added to all pages (TODO)
-- Local business schema (JSON-LD): not yet added (TODO)
-- Sitemap + robots.txt: pending domain confirmation
-- Domain: managed through Google Workspace / Google Domains (DNS not yet pointed to Vercel)
+- Meta descriptions: added to all pages ✅
+- Local business schema (JSON-LD): added to all pages ✅
+- Sitemap + robots.txt: present, reference reclaimedautocare.com
+- Domain registrar: Squarespace Domains (migrated from Google Domains after Squarespace's 2023 acquisition)
+- reclaimeddetailers.com: DNS already correctly points to Vercel (A `@` → 76.76.21.21, CNAME `www` → cname.vercel-dns.com) — confirmed live
+- reclaimedautocare.com: owned, same Squarespace nameservers, but DNS still sits on Squarespace's default parking records — **not yet pointed to Vercel**, and not yet added as a custom domain on the Vercel project. TODO: add domain in Vercel dashboard, then update Squarespace DNS to match the records above.
 
 ## Legal Compliance
 - Privacy Policy: `privacy-policy.html` ✅
@@ -121,11 +123,12 @@ font-family: 'Barlow Condensed', sans-serif; /* Labels, caps, nav links */
 
 ## Pending / TODO
 - [ ] Add real before/after photos to showcase and about pages
-- [ ] Add meta descriptions to all pages
-- [ ] Add Local Business JSON-LD schema to index.html
-- [ ] Confirm domain name and add sitemap.xml + robots.txt
-- [ ] Point DNS in Google Domains to Vercel
-- [ ] Submit sitemap in Google Search Console after domain is live
+- [x] Add meta descriptions to all pages
+- [x] Add Local Business JSON-LD schema to all pages
+- [x] Confirm domain name (reclaimedautocare.com) and add sitemap.xml + robots.txt
+- [ ] Add reclaimedautocare.com as a custom domain on the Vercel project, then point its DNS (still on Squarespace parking defaults) to Vercel
+- [ ] Decide reclaimeddetailers.com's role going forward (redirect to reclaimedautocare.com, or drop it) — it currently still resolves correctly to the same Vercel project
+- [ ] Submit sitemap in Google Search Console once reclaimedautocare.com is live
 - [ ] Set up Google Business Profile for Maps/local SEO
 - [ ] Add Yelp, Bing Places, Apple Maps listings
 
