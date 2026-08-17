@@ -17,9 +17,9 @@
   "@type": "LocalBusiness",
   "name": "Reclaimed Auto Care",
   "alternateName": "Reclaimed Auto Care",
-  "image": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
-  "logo": "https://reclaimeddetailers.com/images/reclaimed-logo.png",
-  "url": "https://reclaimeddetailers.com/services.html",
+  "image": "https://reclaimedautocare.com/images/reclaimed-logo.png",
+  "logo": "https://reclaimedautocare.com/images/reclaimed-logo.png",
+  "url": "https://reclaimedautocare.com/services.html",
   "telephone": "+1-334-640-1831",
   "email": "reclaimedautocare@gmail.com",
   "priceRange": "$$",
@@ -102,28 +102,34 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
 .final h2{font-size:clamp(2.4rem,5vw,4rem);position:relative;z-index:2}
 .final .ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px;position:relative;z-index:2}
 
+.recur-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:rgba(var(--accent-rgb),.06);border:1px solid rgba(var(--accent-rgb),.2);border-radius:var(--radius-lg);padding:28px 32px;margin:clamp(56px,9vh,110px) 0}
+.recur-banner h3{font-size:1.3rem;margin-top:8px;max-width:46ch}
+html[data-mood="dark"] .recur-banner{background:rgba(var(--accent-rgb),.1)}
+
 @media (max-width:860px){
   .srow{grid-template-columns:1fr;gap:32px}.srow.flip .sfig{order:0}
   .incl{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr 1fr;gap:30px 0}.steps::before{display:none}
+  .recur-banner{flex-direction:column;align-items:flex-start}
 }
 @media (max-width:600px){.steps{grid-template-columns:1fr 1fr}}
 </style>
-  <link rel="canonical" href="https://reclaimeddetailers.com/services.html" />
+  <link rel="canonical" href="https://reclaimedautocare.com/services.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Services — Reclaimed Auto Care · Elmore County, AL" />
   <meta property="og:description" content="Exterior detailing, interior restoration, paint correction, and Covenant ceramic coatings. Premium mobile auto detailing in Elmore County, Alabama." />
-  <meta property="og:image" content="https://reclaimeddetailers.com/images/reclaimed-logo.png" />
-  <meta property="og:url" content="https://reclaimeddetailers.com/services.html" />
+  <meta property="og:image" content="https://reclaimedautocare.com/images/reclaimed-logo.png" />
+  <meta property="og:url" content="https://reclaimedautocare.com/services.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Services — Reclaimed Auto Care · Elmore County, AL" />
   <meta name="twitter:description" content="Exterior detailing, interior restoration, paint correction, and Covenant ceramic coatings. Premium mobile auto detailing in Elmore County, Alabama." />
-  <meta name="twitter:image" content="https://reclaimeddetailers.com/images/reclaimed-logo.png" />
+  <meta name="twitter:image" content="https://reclaimedautocare.com/images/reclaimed-logo.png" />
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<script src="assets/analytics.js" defer></script>
 </head>
 <body>
 
@@ -137,6 +143,10 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
           <a href="services-interior.html">Interior Restoration<small>Deep clean &amp; restoration</small></a>
           <a href="services-paint-correction.html">Paint Correction<small>Swirl &amp; scratch removal</small></a>
           <a href="services-ceramic.html">Covenant Coatings<small>Ceramic protection program</small></a>
+          <a href="services-boat.html">Boat Detailing<small>Per-foot, wash to ceramic</small></a>
+          <a href="services-heavy-equipment.html">Heavy Equipment<small>Hourly, degreasing &amp; wash</small></a>
+          <a href="services-powersports.html">Golf Cart / UTV / ATV<small>Wash to full detail</small></a>
+          <a href="services-motorcycle.html">Motorcycle<small>Wash, wax &amp; chrome polish</small></a>
         </div>
       </li>
       <li><a href="about.html">About</a></li>
@@ -169,6 +179,10 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
   <a class="dl sub" href="services-interior.html">Interior Restoration</a>
   <a class="dl sub" href="services-paint-correction.html">Paint Correction</a>
   <a class="dl sub" href="services-ceramic.html">Covenant Coatings</a>
+  <a class="dl sub" href="services-boat.html">Boat Detailing</a>
+  <a class="dl sub" href="services-heavy-equipment.html">Heavy Equipment</a>
+  <a class="dl sub" href="services-powersports.html">Golf Cart / UTV / ATV</a>
+  <a class="dl sub" href="services-motorcycle.html">Motorcycle</a>
   <a class="dl" href="about.html">About</a>
   <a class="dl" href="showcase.html">Gallery</a>
   <div class="dgroup">Service Areas</div>
@@ -183,6 +197,7 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
   <a class="dl" href="reviews.html">Reviews</a>
   <a class="dl" href="faq.html">FAQ</a>
   <a class="dl" href="blog.html">Blog</a>
+  <a class="dl" href="subscriptions.html">Recurring Clients</a>
   <a class="dl" href="contact.html">Contact</a>
   <a class="dl" href="book.html" style="color:var(--accent-soft)">Book a Detail &rarr;</a>
 </aside>
@@ -234,11 +249,11 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
-    <div class="srow reveal" id="refined-detail">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-refined" fit="cover" src="images/refined-detail-crv.jpg" placeholder="The Refined Detail — elevated hand detail"></image-slot></div></div>
+    <div class="srow reveal" id="full-detail">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-refined" fit="cover" src="images/refined-detail-crv.jpg" placeholder="The Full Detail — elevated hand detail"></image-slot></div></div>
       <div>
         <div class="num">03 · Elevated</div>
-        <h2>The Refined Detail</h2>
+        <h2>The Full Detail</h2>
         <p class="for-tag"><b>Best for:</b> a vehicle already in decent shape that's due for a thorough, unhurried refresh</p>
         <p>Interior and exterior together, with extra time and care given to every surface. A step above the basics — more attention, more finishing touches.</p>
         <ul class="incl">
@@ -268,43 +283,18 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
-    <div class="srow reveal" id="maintenance-wash">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-maint" fit="cover" src="images/maintenance-wash-foam.jpg" placeholder="Maintenance wash — quick exterior refresh"></image-slot></div></div>
+    <div class="recur-banner reveal">
       <div>
-        <div class="num">05 · Upkeep</div>
-        <h2>Maintenance Wash</h2>
-        <p class="for-tag"><b>Best for:</b> existing customers keeping a coated exterior fresh between full details</p>
-        <p>A quick, budget-friendly exterior wash that preserves your coating investment and keeps the vehicle showroom-ready between full details.</p>
-        <ul class="incl">
-          <li>Foam pre-soak &amp; hand wash</li><li>Wheel faces wiped down</li>
-          <li>Tire dressing</li><li>Exterior glass</li>
-        </ul>
-        <div class="meta"><div class="price">From <b>$45</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
-        <ul class="size-pricing"><li>Coupe <b>$45</b></li><li>Sedan <b>$50</b></li><li>Mid-Size <b>$55</b></li><li>XL-Size <b>$60</b></li><li>Truck / Mini Van <b>$65</b></li></ul>
-        <p class="pricing-note">Requires a completed full exterior detail on file before booking.</p>
+        <span class="eyebrow no-rule">Already Booked With Us?</span>
+        <h3>Maintenance wash, maintenance detail &amp; membership pricing live on one page for recurring clients.</h3>
       </div>
-    </div>
-
-    <div class="srow flip reveal" id="maintenance-detail">
-      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-maintdetail" fit="cover" src="images/maintenance-detail-mazda.jpg" placeholder="Maintenance detail — interior and exterior upkeep"></image-slot></div></div>
-      <div>
-        <div class="num">06 · Upkeep</div>
-        <h2>Maintenance Detail</h2>
-        <p class="for-tag"><b>Best for:</b> existing customers who want interior + exterior upkeep in one recurring visit</p>
-        <p>The maintenance wash plus an interior refresh — a combined upkeep visit that keeps the whole vehicle feeling cared for between full details.</p>
-        <ul class="incl">
-          <li>Exterior maintenance wash</li><li>Interior vacuum &amp; wipe-down</li>
-          <li>Interior glass</li><li>Light deodorize</li>
-        </ul>
-        <div class="meta"><div class="price">From <b>$135</b></div><a href="book.html" class="btn btn-primary btn-sm">Book This <span class="ar">&rarr;</span></a></div>
-        <ul class="size-pricing"><li>Sedan <b>$135</b></li><li>Midsize SUV <b>$185</b></li><li>Large SUV <b>$235</b></li><li>Truck / Mini Van <b>$285</b></li></ul>
-      </div>
+      <a href="subscriptions.html" class="btn btn-primary">Recurring Clients <span class="ar">&rarr;</span></a>
     </div>
 
     <div class="srow reveal" id="paint-correction">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-pc" fit="cover" src="images/ba1-after-mustang.jpg" placeholder="Paint correction — swirl-free reflection"></image-slot></div></div>
       <div>
-        <div class="num">07 · Correction</div>
+        <div class="num">05 · Correction</div>
         <h2>Paint Correction</h2>
         <p class="for-tag"><b>Best for:</b> swirls, light scratches, or oxidation dulling the paint's finish</p>
         <p>Multi-stage machine polishing removes swirls, light scratches, and oxidation — restoring the paint's original depth, gloss, and clarity.</p>
@@ -320,7 +310,7 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
     <div class="srow flip reveal" id="covenant-coatings">
       <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-cc" fit="cover" src="images/ceramic-water-beading.jpg" placeholder="Ceramic coating — water sheeting off paint"></image-slot></div></div>
       <div>
-        <div class="num">08 · Protection</div>
+        <div class="num">06 · Protection</div>
         <h2>Covenant Coatings</h2>
         <p class="for-tag"><b>Best for:</b> long-term protection on a vehicle you plan to keep</p>
         <p>Our flagship ceramic protection program. A professional-grade coating bonds to your paint — hydrophobic, UV-resistant, and self-cleaning — protecting your finish for years.</p>
@@ -333,10 +323,82 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       </div>
     </div>
 
+    <div class="srow reveal" id="boat-detailing">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-boat" fit="cover" placeholder="Boat detailing — polished hull, clean deck"></image-slot></div></div>
+      <div>
+        <div class="num">07 · Watercraft</div>
+        <h2>Boat Detailing</h2>
+        <p class="for-tag"><b>Best for:</b> boat owners who want the same hand-detail standard on the water</p>
+        <p>From a quick wash to full oxidation removal and ceramic protection, priced per foot so you only pay for the work your boat actually needs.</p>
+        <ul class="incl">
+          <li>Basic wash &amp; deck scrub</li><li>Wash &amp; wax</li>
+          <li>Light polish / buffing</li><li>Oxidation removal / compounding</li>
+          <li>Ceramic coating</li><li>Cabin &amp; vinyl detailing</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$5/ft</b></div><a href="services-boat.html" class="btn btn-primary btn-sm">See Boat Pricing <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Basic Wash <b>$5&ndash;$12/ft</b></li><li>Wash &amp; Wax <b>$15&ndash;$25/ft</b></li><li>Light Polish <b>$25&ndash;$60/ft</b></li><li>Oxidation Removal <b>$50&ndash;$75+/ft</b></li><li>Ceramic Coating <b>$60&ndash;$100+/ft</b></li></ul>
+        <p class="pricing-note">Boats over 40ft or complex layouts (flybridges) run 20&ndash;40% higher. Condition, size, and interior work all affect final pricing.</p>
+      </div>
+    </div>
+
+    <div class="srow flip reveal" id="heavy-equipment">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-heavy" fit="cover" placeholder="Heavy equipment detailing — degreased skid steer or excavator"></image-slot></div></div>
+      <div>
+        <div class="num">08 · Machinery</div>
+        <h2>Heavy Equipment Detailing</h2>
+        <p class="for-tag"><b>Best for:</b> contractors and owners who need caked grease and mud broken down safely</p>
+        <p>Skid steers, excavators, bulldozers, and everything in between — billed hourly with a straightforward minimum so intensive degreasing jobs get done right.</p>
+        <ul class="incl">
+          <li>Pressure washing &amp; degreasing</li><li>Track &amp; undercarriage cleaning</li>
+          <li>Engine compartment detailing</li><li>Heavy-duty commercial degreasers</li>
+          <li>Water hauling if needed</li><li>On-site quote before work begins</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$75/hr</b></div><a href="services-heavy-equipment.html" class="btn btn-primary btn-sm">See Equipment Pricing <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Hourly Rate <b>$75&ndash;$125/hr</b></li><li>Minimum <b>3&ndash;4 hrs</b></li><li>Compact Equipment <b>$300&ndash;$500</b></li><li>Large Equipment <b>Quoted on-site</b></li><li>Water Hauling <b>$30+</b></li></ul>
+        <p class="pricing-note">Typical total job cost runs $300 to $600+ depending on machine size and grime level.</p>
+      </div>
+    </div>
+
+    <div class="srow reveal" id="powersports">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-powersports" fit="cover" placeholder="Powersports detailing — clean golf cart or UTV"></image-slot></div></div>
+      <div>
+        <div class="num">09 · Powersports</div>
+        <h2>Golf Cart, UTV &amp; ATV Detailing</h2>
+        <p class="for-tag"><b>Best for:</b> golf cart, side-by-side, and ATV owners who want the same hand-detail care</p>
+        <p>From a quick wash on a golf cart to a full mud-caked extreme clean on a side-by-side — three package tiers sized to the machine and how dirty it is.</p>
+        <ul class="incl">
+          <li>Exterior rinse &amp; wheel cleaning</li><li>Dashboard &amp; plastic wipe-down</li>
+          <li>Roof degreasing (golf carts)</li><li>Seat cleaning &amp; conditioning</li>
+          <li>Plastic trim restoration</li><li>Hand or spray wax sealant</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$45</b></div><a href="services-powersports.html" class="btn btn-primary btn-sm">See Powersports Pricing <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Golf Carts <b>$45&ndash;$120</b></li><li>Side-by-Sides / UTVs <b>$100&ndash;$300</b></li><li>ATVs / Dirt Bikes <b>$45&ndash;$100</b></li></ul>
+        <p class="pricing-note">Heavy mud removal, seat shampooing, or specialized polishing run an extra $25&ndash;$50.</p>
+      </div>
+    </div>
+
+    <div class="srow flip reveal" id="motorcycle">
+      <div class="sfig"><div class="slot-frame gloss"><image-slot id="svc-moto" fit="cover" placeholder="Motorcycle detailing — polished chrome and clean paint"></image-slot></div></div>
+      <div>
+        <div class="num">10 · Motorcycle</div>
+        <h2>Motorcycle Detailing</h2>
+        <p class="for-tag"><b>Best for:</b> riders who want chrome, paint, and bodywork done by hand</p>
+        <p>From a sport bike wash and wax to a full dresser deep clean with fairings and bags — priced to the size and complexity of the bike.</p>
+        <ul class="incl">
+          <li>Hand wash &amp; wax</li><li>Chrome polish</li>
+          <li>Fairing &amp; bodywork detailing</li><li>Bag &amp; saddle cleaning</li>
+          <li>Tar &amp; bug removal</li><li>Tire &amp; wheel dressing</li>
+        </ul>
+        <div class="meta"><div class="price">From <b>$80</b></div><a href="services-motorcycle.html" class="btn btn-primary btn-sm">See Motorcycle Pricing <span class="ar">&rarr;</span></a></div>
+        <ul class="size-pricing"><li>Basic Bikes <b>$80&ndash;$150</b></li><li>Custom &amp; Mid-Size <b>$110&ndash;$200</b></li><li>Full Dressers / Touring <b>$150&ndash;$350</b></li></ul>
+        <p class="pricing-note">Paint correction, ceramic coating, and heavily soiled bikes are priced as add-ons.</p>
+      </div>
+    </div>
+
     <p class="pricing-note" style="text-align:center;margin-top:44px">Pricing varies by vehicle size and condition — final pricing confirmed at booking.</p>
 
     <div class="addons reveal">
-      <div class="addons-head"><span class="eyebrow no-rule">À la carte</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service above</span></div>
+      <div class="addons-head"><span class="eyebrow no-rule">Extras</span><h3>Add-ons — build your detail</h3><span class="addons-note">Added to any service above</span></div>
       <div class="addons-grid">
         <div class="addon"><span>Clay bar treatment</span><b>+$40</b></div>
         <div class="addon"><span>Iron fallout removal</span><b>+$45</b></div>
@@ -377,6 +439,7 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
       <p class="sec-sub" style="margin:22px auto 0;text-align:center">Tell us where you are and what you drive. We'll bring the studio to your door.</p>
       <div class="ctas">
         <a href="mailto:reclaimedautocare@gmail.com?subject=Detail%20Booking%20Request" class="btn btn-primary">Request a Booking <span class="ar">&rarr;</span></a>
+        <a href="subscriptions.html" class="btn btn-ghost">Membership <span class="ar">&rarr;</span></a>
         <a href="tel:+13346401831" class="btn btn-ghost">Call (334) 640-1831</a>
       </div>
     </div>
@@ -392,7 +455,7 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
         <div class="ftitle">Quick Message</div>
         <p>Prefer to type? We reply the same day.</p>
       </div>
-      <form class="footer-quick-form" action="https://formspree.io/f/mzdqjbye" method="POST">
+      <form class="footer-quick-form" action="https://formspree.io/f/mzdnwagg" method="POST">
         <input type="hidden" name="_subject" value="Quick Message — Reclaimed Auto Care" />
         <div class="fqf-fields">
           <input type="text" name="name" placeholder="Your name" aria-label="Your name" required />
@@ -419,11 +482,11 @@ html[data-mood="dark"] .pricing-note{color:var(--on-dark-mut)}
     <div><div class="ftitle">Navigate</div><ul>
       <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="showcase.html">Gallery</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <li><a href="showcase.html">Gallery</a></li><li><a href="blog.html">Blog</a></li><li><a href="subscriptions.html">Recurring Clients</a></li></ul></div>
     <div><div class="ftitle">Services</div><ul>
       <li><a href="services-exterior.html">Exterior Detail</a></li><li><a href="services-interior.html">Interior Restoration</a></li>
       <li><a href="services-paint-correction.html">Paint Correction</a></li><li><a href="services-ceramic.html">Covenant Coatings</a></li>
-      <li><a href="service-areas.html">Service Areas</a></li></ul></div>
+      <li><a href="services-boat.html">Boat Detailing</a></li><li><a href="services-heavy-equipment.html">Heavy Equipment</a></li><li><a href="services-powersports.html">Golf Cart / UTV / ATV</a></li><li><a href="services-motorcycle.html">Motorcycle</a></li><li><a href="service-areas.html">Service Areas</a></li></ul></div>
     <div><div class="ftitle">Contact</div><ul>
       <li><a href="tel:+13346401831">(334) 640-1831</a></li>
       <li><a href="mailto:reclaimedautocare@gmail.com">reclaimedautocare@gmail.com</a></li>

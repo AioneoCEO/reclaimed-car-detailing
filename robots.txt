@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reclaimeddetailers.com/sitemap.xml
+Sitemap: https://reclaimedautocare.com/sitemap.xml

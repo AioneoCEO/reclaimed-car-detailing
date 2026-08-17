@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <script>try{var _t=localStorage.getItem('rd_theme')||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(_t==='dark')document.documentElement.setAttribute('data-mood','dark')}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Interior Detailing &amp; Restoration — Reclaimed Auto Care · Elmore County, AL</title>
-<meta name="description" content="Interior auto detailing in Elmore County, AL — deep vacuum, steam clean, leather conditioning, and odor neutralization. Mobile — we come to you." />
+<title>Golf Cart, UTV &amp; ATV Detailing — Reclaimed Auto Care · Elmore County, AL</title>
+<meta name="description" content="Mobile powersports detailing in Elmore County, AL — golf carts, side-by-sides (UTVs), and ATVs. Basic wash from $45, full detail and mud-caked extreme cleans available." />
 <link rel="icon" href="images/reclaimed-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Interior Auto Detailing",
+  "serviceType": "Powersports Detailing",
   "provider": {"@type":"LocalBusiness","name":"Reclaimed Auto Care","telephone":"+1-334-640-1831","url":"https://reclaimedautocare.com/"},
   "areaServed": [
     {"@type":"AdministrativeArea","name":"Elmore County, AL"},
@@ -26,8 +26,8 @@
     {"@type":"City","name":"Pike Road, AL"},
     {"@type":"City","name":"Auburn, AL"}
   ],
-  "url": "https://reclaimedautocare.com/services-interior.html",
-  "offers": {"@type":"Offer","priceCurrency":"USD","price":"180"}
+  "url": "https://reclaimedautocare.com/services-powersports.html",
+  "offers": {"@type":"Offer","priceCurrency":"USD","price":"45"}
 }
 </script>
 <style>
@@ -35,7 +35,7 @@
 .svc-hero .glow{position:absolute;width:680px;height:560px;top:-160px;left:50%;transform:translateX(-30%);background:radial-gradient(ellipse,rgba(var(--accent-rgb),.28),transparent 65%);pointer-events:none}
 .svc-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,64px);align-items:center;position:relative;z-index:2}
 .svc-hero .crumb{margin-bottom:16px}
-.svc-hero h1{font-size:clamp(2.5rem,5vw,4rem);margin-top:14px;max-width:14ch}
+.svc-hero h1{font-size:clamp(2.5rem,5vw,4rem);margin-top:14px;max-width:16ch}
 .svc-hero p{color:rgba(244,240,234,.66);font-size:1.1rem;line-height:1.7;margin-top:20px;max-width:48ch}
 .svc-hero .meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}
 .svc-hero .price{font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--gold-lite)}
@@ -46,6 +46,28 @@
 .incl li{font-size:.98rem;display:flex;gap:11px;align-items:flex-start;color:var(--ink-2)}
 html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
 .incl li::before{content:"";width:17px;height:17px;flex-shrink:0;margin-top:3px;border-radius:50%;background:rgba(var(--accent-rgb),.14);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8842f' stroke-width='3'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+
+/* pricing table */
+.ft-table{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-top:26px}
+.ft-table .frow{display:grid;grid-template-columns:1.6fr 2.4fr auto;gap:16px;align-items:center;padding:18px 24px;border-top:1px solid var(--line)}
+.ft-table .frow:first-child{border-top:none}
+.ft-table .frow b{font-size:1.02rem}
+.ft-table .frow span{font-size:.9rem;color:var(--muted)}
+.ft-table .frow .rng{font-family:var(--font-mono);font-size:1rem;font-weight:700;color:var(--accent-deep,var(--accent));white-space:nowrap;text-align:right}
+html[data-mood="dark"] .ft-table .frow .rng{color:var(--accent-soft,var(--on-dark))}
+html[data-mood="dark"] .ft-table{border-color:var(--on-dark-line)}
+html[data-mood="dark"] .ft-table .frow{border-color:var(--on-dark-line)}
+@media(max-width:640px){.ft-table .frow{grid-template-columns:1fr;text-align:left}.ft-table .frow .rng{text-align:left}}
+
+/* by-vehicle-type strip */
+.type-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.type-item{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+html[data-mood="dark"] .type-item{background:var(--dark-card);border-color:var(--on-dark-line)}
+.type-item b{display:block;font-family:var(--font-display);font-size:1.15rem;margin-bottom:6px}
+.type-item .rng{font-family:var(--font-mono);font-size:1.05rem;font-weight:700;color:var(--accent-deep,var(--accent))}
+html[data-mood="dark"] .type-item .rng{color:var(--accent-soft,var(--on-dark))}
+@media(max-width:720px){.type-strip{grid-template-columns:1fr}}
+
 .rel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .rel a{display:block;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;transition:border-color .25s,transform .25s}
 .rel a:hover{border-color:rgba(var(--accent-rgb),.4);transform:translateY(-3px)}
@@ -53,16 +75,16 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
 .rel small{color:var(--muted);font-size:.88rem}
 @media(max-width:860px){.svc-hero-grid{grid-template-columns:1fr}.incl{grid-template-columns:1fr}.rel{grid-template-columns:1fr}}
 </style>
-  <link rel="canonical" href="https://reclaimedautocare.com/services-interior.html" />
+  <link rel="canonical" href="https://reclaimedautocare.com/services-powersports.html" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Interior Detailing &amp; Restoration — Reclaimed Auto Care · Elmore County, AL" />
-  <meta property="og:description" content="Interior auto detailing in Elmore County, AL — deep vacuum, steam clean, leather conditioning, and odor neutralization. Mobile — we come to you." />
+  <meta property="og:title" content="Golf Cart, UTV &amp; ATV Detailing — Reclaimed Auto Care · Elmore County, AL" />
+  <meta property="og:description" content="Mobile powersports detailing in Elmore County, AL — golf carts, side-by-sides (UTVs), and ATVs. Basic wash from $45." />
   <meta property="og:image" content="https://reclaimedautocare.com/images/reclaimed-logo.png" />
-  <meta property="og:url" content="https://reclaimedautocare.com/services-interior.html" />
+  <meta property="og:url" content="https://reclaimedautocare.com/services-powersports.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Interior Detailing &amp; Restoration — Reclaimed Auto Care · Elmore County, AL" />
-  <meta name="twitter:description" content="Interior auto detailing in Elmore County, AL — deep vacuum, steam clean, leather conditioning, and odor neutralization. Mobile — we come to you." />
+  <meta name="twitter:title" content="Golf Cart, UTV &amp; ATV Detailing — Reclaimed Auto Care · Elmore County, AL" />
+  <meta name="twitter:description" content="Mobile powersports detailing in Elmore County, AL — golf carts, side-by-sides (UTVs), and ATVs. Basic wash from $45." />
   <meta name="twitter:image" content="https://reclaimedautocare.com/images/reclaimed-logo.png" />
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -142,61 +164,62 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
 <main id="main-content">
 <header class="svc-hero" id="top"><div class="glow"></div><div class="wrap"><div class="svc-hero-grid">
     <div>
-      <div class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Interior</div>
-      <span class="eyebrow no-rule" style="color:var(--gold-lite)">Interior Restoration</span>
-      <h1>Interior restoration.</h1>
-      <p>A fresh, clean cabin — vacuumed, wiped down, and deodorized. Deeper restoration like steam extraction, leather conditioning, and pet-hair removal is available as add-ons.</p>
-      <div class="meta"><div class="price">From <b>$130</b></div>
+      <div class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Golf Cart / UTV / ATV</div>
+      <span class="eyebrow no-rule" style="color:var(--gold-lite)">Powersports Detailing</span>
+      <h1>Golf carts, UTVs &amp; ATVs, reclaimed.</h1>
+      <p>From a quick wash on your golf cart to a full mud-caked extreme clean on a side-by-side — the same hand-detail care, sized to the machine.</p>
+      <div class="meta"><div class="price">From <b>$45</b></div>
         <a href="book.html" class="btn btn-primary">Book This <span class="ar">&rarr;</span></a></div>
-      <p style="font-size:.86rem;color:var(--on-dark-mut);margin-top:14px">Coupe <b>$130</b> &middot; Sedan <b>$150</b> &middot; Mid-Size <b>$170</b> &middot; XL-Size <b>$205</b></p>
+      <p style="font-size:.86rem;color:var(--on-dark-mut);margin-top:14px">Golf Carts $45&ndash;$120 &middot; UTVs/Side-by-Sides $100&ndash;$300 &middot; ATVs/Dirt Bikes $45&ndash;$100</p>
     </div>
-    <div class="svc-hero-fig"><div class="slot-frame gloss"><image-slot id="svc-hero-img" fit="cover" src="images/interior-detail.jpg" placeholder="Interior — conditioned leather, vacuumed, restored cabin"></image-slot></div></div>
+    <div class="svc-hero-fig"><div class="slot-frame gloss"><image-slot id="svc-hero-img" fit="cover" placeholder="Powersports detailing — clean golf cart or UTV"></image-slot></div></div>
   </div></div></header>
 
   <section class="section bg-cream"><div class="wrap">
-    <div class="grid-2">
-      <div class="reveal"><span class="eyebrow">What It Is</span><h2 class="sec-title" style="margin-bottom:14px">A cabin, renewed.</h2>
-        <p style="color:var(--muted);line-height:1.8;margin-top:14px">The inside of your vehicle takes more abuse than anywhere else — spills, dust, pet hair, food, and the slow build-up of daily life. Our interior detail resets the everyday mess.</p><p style="color:var(--muted);line-height:1.8;margin-top:14px">We vacuum every surface, wipe down panels, console, and vents, clean the interior glass, and deodorize the cabin. Need more? Add steam cleaning &amp; extraction, leather conditioning, pet hair removal, or heavy mud &amp; dirt removal as add-ons.</p>
-      </div>
-      <div class="reveal d1">
-        <div style="background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px">
-          <h3 style="font-size:1.4rem;margin-bottom:20px">What's included</h3>
-          <ul class="incl"><li>Full vacuum &amp; air purge</li><li>Surface wipe-down</li><li>Interior glass</li><li>Vents &amp; crevices</li><li>Door panels &amp; console</li><li>Light deodorize</li></ul>
-        </div>
-      </div>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Package Tiers</span>
+      <h2 class="sec-title">Three levels, from a quick wash to extreme clean.</h2>
+      <p class="sec-sub">Every golf cart, UTV, and ATV is different — pricing depends on the level of service and how much mud and grime we're working against.</p>
     </div>
-    <div class="addons reveal">
-      <div class="addons-head"><span class="eyebrow no-rule">Extras</span><h3>Popular interior add-ons</h3></div>
-      <div class="addons-grid">
-        <div class="addon"><span>Pet hair removal</span><b>+$40</b></div>
-        <div class="addon"><span>Heavy mud &amp; dirt removal</span><b>+$70</b></div>
-        <div class="addon"><span>Steam clean &amp; extraction</span><b>$50/hr</b></div>
-        <div class="addon"><span>Leather clean &amp; condition</span><b>+$45</b></div>
-        <div class="addon"><span>Headliner cleaning</span><b>+$150</b></div>
-      </div>
-      <p style="font-size:.82rem;color:var(--muted);font-style:italic;margin-top:12px">Pricing varies by vehicle condition — final pricing confirmed at booking.</p>
+    <div class="ft-table reveal d1">
+      <div class="frow"><b>Basic Wash &amp; Go</b><span>Exterior rinse, wheel/rim cleaning, dashboard or plastic wipe-down, light protectant</span><div class="rng">$45&ndash;$75</div></div>
+      <div class="frow"><b>Full Detail &amp; Protection</b><span>Deep wash, roof degreasing (golf carts), seat cleaning &amp; conditioning, plastic trim restoration, hand or spray wax sealant</span><div class="rng">$100&ndash;$175</div></div>
+      <div class="frow"><b>Heavy Mud / Extreme Clean</b><span>Off-road UTVs caked in thick mud &amp; grime &mdash; extra time, undercarriage washing, heavy degreasing</span><div class="rng">$200&ndash;$300+</div></div>
     </div>
+
+    <div class="sec-head reveal" style="margin-top:56px">
+      <span class="eyebrow">By Vehicle Type</span>
+      <h2 class="sec-title">A quick reference by machine.</h2>
+    </div>
+    <div class="type-strip reveal d1">
+      <div class="type-item"><b>Golf Carts</b><span class="rng">$45&ndash;$120</span></div>
+      <div class="type-item"><b>Side-by-Sides / UTVs</b><span class="rng">$100&ndash;$300</span></div>
+      <div class="type-item"><b>ATVs / Dirt Bikes</b><span class="rng">$45&ndash;$100</span></div>
+    </div>
+    <p class="pricing-note" style="margin-top:16px">Add-ons like heavy mud removal, seat shampooing, or specialized metal/plastic polishing run an extra $25&ndash;$50. As a rule of thumb, a one-hour golf cart wash runs around $100, while a heavily mud-caked UTV needing three hours runs $250 or more.</p>
   </div></section>
 
   <section class="section dark"><div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow no-rule" style="justify-content:center">Why It Matters</span><h2 class="sec-title">Comfort you can feel.</h2></div>
-    <div class="grid-3"><div class="card reveal "><span class="ic">&#10024;</span><h3>Like-New Feel</h3><p>Conditioned leather, fresh carpet, and clean glass make every drive feel like the first one.</p></div>
-<div class="card reveal d1"><span class="ic">&#9763;</span><h3>Healthier Cabin</h3><p>Removing dust, allergens, and bacteria makes the air inside your vehicle noticeably cleaner.</p></div>
-<div class="card reveal d2"><span class="ic">&#9851;</span><h3>Protected Surfaces</h3><p>Conditioning guards leather and trim against cracking, fading, and UV damage.</p></div></div>
+    <div class="sec-head center reveal"><span class="eyebrow no-rule" style="justify-content:center">Pricing Factors</span><h2 class="sec-title">What moves the price.</h2></div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Vehicle Type &amp; Size</h3><p>A single-row golf cart, a double-row UTV, and a compact ATV all take different amounts of time and product to do right.</p></div>
+      <div class="card reveal d1"><h3>Mud &amp; Grime Level</h3><p>Off-road machines caked in thick mud need extra time, undercarriage washing, and heavier degreasing than a machine kept mostly clean.</p></div>
+      <div class="card reveal d2"><h3>Add-Ons</h3><p>Heavy mud removal, seat shampooing, and specialized metal or plastic polishing are priced separately from the base wash or detail.</p></div>
+    </div>
   </div></section>
 
   <section class="section bg-alt"><div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Keep Exploring</span><h2 class="sec-title">Related services.</h2></div>
-    <div class="rel"><a href="services-exterior.html"><b>Exterior Detail</b><small>Wash, clay &amp; sealant</small></a>
-<a href="services-paint-correction.html"><b>Paint Correction</b><small>Erase swirls &amp; scratches</small></a>
-<a href="subscriptions.html"><b>Maintenance Wash</b><small>Keep it this way</small></a></div>
+    <div class="rel"><a href="services-heavy-equipment.html"><b>Heavy Equipment</b><small>Hourly, degreasing &amp; wash</small></a>
+<a href="services-boat.html"><b>Boat Detailing</b><small>Per-foot, wash to ceramic</small></a>
+<a href="services-exterior.html"><b>Exterior Detail</b><small>Vehicle wash &amp; protection</small></a></div>
   </div></section>
 
   <section class="section final dark">
   <div class="glow"></div><div class="wrap"><div class="reveal">
     <span class="eyebrow no-rule" style="justify-content:center;color:var(--gold-lite)">Ready When You Are</span>
-    <h2 style="margin-top:18px">Restore your cabin.</h2>
-    <p class="sec-sub" style="margin:22px auto 0;text-align:center">Book an interior restoration and step back into a vehicle that feels brand new.</p>
+    <h2 style="margin-top:18px">Let's get it reclaimed.</h2>
+    <p class="sec-sub" style="margin:22px auto 0;text-align:center">Tell us what you've got and how muddy it is — we'll confirm the right package before we start.</p>
     <div class="ctas"><a href="book.html" class="btn btn-primary">Book a Detail <span class="ar">&rarr;</span></a><a href="subscriptions.html" class="btn btn-ghost">Membership <span class="ar">&rarr;</span></a><a href="tel:+13346401831" class="btn btn-ghost">Call (334) 640-1831</a></div>
   </div></div></section>
 </main>
@@ -223,7 +246,7 @@ html[data-mood="dark"] .incl li{color:var(--on-dark-mut)}
 
   <div class="wrap cols">
     <div>
-      
+
       <div class="ftag">Restored. Refined. Reclaimed.</div>
       <p class="fdesc">Premium mobile auto detailing in Elmore County, Alabama. Faith-driven, community-minded, and obsessive about the details.</p>
       <div class="socials">

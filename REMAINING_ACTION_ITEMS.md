@@ -33,13 +33,13 @@
 
 **Step-by-step:**
 1. Log into Google Domains (or wherever your domain is registered): https://domains.google.com
-2. Find your domain (e.g., reclaimeddetailers.com)
+2. Find your domain (e.g., reclaimedautocare.com)
 3. Click "DNS" or "Manage DNS"
 4. Add these records:
    - Type: **A** | Name: **@** | Value: **76.76.21.21** (Vercel's IP)
    - Type: **CNAME** | Name: **www** | Value: **cname.vercel-dns.com**
 5. In Vercel dashboard (vercel.com), go to your project → Settings → Domains
-6. Add your domain: `reclaimeddetailers.com` and `www.reclaimeddetailers.com`
+6. Add your domain: `reclaimedautocare.com` and `www.reclaimedautocare.com`
 7. Vercel will auto-provision SSL (takes 5–30 minutes after DNS propagates)
 8. DNS propagation: typically 1–4 hours, up to 48 hours
 
@@ -54,7 +54,7 @@
 **Step-by-step (do AFTER domain DNS is live):**
 1. Go to: https://search.google.com/search-console
 2. Log in with your Google account (rayr.compton@gmail.com)
-3. Add property: choose "URL prefix" → enter `https://reclaimeddetailers.com`
+3. Add property: choose "URL prefix" → enter `https://reclaimedautocare.com`
 4. Verify via the HTML file already in your repo (google4c047571b395bdc9.html)
 5. In left sidebar → Sitemaps → Enter: `sitemap.xml` → Submit
 6. Check back in 1–2 days to confirm Google indexed your pages
@@ -127,7 +127,7 @@
 - Business Name: **Reclaimed Detailers LLC** (exact same every time)
 - Phone: **(334) 640-1831**
 - Email: **reclaimeddetailers@outlook.com**
-- Website: **https://reclaimeddetailers.com**
+- Website: **https://reclaimedautocare.com**
 - Category: **Auto Detailing**
 
 **Estimated time:** 3–4 hours total
@@ -276,13 +276,13 @@
 ---
 
 ### 15. Set Up a Business Email Address
-**Why:** `reclaimeddetailers@outlook.com` looks informal vs. `ray@reclaimeddetailers.com`.
+**Why:** `reclaimeddetailers@outlook.com` looks informal vs. `ray@reclaimedautocare.com`.
 
 **Step-by-step:**
 1. Go to Google Workspace: https://workspace.google.com (starts at $6/month)
 2. Or use Zoho Mail (free): https://zoho.com/mail
 3. Verify your domain
-4. Create `ray@reclaimeddetailers.com` or `hello@reclaimeddetailers.com`
+4. Create `ray@reclaimedautocare.com` or `hello@reclaimedautocare.com`
 
 **Estimated time:** 30 minutes
 **Priority: LOW** (professional but not urgent)
