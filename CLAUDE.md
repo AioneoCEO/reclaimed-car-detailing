@@ -112,6 +112,7 @@ font-family: 'Barlow Condensed', sans-serif; /* Labels, caps, nav links */
 - Cookie consent banner: added to all pages ✅
 - Copyright: © 2026 Reclaimed Auto Care ✅
 - ADA: basic structure in place; needs real image alt text when photos are added
+- **Not licensed or insured.** The business is currently run as a practice business while Ray builds experience — never claim "licensed and insured" (or similar) anywhere on the site. This is disclosed openly on the homepage, FAQ, terms, and liability waiver. Update here if that status changes.
 
 ## Services Offered
 - Exterior wash & decontamination
